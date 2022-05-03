@@ -10,22 +10,47 @@
 		<link rel="stylesheet" href="css_files/login.css">
 		<link rel="stylesheet" href="css_files/about.css">
 		<link rel="stylesheet" href="css_files/start.css">
+		<link rel="stylesheet" href="css_files/general.css">
 	</head>
 
 	<body>
-		<div>
-			<img src="media/images/pacman_logo.jpeg">
+		<div id="container_header">
+			<header>
+				<center>
+					<img id=logo src="media/images/pacman_logo.jpeg" width="300" height="170">
+				</center>
+			</header>
 		</div>
-		<div id="score">
-			<label for="lblScore">SCORE:</label>
-			<input id="lblScore" type="text" />
+
+
+		<div id="container_menu">
+			<ul id="menu">
+				<center>
+					<button id="home-menu-btn" class="btn1" data-text="color"> WELCOME</button>
+					<button id="register-menu-btn" class="btn1" data-text="color"> REGISTER</button>
+					<button id="login-menu-btn" class="btn1" data-text="color"> LOGIN</button>
+					<button id="about-menu-btn" class="btn1" data-text="color"> ABOUT</button>
+				</center>
+			</ul>
 		</div>
-		<div id="time">
-			<label for="lblTime">TIME:</label>
-			<input id="lblTime" type="text" />
-		</div>
-		<div id="game">
-			<canvas id="canvas" height="600" width="600"></canvas>
-		</div>
+
+		<center>
+			<div id="score">
+				<label for="lblScore">SCORE:</label>
+				<input id="lblScore" type="text" />
+			</div>
+			<div id="time">
+				<label for="lblTime">TIME:</label>
+				<input id="lblTime" type="text" />
+			</div>
+			<div id="game">
+				<canvas id="canvas" height="600" width="600"></canvas>
+			</div>
+
+			<center>
+				<button id="start-btn" class="btn1" data-text="color"> START NEW GAME</button>
+			</center>
+		</center>
+
 	</body>
 </html>
