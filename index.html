@@ -51,6 +51,82 @@
 				<button id="start-btn" class="btn1" data-text="color"> START NEW GAME</button>
 			</center>
 		</center>
+	<center>
+		<footer>
+			<p>Contact Us</p>
+			<p>
+				Yuval Cohen
+				<button id="email-img-yuval">
+					<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormYuval()">
+				</button>
+			</p>
+			<p>
+				Noa Magriso
+				<button id="email-img-noa">
+					<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormNoa()">
+				</button>
+			</p>
+
+		</footer>
+	</center>
+<!--		https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup_form-->
+		<!--TODO: Add X button to close the window-->
+		<div class="form-popup" id="myFormYuval">
+			<form action="https://formsubmit.co/yucoh@post.bgu.ac.il" method="POST">
+				Name:
+				<br/>
+				<input type="hidden" name="_subject" value="New email from My Web">
+				<input type="text" name="name" placeholder="Full name" required>
+				<br/>
+				E-mail:
+				<br/>
+				<input type="text" name="email" placeholder="E-mail Address" required>
+				<br/>
+				Comment:
+				<br/>
+				<textarea id="myTextareaYuval" name="message" placeholder="Write your message here" required></textarea>
+				<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
+				<input type="hidden" name="_template" value="basic">
+				<br/>
+				<button type="submit" onclick="closeFomYuval()">Send</button>
+				<button type="reset">Reset</button>
+			</form>
+		</div>
+		<div class="form-popup" id="myFormNoa">
+			<form action="https://formsubmit.co/" method="POST"><!-- TODO:Add Noa email!!!! -->
+				Name:
+				<br/>
+				<input type="hidden" name="_subject" value="New email from My Web">
+				<input type="text" name="name" placeholder="Full name" required>
+				<br/>
+				E-mail:
+				<br/>
+				<input type="text" name="email" placeholder="E-mail Address" required>
+				<br/>
+				Comment:
+				<br/>
+				<textarea id="myTextareaNoa" name="message" placeholder="Write your message here" required></textarea>
+				<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
+				<input type="hidden" name="_template" value="basic">
+				<br/>
+				<button type="submit" onclick="closeFomNoa()">Send</button>
+				<button type="reset">Reset</button>
+			</form>
+		</div>
 
 	</body>
+	<script>
+		function openFormYuval(){
+			document.getElementById("myFormYuval").style.display = "block";
+		}
+		function closeFomYuval(){
+			document.getElementById("myFormYuval").style.display = "none";
+		}
+		function openFormNoa(){
+			document.getElementById("myFormYuval").style.display = "block";
+		}
+		function closeFomNoa(){
+			document.getElementById("myFormYuval").style.display = "none";
+		}
+	</script>
 </html>
