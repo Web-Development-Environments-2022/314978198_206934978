@@ -5,11 +5,56 @@ var score;
 var pac_color;
 var start_time;
 var time_elapsed;
-var interval
+var interval;
+let users = [{username: 'k', password: 'k', firstname:'k', lastname: 'k', email: 'kk@gmail.com', birthdate: '01/01/1995'}];
+let loggedInUser = null;
 
 $(document).ready(function() {
-	context = canvas.getContext("2d");
-	Start();
+	$("#play-section").hide();
+	$("#register-section").hide();
+	$("#login-section").hide();
+
+	$("#home-menu-btn").click(function(){
+		window.clearInterval(interval);
+		$("#welcome-section-notloggedin").show();
+		$("#play-section").hide();
+		$("#register-section").hide();
+		$("#login-section").hide();
+	})
+
+	$("#register-menu-btn").click(function(){
+		window.clearInterval(interval);
+		$("#welcome-section-notloggedin").hide();
+		$("#play-section").hide();
+		$("#register-section").show();
+		$("#login-section").hide();
+	})
+
+	$("#login-menu-btn").click(function(){
+		window.clearInterval(interval);
+		$("#welcome-section-notloggedin").hide();
+		$("#play-section").hide();
+		$("#register-section").hide();
+		$("#login-section").show();
+	})
+
+	$("#welcome-login-btn").click(function(){
+		window.clearInterval(interval);
+		$("#welcome-section-notloggedin").hide();
+		$("#play-section").hide();
+		$("#register-section").hide();
+		$("#login-section").show();
+	})
+
+	$("#welcome-registration-btn").click(function(){
+		window.clearInterval(interval);
+		$("#welcome-section-notloggedin").hide();
+		$("#play-section").hide();
+		$("#register-section").show();
+		$("#login-section").hide();
+	})
+	// context = canvas.getContext("2d");
+	// Start();
 });
 
 function Start() {

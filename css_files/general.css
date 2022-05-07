@@ -3,7 +3,7 @@
 
 
 body{
-    background-color: #980628;
+    background-color: black;
     max-width: 100%;
     max-height: 100%;
     justify-content: center;
@@ -55,7 +55,8 @@ body{
 .btn1{
     text-align: center;
     width: max-content;
-    color: rgba(80,230,255,200);
+    /*color: rgba(80,230,255,200);*/
+    color: #FFFF00;
     background: none;
     border-radius: 3;
     padding: 0.5em 4em;

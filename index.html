@@ -17,40 +17,87 @@
 		<div id="container_header">
 			<header>
 				<center>
-					<img id=logo src="media/images/pacman_logo.jpeg" width="300" height="170">
+					<img id=logo src="media/images/PacMan.png" width="500" height="250">
 				</center>
 			</header>
 		</div>
 
-
 		<div id="container_menu">
 			<ul id="menu">
 				<center>
-					<button id="home-menu-btn" class="btn1" data-text="color"> WELCOME</button>
-					<button id="register-menu-btn" class="btn1" data-text="color"> REGISTER</button>
-					<button id="login-menu-btn" class="btn1" data-text="color"> LOGIN</button>
-					<button id="about-menu-btn" class="btn1" data-text="color"> ABOUT</button>
+					<button id="home-menu-btn" class="btn1" data-text="color">WELCOME</button>
+					<button id="register-menu-btn" class="btn1" data-text="color">REGISTER</button>
+					<button id="login-menu-btn" class="btn1" data-text="color">LOGIN</button>
+					<button id="about-menu-btn" class="btn1" data-text="color">ABOUT</button>
 				</center>
 			</ul>
 		</div>
 
-		<center>
-			<div id="score">
-				<label for="lblScore">SCORE:</label>
-				<input id="lblScore" type="text" />
-			</div>
-			<div id="time">
-				<label for="lblTime">TIME:</label>
-				<input id="lblTime" type="text" />
-			</div>
-			<div id="game">
-				<canvas id="canvas" height="600" width="600"></canvas>
-			</div>
-
+		<section class="welcome-section" id="welcome-section-notloggedin">
 			<center>
-				<button id="start-btn" class="btn1" data-text="color"> START NEW GAME</button>
+				<img src="media/images/welcome.gif"/>
+				<br/>
+				<br/>
+				<button id="welcome-login-btn" type="button" class="btn1" data-text="color">LOGIN</button>
+				<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>
 			</center>
-		</center>
+		</section>
+
+		<section id="register-section" class="form-section">
+			<form id="registration-form" class="app-forms">
+				<div class="formInstructionsD">
+					<h2>Sign Up</h2>
+				</div>
+				<div class="fillContactD">
+					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="registerFormUserName" name="registerFormUserName"/>
+					<input class="inputRequest formContentElement" type="text" placeholder="Password" id="registerFormPassword" name="registerFormPassword"/>
+					<input class="inputRequest formContentElement" type="text" placeholder="First Name" id="registerFormFirstName" name="registerFormFirstName"/>
+					<input class="inputRequest formContentElement" type="text" placeholder="Email" id="registerFormEmail" name="registerFormEmail"/>
+					<input class="inputRequest formContentElement" type="text" placeholder="Birth Date" id="registerFormBirthDate" name="registerFormBirthDate" onfocus="this.type='date'" onblur="this.type='text'"/>
+				</div>
+				<div class="submitRegistrationButtonD">
+					<input type="submit" class="submitButton" onclick="registrationUser()"/>
+					<input type="reset" class="submitButton"/>
+				</div>
+			</form>
+		</section>
+
+		<section id="login-section" class="form-section">
+			<form id="login-section-form" class="app-forms">
+				<div class="formInstructionsD">
+					<h2>Log In</h2>
+				</div>
+				<div class="fillContactD">
+					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="loginFormUserName"/>
+					<input class="inputRequest formContentElement" type="text" placeholder="Password" id="loginFormPassword"/>
+				</div>
+				<div class="submitRegistrationButtonD">
+					<input type="submit" class="submitButton" onclick="logIn()"/>
+					<input type="reset" class="submitButton"/>
+				</div>
+			</form>
+		</section>
+
+		<section id="play-section">
+			<center>
+				<div id="score">
+					<label for="lblScore">SCORE:</label>
+					<input id="lblScore" type="text" />
+				</div>
+				<div id="time">
+					<label for="lblTime">TIME:</label>
+					<input id="lblTime" type="text" />
+				</div>
+				<div id="game">
+					<canvas id="canvas" height="600" width="600"></canvas>
+				</div>
+
+				<center>
+					<button id="start-btn" class="btn1" data-text="color"> START NEW GAME</button>
+				</center>
+			</center>
+		</section>
+
 	<center>
 		<footer>
 			<p>Contact Us</p>
