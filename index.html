@@ -43,30 +43,36 @@
 		</div>
 
 		<section class="welcome-section" id="welcome-section-notloggedin">
-			<center>
-				<br/>
-				<img src="media/images/welcome.gif"/>
-				<br/>
-				<br/>
-				<button id="welcome-login-btn" type="button" class="btn1" data-text="color">LOGIN</button>
-				<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>
-			</center>
+			<div id="Welcome-img">
+				<img id="welcome-gif" src="media/images/welcome.gif"/>
+			</div>
+			<div id="Welcome-Section-Buttons">
+				<ul id="Welcome-ul">
+					<li>
+						<button id="welcome-login-btn" type="button" class="btn1" data-text="color">LOGIN</button>
+					</li>
+					<li>
+						<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>
+					</li>
+				</ul>
+			</div>
 		</section>
 
 		<section id="register-section" class="form-section">
 			<form id="registration-form" class="app-forms">
-				<div class="formInstructionsD">
+				<div class="formInstructionsD formElement">
 					<h2>Sign Up</h2>
 				</div>
 				<div class="fillContactD">
 					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="registerFormUserName" name="registerFormUserName" required/>
 					<input class="inputRequest formContentElement" type="text" placeholder="Password" id="registerFormPassword" name="registerFormPassword"required/>
 					<input class="inputRequest formContentElement" type="text" placeholder="First Name" id="registerFormFirstName" name="registerFormFirstName" required/>
+					<input class="inputRequest formContentElement" type="text" placeholder="Last Name" id="registerFormLastName" name="registerFormLastName" required/>
 					<input class="inputRequest formContentElement" type="text" placeholder="Email" id="registerFormEmail" name="registerFormEmail" required/>
 					<input class="inputRequest formContentElement" type="date" placeholder="Birth Date" id="registerFormBirthDate" name="registerFormBirthDate" value="1940-01-01" min="1900-01-01" max="2022-01-01" required/>
 				</div>
 				<div class="submitRegistrationButtonD">
-					<input type="submit" class="submitButton" onclick="registrationUser()"/>
+					<input type="submit" class="submitButton" onclick="return registrationUser()"/>
 					<input type="reset" class="submitButton"/>
 				</div>
 			</form>

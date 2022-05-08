@@ -1,1 +1,29 @@
+.formInstructionsD{
+    margin-left: 5%;
+    font-size: 1em;
+    margin-top: 10vh;
+}
 
+.fillContactD{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.inputRequest {
+    padding: 15px;
+    font-size: 1.2em;
+    background-color: #f2f2f2;
+    border-style: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.inputRequest:focus {
+    border-style: solid;
+    border: 1px;
+    border-color: #0d6380;
+}

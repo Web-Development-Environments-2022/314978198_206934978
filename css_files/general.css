@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     color: #442620;
-    font-family: ;
+    /*font-family: ;*/
     font-size: 85.5%;
 }
 
@@ -67,7 +67,7 @@ body{
     color: rgba(80,230,255,200);
     color: #FFFF00;
     background: none;
-    border-radius: 1;
+    border-radius: 1px;
     padding: 3px 15px;
     letter-spacing: 0.2em;
     transition: background-color 0.8s, box-shadow 0.2s, color 0.8s;
@@ -112,3 +112,11 @@ body{
     width:1100px;
 }
 
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}

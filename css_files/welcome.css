@@ -1,8 +1,52 @@
-.form-popup {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
+#Welcome-Section-Buttons {
+    /*margin: 0vw 20vw 0vw 20vw;*/
+    /*padding-top: 10px;*/
+    /*background-color: white;*/
+    background-color: black;
+    padding-top: 0px;
+    height: 5vh;
+    /*line-height: 60px;*/
+    /*font-size: 10em;*/
+    /*font-weight: 700;*/
+    text-align: center;
 }
+
+#Welcome-Section-Buttons > #Welcome-ul{
+    /*margin: 0vw 20vw 0vw 20vw;*/
+    /*padding-top: 10px;*/
+    /*background-color: white;*/
+    background-color: #22102b;
+    padding-top: 0px;
+    height: 0px;
+    /*line-height: 60px;*/
+    /*font-size: 10em;*/
+    /*font-weight: 700;*/
+    text-align: center;
+}
+
+#Welcome-Section-Buttons > #Welcome-ul > li{
+    height: 0px;
+    display: inline-block;
+    /* display: inline-block; */
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    padding-top: 0px;
+    margin: 0 1vw 0 1vw;
+}
+
+#Welcome-img{
+    height: 40vh;
+    width: 85vw;
+    text-align: center;
+    padding-top: 0vh;
+    padding-bottom: 0vh;
+    /*padding-left: 10vw;*/
+}
+
+#Welcome-img > #welcome-gif{
+    padding-top: 7vh;
+    padding-bottom: 5vh;
+    padding-left: 15vw;
+}
+
