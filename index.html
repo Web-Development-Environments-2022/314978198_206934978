@@ -42,7 +42,7 @@
 			</ul>
 		</div>
 
-		<section class="welcome-section" id="welcome-section-notloggedin">
+		<section class="welcome-section" id="welcome-section-notLoggedIn">
 			<div id="Welcome-img">
 				<img id="welcome-gif" src="media/images/welcome.gif"/>
 			</div>
@@ -65,7 +65,8 @@
 				</div>
 				<div class="fillContactD">
 					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="registerFormUserName" name="registerFormUserName" required/>
-					<input class="inputRequest formContentElement" type="text" placeholder="Password" id="registerFormPassword" name="registerFormPassword"required/>
+					<input class="inputRequest formContentElement" type="text" placeholder="Password" id="registerFormPassword" name="registerFormPassword" required/>
+					<input class="inputRequest formContentElement" type="text" placeholder="Confirm Password" id="registerFormConfirmPassword" name="registerFormConfirmPassword" required/>
 					<input class="inputRequest formContentElement" type="text" placeholder="First Name" id="registerFormFirstName" name="registerFormFirstName" required/>
 					<input class="inputRequest formContentElement" type="text" placeholder="Last Name" id="registerFormLastName" name="registerFormLastName" required/>
 					<input class="inputRequest formContentElement" type="text" placeholder="Email" id="registerFormEmail" name="registerFormEmail" required/>
@@ -88,7 +89,7 @@
 					<input class="inputRequest formContentElement" type="text" placeholder="Password" id="loginFormPassword"/>
 				</div>
 				<div class="submitRegistrationButtonD">
-					<button type="submit" class="btn1" data-text="color" onclick="logIn()">LOGIN</button>
+					<button type="submit" class="btn1" data-text="color" onclick="return logIn()">LOGIN</button>
 					<button type="reset" class="btn1" data-text="color">RESET</button>
 				</div>
 			</form>

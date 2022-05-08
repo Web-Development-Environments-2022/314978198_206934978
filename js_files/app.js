@@ -18,49 +18,49 @@ $(document).ready(function() {
 
 	$("#home-menu-btn").click(function(){
 		window.clearInterval(interval);
-		$("#welcome-section-notloggedin").show();
+		$("#welcome-section-notLoggedIn").show();
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").hide();
-	})
+	});
 
 	$("#register-menu-btn").click(function(){
 		window.clearInterval(interval);
-		$("#welcome-section-notloggedin").hide();
+		$("#welcome-section-notLoggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").show();
 		$("#login-section").hide();
-	})
+	});
 
 	$("#login-menu-btn").click(function(){
 		window.clearInterval(interval);
-		$("#welcome-section-notloggedin").hide();
+		$("#welcome-section-notLoggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").show();
-	})
+	});
 
 	$("#welcome-login-btn").click(function(){
 		window.clearInterval(interval);
-		$("#welcome-section-notloggedin").hide();
+		$("#welcome-section-notLoggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").show();
-	})
+	});
 
 	$("#welcome-registration-btn").click(function(){
 		window.clearInterval(interval);
-		$("#welcome-section-notloggedin").hide();
+		$("#welcome-section-notLoggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").show();
 		$("#login-section").hide();
-	})
+	});
 	// context = canvas.getContext("2d");
 	// Start();
 });
 
-$(document).ready(function(){
-	$.validator. addMethod("validPassword", function (value) {
+$(document).ready(function () {
+	$.validator.addMethod("validPassword", function (value) {
 		return /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/.test(value);
 	}, 'Password must contain at least one character and one number');
 
@@ -70,12 +70,59 @@ $(document).ready(function(){
 
 	$('#registration-form').validate({
 		rules: {
+			registerFormUserName: {
+				required: true
+			},
 
+			registerFormPassword: {
+				required: true,
+				validPassword: true,
+				minLength:8
+			},
+
+			registerFormConfirmPassword : {
+				equalTo: "#registerFormPassword"
+			},
+
+			registerFormFirstName: {
+				required: true,
+				noNumbers: true
+			},
+
+			registerFormLastName: {
+				required: true,
+				noNumbers: true
+			},
+
+			registerFormEmail: {
+				required: true,
+				email: true
+			},
+
+			registerFormBirthDate: {
+				required: true,
+			}
+		},
+
+		messages: {
+			registerFormPassword: {
+				minlength: "Password must be at least 8 characters long."
+			},
+
+			registerFormConfirmPassword: {
+				equalTo: "Password and Confirm Password must match."
+			},
+
+			registerFormFirstName: {
+				noNumbers: "Letters allowed only."
+			},
+
+			registerFormLastName: {
+				noNumbers: "Letters allowed only."
+			}
 		}
 	})
-
 });
-
 
 
 $(document).ready(function(){
