@@ -13,6 +13,8 @@ $(document).ready(function() {
 	$("#play-section").hide();
 	$("#register-section").hide();
 	$("#login-section").hide();
+	$("#about").hide();
+
 
 	$("#home-menu-btn").click(function(){
 		window.clearInterval(interval);
