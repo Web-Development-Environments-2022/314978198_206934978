@@ -49,11 +49,11 @@
 					<h2>Sign Up</h2>
 				</div>
 				<div class="fillContactD">
-					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="registerFormUserName" name="registerFormUserName"/>
-					<input class="inputRequest formContentElement" type="text" placeholder="Password" id="registerFormPassword" name="registerFormPassword"/>
-					<input class="inputRequest formContentElement" type="text" placeholder="First Name" id="registerFormFirstName" name="registerFormFirstName"/>
-					<input class="inputRequest formContentElement" type="text" placeholder="Email" id="registerFormEmail" name="registerFormEmail"/>
-					<input class="inputRequest formContentElement" type="text" placeholder="Birth Date" id="registerFormBirthDate" name="registerFormBirthDate" onfocus="this.type='date'" onblur="this.type='text'"/>
+					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="registerFormUserName" name="registerFormUserName" required/>
+					<input class="inputRequest formContentElement" type="text" placeholder="Password" id="registerFormPassword" name="registerFormPassword"required/>
+					<input class="inputRequest formContentElement" type="text" placeholder="First Name" id="registerFormFirstName" name="registerFormFirstName" required/>
+					<input class="inputRequest formContentElement" type="text" placeholder="Email" id="registerFormEmail" name="registerFormEmail" required/>
+					<input class="inputRequest formContentElement" type="date" placeholder="Birth Date" id="registerFormBirthDate" name="registerFormBirthDate" value="1940-01-01" min="1900-01-01" max="2022-01-01" required/>
 				</div>
 				<div class="submitRegistrationButtonD">
 					<input type="submit" class="submitButton" onclick="registrationUser()"/>
