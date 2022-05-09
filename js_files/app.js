@@ -59,6 +59,24 @@ $(document).ready(function() {
 	// Start();
 });
 
+function registrationUser(){
+	const userName = $("#registerFormUserName").val();
+	const password = $("#registerFormPassword").val();
+	const firstName = $("#registerFormFirstName").val();
+	const lastName = $("#registerFormLastName").val();
+	const email = $("#registerFormEmail").val();
+	const birthDate = $("#registerFormBirthDate").val();
+
+	const newUser = {username: userName, password: password, firstname: firstName, lastname: lastName, email: email, birthdate: birthDate};
+
+	users.push(newUser);
+	alert('Registration completed successfully');
+	$("#register-section").hide();
+	$("#login-section").show();
+	return false;
+}
+
+
 $(document).ready(function () {
 	$.validator.addMethod("validPassword", function (value) {
 		return /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/.test(value);
@@ -77,7 +95,7 @@ $(document).ready(function () {
 			registerFormPassword: {
 				required: true,
 				validPassword: true,
-				minLength:8
+				minLength:6
 			},
 
 			registerFormConfirmPassword : {
@@ -106,7 +124,7 @@ $(document).ready(function () {
 
 		messages: {
 			registerFormPassword: {
-				minlength: "Password must be at least 8 characters long."
+				minlength: "Password must be at least 6 characters long."
 			},
 
 			registerFormConfirmPassword: {
@@ -123,7 +141,6 @@ $(document).ready(function () {
 		}
 	})
 });
-
 
 $(document).ready(function(){
 	let canvas = document.getElementById("canvas");
@@ -287,22 +304,5 @@ function UpdatePosition() {
 	} else {
 		Draw();
 	}
-}
-
-function registrationUser(){
-	const userName = $("#registerFormUserName").val();
-	const password = $("#registerFormPassword").val();
-	const firstName = $("#registerFormFirstName").val();
-	const lastName = $("#registerFormLastName").val();
-	const email = $("#registerFormEmail").val();
-	const birthDate = $("#registerFormBirthDate").val();
-
-	const newUser = {username: userName, password: password, firstname: firstName, lastname: lastName, email: email, birthdate: birthDate};
-
-	users.push(newUser);
-	alert('Registration completed successfully');
-	$("#register-section").hide();
-	$("#login-section").show();
-	return false;
 }
 
