@@ -6,7 +6,7 @@ var pac_color;
 var start_time;
 var time_elapsed;
 var interval;
-let users = [{username: 'k', password: 'k', confirmpassword: 'k', firstname:'k', lastname: 'k', email: 'kk@gmail.com', birthdate: '01/01/1995'}];
+var users = [{username: 'k', password: 'k', firstname:'k', lastname: 'k', email: 'kk@gmail.com', birthdate: '01/01/1995'}];
 let loggedInUser = null;
 
 $(document).ready(function() {
@@ -73,10 +73,12 @@ $(document).ready(function () {
 	//Checks if username ia already exists
 	$.validator.addMethod("validUserName", function(value){
 		is_valid = users.some(e => e.username == value);
-		if (is_valid == true)
+		if (is_valid == true){
 			return false;
-		else
+		}
+		else{
 			return true;
+		}
 	});
 
 	$("#registration-form").validate({
@@ -150,23 +152,38 @@ $(document).ready(function () {
 			registerFormBirthDate: {
 				required: "Please choose your birth date"
 			}
+		},
 
+		submitHandler: function(){
+			registrationUser();
+			// alert('Registration completed successfully');
+			// $("#register-section").hide();
+			// $("#login-section").show();
+			let form = $("#registration-form");
+			form[0].reset();
 		}
 	});
 });
 
 function registrationUser(){
-	const userName = $("#registerFormUserName").val();
-	const password = $("#registerFormPassword").val();
-	const confirmPassword = $("#registerFormConfirmPassword").val();
-	const firstName = $("#registerFormFirstName").val();
-	const lastName = $("#registerFormLastName").val();
-	const email = $("#registerFormEmail").val();
-	const birthDate = $("#registerFormBirthDate").val();
+	let userName = $("#registerFormUserName").val();
+	let password = $("#registerFormPassword").val();
+	let firstName = $("#registerFormFirstName").val();
+	let lastName = $("#registerFormLastName").val();
+	let email = $("#registerFormEmail").val();
+	let birthDate = $("#registerFormBirthDate").val();
 
-	const newUser = {username: userName, password: password, confirmpassword: confirmPassword, firstname: firstName, lastname: lastName, email: email, birthdate: birthDate};
+	let newUser = {
+		username: userName,
+		password: password,
+		firstname: firstName,
+		lastname: lastName,
+		email: email,
+		birthdate: birthDate
+	};
 
 	users.push(newUser);
+	console.log(users);
 	alert('Registration completed successfully');
 	$("#register-section").hide();
 	$("#login-section").show();

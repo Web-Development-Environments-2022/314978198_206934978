@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="js_files/jquery-3.4.1.slim.min.js"></script>
-		<script type="text/javascript" src="js_files/app.js"></script>
+		<script type="text/javascript" src="js_files/jquery-3.4.1.slim.min.js"></script>
 		<script type="text/javascript" src="js_files/jquery.validate.js"></script>
+		<script type="text/javascript" src="js_files/app.js"></script>
 
 		<!--LINKS TO CSS FILES-->
 		<link rel="stylesheet" href="css_files/welcome.css">
@@ -74,8 +74,8 @@
 					<input class="inputRequest formContentElement" type="date" placeholder="Birth Date" id="registerFormBirthDate" name="registerFormBirthDate" value="1940-01-01" min="1900-01-01" max="2022-01-01" required/>
 				</div>
 				<div class="submitRegistrationButtonD">
-					<input type="submit" class="submitButton" onclick="return registrationUser()"/>
-					<input type="reset" class="submitButton"/>
+					<input type="submit" class="submitButton" id="submitButton"/>
+					<input type="reset" class="resetButton"/>
 				</div>
 			</form>
 		</section>
