@@ -6,7 +6,7 @@ var pac_color;
 var start_time;
 var time_elapsed;
 var interval;
-let users = [{username: 'k', password: 'k', firstname:'k', lastname: 'k', email: 'kk@gmail.com', birthdate: '01/01/1995'}];
+let users = [{username: 'k', password: 'k', confirmpassword: 'k', firstname:'k', lastname: 'k', email: 'kk@gmail.com', birthdate: '01/01/1995'}];
 let loggedInUser = null;
 
 $(document).ready(function() {
@@ -59,37 +59,31 @@ $(document).ready(function() {
 	// Start();
 });
 
-function registrationUser(){
-	const userName = $("#registerFormUserName").val();
-	const password = $("#registerFormPassword").val();
-	const firstName = $("#registerFormFirstName").val();
-	const lastName = $("#registerFormLastName").val();
-	const email = $("#registerFormEmail").val();
-	const birthDate = $("#registerFormBirthDate").val();
-
-	const newUser = {username: userName, password: password, firstname: firstName, lastname: lastName, email: email, birthdate: birthDate};
-
-	users.push(newUser);
-	alert('Registration completed successfully');
-	$("#register-section").hide();
-	$("#login-section").show();
-	return false;
-}
-
-
 $(document).ready(function () {
+	//Checks password
 	$.validator.addMethod("validPassword", function (value) {
 		return /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/.test(value);
 	}, 'Password must contain at least one character and one number');
 
+	//Checks no numbers first and last name
 	$.validator.addMethod("noNumbers", function(value){
 		return /^[a-zA-Z]+$/.test(value);
 	});
 
-	$('#registration-form').validate({
+	//Checks if username ia already exists
+	$.validator.addMethod("validUserName", function(value){
+		is_valid = users.some(e => e.username == value);
+		if (is_valid == true)
+			return false;
+		else
+			return true;
+	});
+
+	$("#registration-form").validate({
 		rules: {
 			registerFormUserName: {
-				required: true
+				required: true,
+				validUserName: true
 			},
 
 			registerFormPassword: {
@@ -99,6 +93,7 @@ $(document).ready(function () {
 			},
 
 			registerFormConfirmPassword : {
+				required: true,
 				equalTo: "#registerFormPassword"
 			},
 
@@ -123,24 +118,60 @@ $(document).ready(function () {
 		},
 
 		messages: {
+			registerFormUserName: {
+				validUserName: "This username is already exists",
+				required: "Please enter a username"
+			},
+
 			registerFormPassword: {
-				minlength: "Password must be at least 6 characters long."
+				minlength: "Password must be at least 6 characters long.",
+				required: "Please enter a password"
 			},
 
 			registerFormConfirmPassword: {
-				equalTo: "Password and Confirm Password must match."
+				equalTo: "Password and Confirm Password must match.",
+				required: "Please enter a confirm password"
 			},
 
 			registerFormFirstName: {
-				noNumbers: "Letters allowed only."
+				noNumbers: "Letters allowed only.",
+				required: "Please enter a first name"
 			},
 
 			registerFormLastName: {
-				noNumbers: "Letters allowed only."
+				noNumbers: "Letters allowed only.",
+				required: "Please enter a last name"
+			},
+
+			registerFormEmail: {
+				required: "Please enter an email"
+			},
+
+			registerFormBirthDate: {
+				required: "Please choose your birth date"
 			}
+
 		}
-	})
+	});
 });
+
+function registrationUser(){
+	const userName = $("#registerFormUserName").val();
+	const password = $("#registerFormPassword").val();
+	const confirmPassword = $("#registerFormConfirmPassword").val();
+	const firstName = $("#registerFormFirstName").val();
+	const lastName = $("#registerFormLastName").val();
+	const email = $("#registerFormEmail").val();
+	const birthDate = $("#registerFormBirthDate").val();
+
+	const newUser = {username: userName, password: password, confirmpassword: confirmPassword, firstname: firstName, lastname: lastName, email: email, birthdate: birthDate};
+
+	users.push(newUser);
+	alert('Registration completed successfully');
+	$("#register-section").hide();
+	$("#login-section").show();
+	return false;
+}
 
 $(document).ready(function(){
 	let canvas = document.getElementById("canvas");
