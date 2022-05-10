@@ -1,231 +1,231 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<script type="text/javascript" src="js_files/jquery-3.4.1.slim.min.js"></script>
-		<script type="text/javascript" src="js_files/jquery.validate.js"></script>
-		<script type="text/javascript" src="js_files/app.js"></script>
+<head>
+	<script type="text/javascript" src="js_files/jquery-3.4.1.slim.min.js"></script>
+	<script type="text/javascript" src="js_files/jquery.validate.js"></script>
+	<script type="text/javascript" src="js_files/app.js"></script>
 
-		<!--LINKS TO CSS FILES-->
-		<link rel="stylesheet" href="css_files/welcome.css">
-		<link rel="stylesheet" href="css_files/register.css">
-		<link rel="stylesheet" href="css_files/login.css">
-		<link rel="stylesheet" href="css_files/about.css">
-		<link rel="stylesheet" href="css_files/start.css">
-		<link rel="stylesheet" href="css_files/general.css">
-	</head>
+	<!--LINKS TO CSS FILES-->
+	<link rel="stylesheet" href="css_files/welcome.css">
+	<link rel="stylesheet" href="css_files/register.css">
+	<link rel="stylesheet" href="css_files/login.css">
+	<link rel="stylesheet" href="css_files/about.css">
+	<link rel="stylesheet" href="css_files/start.css">
+	<link rel="stylesheet" href="css_files/general.css">
+</head>
 
-	<body>
-		<div id="container_header">
-			<header>
-				<center>
-					<img id=logo src="media/images/PacMan.png">
-					<h3>
-						Yuval Cohen & Noa Magrisso
-					</h3>
-				</center>
-			</header>
+<body>
+<div id="container_header">
+	<header>
+		<center>
+			<img id=logo src="media/images/PacMan.png">
+			<h3>
+				Yuval Cohen & Noa Magrisso
+			</h3>
+		</center>
+	</header>
+</div>
+
+<div id="Menu-container">
+	<ul id="menu">
+		<li>
+			<button id="home-menu-btn" class="btn1" data-text="color">WELCOME</button>
+		</li>
+		<li>
+			<button id="register-menu-btn" class="btn1" data-text="color">REGISTER</button>
+		</li>
+		<li>
+			<button id="login-menu-btn" class="btn1" data-text="color">LOGIN</button>
+		</li>
+		<li>
+			<button id="about-menu-btn" class="btn1" data-text="color">ABOUT</button>
+		</li>
+	</ul>
+</div>
+
+<section class="welcome-section" id="welcome-section-notLoggedIn">
+	<div id="Welcome-img">
+		<img id="welcome-gif" src="media/images/welcome.gif"/>
+	</div>
+	<div id="Welcome-Section-Buttons">
+		<ul id="Welcome-ul">
+			<li>
+				<button id="welcome-login-btn" type="button" class="btn1" data-text="color">LOGIN</button>
+			</li>
+			<li>
+				<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section id="register-section" class="form-section">
+	<form id="registration-form" class="app-forms">
+		<div class="formInstructionsD formElement">
+			<h2>Sign Up</h2>
 		</div>
-
-		<div id="Menu-container">
-			<ul id="menu">
-				<li>
-					<button id="home-menu-btn" class="btn1" data-text="color">WELCOME</button>
-				</li>
-				<li>
-					<button id="register-menu-btn" class="btn1" data-text="color">REGISTER</button>
-				</li>
-				<li>
-					<button id="login-menu-btn" class="btn1" data-text="color">LOGIN</button>
-				</li>
-				<li>
-					<button id="about-menu-btn" class="btn1" data-text="color">ABOUT</button>
-				</li>
-			</ul>
+		<div class="fillContactD">
+			<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="registerFormUserName" name="registerFormUserName" required/>
+			<input class="inputRequest formContentElement" type="password" placeholder="Password" id="registerFormPassword" name="registerFormPassword" required/>
+			<input class="inputRequest formContentElement" type="password" placeholder="Confirm Password" id="registerFormConfirmPassword" name="registerFormConfirmPassword" required/>
+			<input class="inputRequest formContentElement" type="text" placeholder="First Name" id="registerFormFirstName" name="registerFormFirstName" required/>
+			<input class="inputRequest formContentElement" type="text" placeholder="Last Name" id="registerFormLastName" name="registerFormLastName" required/>
+			<input class="inputRequest formContentElement" type="email" placeholder="Email" id="registerFormEmail" name="registerFormEmail" required/>
+			<input class="inputRequest formContentElement" type="date" placeholder="Birth Date" id="registerFormBirthDate" name="registerFormBirthDate" value="1940-01-01" min="1900-01-01" max="2022-01-01" required/>
 		</div>
+		<div class="submitRegistrationButtonD">
+			<input type="submit" class="submitButton" id="submitButton"/>
+			<input type="reset" class="resetButton"/>
+		</div>
+	</form>
+</section>
 
-		<section class="welcome-section" id="welcome-section-notLoggedIn">
-			<div id="Welcome-img">
-				<img id="welcome-gif" src="media/images/welcome.gif"/>
-			</div>
-			<div id="Welcome-Section-Buttons">
-				<ul id="Welcome-ul">
-					<li>
-						<button id="welcome-login-btn" type="button" class="btn1" data-text="color">LOGIN</button>
-					</li>
-					<li>
-						<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>
-					</li>
-				</ul>
-			</div>
-		</section>
+<section id="login-section" class="form-section">
+	<form id="login-section-form" class="app-forms">
+		<div class="formInstructionsD">
+			<h2>Log In</h2>
+		</div>
+		<div class="fillContactD">
+			<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="loginFormUserName"/>
+			<input class="inputRequest formContentElement" type="text" placeholder="Password" id="loginFormPassword"/>
+		</div>
+		<div class="submitRegistrationButtonD">
+			<button type="submit" class="btn1" data-text="color" onclick="return logIn()">LOGIN</button>
+			<button type="reset" class="btn1" data-text="color">RESET</button>
+		</div>
+	</form>
+</section>
 
-		<section id="register-section" class="form-section">
-			<form id="registration-form" class="app-forms">
-				<div class="formInstructionsD formElement">
-					<h2>Sign Up</h2>
-				</div>
-				<div class="fillContactD">
-					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="registerFormUserName" name="registerFormUserName" required/>
-					<input class="inputRequest formContentElement" type="password" placeholder="Password" id="registerFormPassword" name="registerFormPassword" required/>
-					<input class="inputRequest formContentElement" type="password" placeholder="Confirm Password" id="registerFormConfirmPassword" name="registerFormConfirmPassword" required/>
-					<input class="inputRequest formContentElement" type="text" placeholder="First Name" id="registerFormFirstName" name="registerFormFirstName" required/>
-					<input class="inputRequest formContentElement" type="text" placeholder="Last Name" id="registerFormLastName" name="registerFormLastName" required/>
-					<input class="inputRequest formContentElement" type="email" placeholder="Email" id="registerFormEmail" name="registerFormEmail" required/>
-					<input class="inputRequest formContentElement" type="date" placeholder="Birth Date" id="registerFormBirthDate" name="registerFormBirthDate" value="1940-01-01" min="1900-01-01" max="2022-01-01" required/>
-				</div>
-				<div class="submitRegistrationButtonD">
-					<input type="submit" class="submitButton" id="submitButton"/>
-					<input type="reset" class="resetButton"/>
-				</div>
-			</form>
-		</section>
-
-		<section id="login-section" class="form-section">
-			<form id="login-section-form" class="app-forms">
-				<div class="formInstructionsD">
-					<h2>Log In</h2>
-				</div>
-				<div class="fillContactD">
-					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="loginFormUserName"/>
-					<input class="inputRequest formContentElement" type="text" placeholder="Password" id="loginFormPassword"/>
-				</div>
-				<div class="submitRegistrationButtonD">
-					<button type="submit" class="btn1" data-text="color" onclick="return logIn()">LOGIN</button>
-					<button type="reset" class="btn1" data-text="color">RESET</button>
-				</div>
-			</form>
-		</section>
-
-		<section id="play-section">
-			<center>
-				<div id="score">
-					<label for="lblScore">SCORE:</label>
-					<input id="lblScore" type="text" />
-				</div>
-				<div id="time">
-					<label for="lblTime">TIME:</label>
-					<input id="lblTime" type="text" />
-				</div>
-				<div id="game">
-					<canvas id="canvas" height="600" width="600"></canvas>
-				</div>
-
-				<center>
-					<button id="start-btn" class="btn1" data-text="color"> START NEW GAME</button>
-				</center>
-			</center>
-		</section>
-
+<section id="play-section">
 	<center>
-		<footer>
-			<p>Contact Us</p>
-			<p>
-				Yuval Cohen
-				<button id="email-img-yuval">
-					<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormYuval()">
-				</button>
-			</p>
-			<p>
-				Noa Magrisso
-				<button id="email-img-noa">
-					<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormNoa()">
-				</button>
-			</p>
+		<div id="score">
+			<label for="lblScore">SCORE:</label>
+			<input id="lblScore" type="text" />
+		</div>
+		<div id="time">
+			<label for="lblTime">TIME:</label>
+			<input id="lblTime" type="text" />
+		</div>
+		<div id="game">
+			<canvas id="canvas" height="600" width="600"></canvas>
+		</div>
 
-		</footer>
+		<center>
+			<button id="start-btn" class="btn1" data-text="color"> START NEW GAME</button>
+		</center>
 	</center>
+</section>
+
+<center>
+	<footer>
+		<p>Contact Us</p>
+		<p>
+			Yuval Cohen
+			<button id="email-img-yuval">
+				<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormYuval()">
+			</button>
+		</p>
+		<p>
+			Noa Magrisso
+			<button id="email-img-noa">
+				<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormNoa()">
+			</button>
+		</p>
+
+	</footer>
+</center>
 <!--		https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup_form-->
-		<!--TODO: Add X button to close the window-->
-		<div class="form-popup" id="myFormYuval">
-			<form action="https://formsubmit.co/yucoh@post.bgu.ac.il" method="POST">
-				Name:
-				<br/>
-				<input type="hidden" name="_subject" value="New email from My Web">
-				<input type="text" name="name" placeholder="Full name" required>
-				<br/>
-				E-mail:
-				<br/>
-				<input type="text" name="email" placeholder="E-mail Address" required>
-				<br/>
-				Comment:
-				<br/>
-				<textarea id="myTextareaYuval" name="message" placeholder="Write your message here" required></textarea>
-				<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
-				<input type="hidden" name="_template" value="basic">
-				<br/>
-				<button type="submit" onclick="closeFomYuval()">Send</button>
-				<button type="reset">Reset</button>
-			</form>
-		</div>
-		<div class="form-popup" id="myFormNoa">
-			<form action="https://formsubmit.co/" method="POST"><!-- TODO:Add Noa email!!!! -->
-				Name:
-				<br/>
-				<input type="hidden" name="_subject" value="New email from My Web">
-				<input type="text" name="name" placeholder="Full name" required>
-				<br/>
-				E-mail:
-				<br/>
-				<input type="text" name="email" placeholder="E-mail Address" required>
-				<br/>
-				Comment:
-				<br/>
-				<textarea id="myTextareaNoa" name="message" placeholder="Write your message here" required></textarea>
-				<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
-				<input type="hidden" name="_template" value="basic">
-				<br/>
-				<button type="submit" onclick="closeFomNoa()">Send</button>
-				<button type="reset">Reset</button>
-			</form>
-		</div>
+<!--TODO: Add X button to close the window-->
+<div class="form-popup" id="myFormYuval">
+	<form action="https://formsubmit.co/yucoh@post.bgu.ac.il" method="POST">
+		Name:
+		<br/>
+		<input type="hidden" name="_subject" value="New email from My Web">
+		<input type="text" name="name" placeholder="Full name" required>
+		<br/>
+		E-mail:
+		<br/>
+		<input type="text" name="email" placeholder="E-mail Address" required>
+		<br/>
+		Comment:
+		<br/>
+		<textarea id="myTextareaYuval" name="message" placeholder="Write your message here" required></textarea>
+		<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
+		<input type="hidden" name="_template" value="basic">
+		<br/>
+		<button type="submit" onclick="closeFomYuval()">Send</button>
+		<button type="reset">Reset</button>
+	</form>
+</div>
+<div class="form-popup" id="myFormNoa">
+	<form action="https://formsubmit.co/" method="POST"><!-- TODO:Add Noa email!!!! -->
+		Name:
+		<br/>
+		<input type="hidden" name="_subject" value="New email from My Web">
+		<input type="text" name="name" placeholder="Full name" required>
+		<br/>
+		E-mail:
+		<br/>
+		<input type="text" name="email" placeholder="E-mail Address" required>
+		<br/>
+		Comment:
+		<br/>
+		<textarea id="myTextareaNoa" name="message" placeholder="Write your message here" required></textarea>
+		<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
+		<input type="hidden" name="_template" value="basic">
+		<br/>
+		<button type="submit" onclick="closeFomNoa()">Send</button>
+		<button type="reset">Reset</button>
+	</form>
+</div>
 
-		<div id="about" class="modal">
-			<div id="about-header">
-				<h1>About</h1>
-			</div>
-			<div>
-				<h2>Made by</h2>
-				<ul>
-					<li>
-						<p>
-							Yuval Cohen - 314978198
-						</p>
-					</li>
-					<li>
-						<p>
-							Noa Magrisso - 206934978
-						</p>
-					</li>
-				</ul>
-				<h2>Used JQuery Plugins</h2>
-				<ol class="about-list">
-					<li>
-						<p>
-							<a href="">JQuery Moder</a> - About model
-						</p>
-					</li>
-					<li>
-						<p>
-							<a href="">JQuery Validation</a> - Validating registration form
-						</p>
-					</li>
-				</ol>
-			</div>
-		</div>
+<div id="about" class="modal">
+	<div id="about-header">
+		<h1>About</h1>
+	</div>
+	<div>
+		<h2>Made by</h2>
+		<ul>
+			<li>
+				<p>
+					Yuval Cohen - 314978198
+				</p>
+			</li>
+			<li>
+				<p>
+					Noa Magrisso - 206934978
+				</p>
+			</li>
+		</ul>
+		<h2>Used JQuery Plugins</h2>
+		<ol class="about-list">
+			<li>
+				<p>
+					<a href="">JQuery Moder</a> - About model
+				</p>
+			</li>
+			<li>
+				<p>
+					<a href="">JQuery Validation</a> - Validating registration form
+				</p>
+			</li>
+		</ol>
+	</div>
+</div>
 
-	</body>
-	<script>
-		function openFormYuval(){
-			document.getElementById("myFormYuval").style.display = "block";
-		}
-		function closeFomYuval(){
-			document.getElementById("myFormYuval").style.display = "none";
-		}
-		function openFormNoa(){
-			document.getElementById("myFormYuval").style.display = "block";
-		}
-		function closeFomNoa(){
-			document.getElementById("myFormYuval").style.display = "none";
-		}
-	</script>
+</body>
+<script>
+	function openFormYuval(){
+		document.getElementById("myFormYuval").style.display = "block";
+	}
+	function closeFomYuval(){
+		document.getElementById("myFormYuval").style.display = "none";
+	}
+	function openFormNoa(){
+		document.getElementById("myFormYuval").style.display = "block";
+	}
+	function closeFomNoa(){
+		document.getElementById("myFormYuval").style.display = "none";
+	}
+</script>
 </html>
