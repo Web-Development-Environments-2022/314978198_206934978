@@ -119,6 +119,7 @@ $(document).ready(function() {
 	$("#login-section").hide();
 	$("#about").hide();
 	$("#welcome-section-loggedIn").hide();
+	$("#preference-section").hide();
 
 
 	$("#home-menu-btn").click(function(){
@@ -127,6 +128,7 @@ $(document).ready(function() {
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").hide();
+		$("#preference-section").hide();
 	});
 
 	$("#register-menu-btn").click(function(){
@@ -136,6 +138,7 @@ $(document).ready(function() {
 		$("#play-section").hide();
 		$("#register-section").show();
 		$("#login-section").hide();
+		$("#preference-section").hide();
 	});
 
 	$("#login-menu-btn").click(function(){
@@ -145,6 +148,7 @@ $(document).ready(function() {
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").show();
+		$("#preference-section").hide();
 	});
 
 	$("#welcome-login-btn").click(function(){
@@ -154,6 +158,7 @@ $(document).ready(function() {
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").show();
+		$("#preference-section").hide();
 	});
 
 	$("#welcome-registration-btn").click(function(){
@@ -163,6 +168,17 @@ $(document).ready(function() {
 		$("#play-section").hide();
 		$("#register-section").show();
 		$("#login-section").hide();
+		$("#preference-section").hide();
+	});
+
+	$("#welcome-play-btn").click(function(){
+		window.clearInterval(interval);
+		$("#welcome-section-notLoggedIn").hide();
+		$("#welcome-section-loggedIn").hide();
+		$("#play-section").hide();
+		$("#register-section").hide();
+		$("#login-section").hide();
+		$("#preference-section").show();
 	});
 	// context = canvas.getContext("2d");
 	// Start();
@@ -234,6 +250,11 @@ function setLogIn() {
 	$("#play-section").hide();
 	$("#register-section").hide();
 	$("#login-section").hide();
+}
+
+function setKey(){
+
+
 }
 
 $(document).ready(function(){
