@@ -6,6 +6,11 @@ var pac_color;
 var start_time;
 var time_elapsed;
 var interval;
+//TODO: Set the keys!!
+let up_key;
+let left_key;
+let right_key;
+let down_key;
 let users = [{username: 'k', password: 'k', firstname:'k', lastname: 'k', email: 'kk@gmail.com', birthdate: '01/01/1995'}];
 let loggedInUser = null;
 
@@ -252,9 +257,36 @@ function setLogIn() {
 	$("#login-section").hide();
 }
 
-function setKey(){
+async function setKey(keyToSet){
+	return new Promise((resolve) => {
+		document.addEventListener("keydown", onKeyHandler);
+		function onKeyHandler(e){
+			document.removeEventListener("keydown", onKeyHandler);
+			resolve();
+			switch (keyToSet){
+				case 'U':
+					up_key = e.which;
+					$("#key-up").text(e.key);
+					break;
 
+				case 'D':
+					down_key = e.which;
+					$("#key-down").text(e.key);
+					break;
 
+				case 'R':
+					right_key = e.which;
+					$("#key-right").text(e.key);
+					break;
+
+				case 'L':
+					left_key = e.which;
+					$("#key-left").text(e.key);
+					break;
+			}
+
+		}
+	});
 }
 
 $(document).ready(function(){
