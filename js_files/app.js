@@ -6,7 +6,7 @@ var pac_color;
 var start_time;
 var time_elapsed;
 var interval;
-var users = [{username: 'k', password: 'k', firstname:'k', lastname: 'k', email: 'kk@gmail.com', birthdate: '01/01/1995'}];
+let users = [{username: 'k', password: 'k', firstname:'k', lastname: 'k', email: 'kk@gmail.com', birthdate: '01/01/1995'}];
 let loggedInUser = null;
 
 
@@ -112,11 +112,13 @@ $(document).ready(function () {
 	});
 });
 
+
 $(document).ready(function() {
 	$("#play-section").hide();
 	$("#register-section").hide();
 	$("#login-section").hide();
 	$("#about").hide();
+	$("#welcome-section-loggedIn").hide();
 
 
 	$("#home-menu-btn").click(function(){
@@ -130,6 +132,7 @@ $(document).ready(function() {
 	$("#register-menu-btn").click(function(){
 		window.clearInterval(interval);
 		$("#welcome-section-notLoggedIn").hide();
+		$("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").show();
 		$("#login-section").hide();
@@ -138,6 +141,7 @@ $(document).ready(function() {
 	$("#login-menu-btn").click(function(){
 		window.clearInterval(interval);
 		$("#welcome-section-notLoggedIn").hide();
+		$("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").show();
@@ -146,6 +150,7 @@ $(document).ready(function() {
 	$("#welcome-login-btn").click(function(){
 		window.clearInterval(interval);
 		$("#welcome-section-notLoggedIn").hide();
+		$("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").show();
@@ -154,6 +159,7 @@ $(document).ready(function() {
 	$("#welcome-registration-btn").click(function(){
 		window.clearInterval(interval);
 		$("#welcome-section-notLoggedIn").hide();
+		$("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").show();
 		$("#login-section").hide();
@@ -163,23 +169,19 @@ $(document).ready(function() {
 });
 
 function registrationUser(){
-	let userName = $("#registerFormUserName").val();
-	let password = $("#registerFormPassword").val();
-	let firstName = $("#registerFormFirstName").val();
-	let lastName = $("#registerFormLastName").val();
-	let email = $("#registerFormEmail").val();
-	let birthDate = $("#registerFormBirthDate").val();
+	const un = document.getElementById("registerFormUserName").value;
+	const pass = document.getElementById("registerFormPassword").value;
+	const fn = document.getElementById("registerFormFirstName").value;
+	const ln = document.getElementById("registerFormLastName").value;
+	const em = document.getElementById("registerFormEmail").value;
+	const bD = document.getElementById("registerFormBirthDate").value;
 
-	let newUser = {
-		username: userName,
-		password: password,
-		firstname: firstName,
-		lastname: lastName,
-		email: email,
-		birthdate: birthDate
-	};
+	const newUser = {username: un, password: pass, firstname: fn, lastname: ln, email: em, birthdate: bD};
 
 	users.push(newUser);
+	alert(newUser["username"]);
+	alert(newUser["password"]);
+
 	alert('Registration completed successfully');
 
 	let form = $("#registration-form");
@@ -188,6 +190,50 @@ function registrationUser(){
 	$("#register-section").hide();
 	$("#login-section").show();
 	return false;
+}
+
+function logIn(){
+	let userName = document.getElementById("loginFormUserName").value;
+	let password = document.getElementById("loginFormPassword").value;
+
+	let user = null;
+
+	for (let i = 0; i < users.length; i++){
+		if (users[i]['username'] == userName){
+			user = users[i];
+		}
+	}
+
+	if (user != null){
+		if (user['password'] == password){
+			loggedInUser = user;
+			alert("Welcome " + userName + "!");
+			setLogIn();
+			return false;
+		}
+		else{
+			alert("Password is incorrect");
+			return false;
+		}
+	}
+	else {
+		alert(userName + " is not a registered user, please register")
+
+		let form = $("#login-section-form");
+		form[0].reset();
+
+		$("#register-section").show();
+		$("#login-section").hide();
+
+		return false;
+	}
+}
+function setLogIn() {
+	$("#welcome-section-loggedIn").show();
+	$("#welcome-section-notLoggedIn").hide();
+	$("#play-section").hide();
+	$("#register-section").hide();
+	$("#login-section").hide();
 }
 
 $(document).ready(function(){
