@@ -1,0 +1,38 @@
+#about {
+    background-color: white;
+    color: black;
+    padding: 0;
+}
+
+#about-header {
+    padding: 2%;
+}
+
+#about-header-title {
+    font-weight: 0;
+    text-align: center;
+    font-size: 50px;
+}
+
+.about-list {
+    margin-left: 5%;
+}
+
+.about-sub-header {
+    font-size: 30px;
+    margin-top: 3%;
+    margin-bottom: 1%;
+}
+
+#about-content {
+    font-size: 22px;
+    padding: 2% 5% 5% 5%;
+}
+
+#about-close {
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    font-size: 30px;
+}

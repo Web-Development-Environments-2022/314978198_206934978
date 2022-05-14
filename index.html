@@ -39,7 +39,7 @@
 			<button id="login-menu-btn" class="btn1" data-text="color">LOGIN</button>
 		</li>
 		<li>
-			<button id="about-menu-btn" class="btn1" data-text="color">ABOUT</button>
+			<button id="about-menu-btn" class="btn1" data-text="color" hrel="#about">ABOUT</button>
 		</li>
 	</ul>
 </div>
@@ -57,6 +57,7 @@
 				<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>
 			</li>
 		</ul>
+
 	</div>
 </section>
 
@@ -208,23 +209,179 @@
 </section>
 
 <section id="play-section">
-	<center>
-		<div id="score">
-			<label for="lblScore">SCORE:</label>
-			<input id="lblScore" type="text" />
+	<div class="row">
+		<div id="preferences-selected">
+			<h3 id="preferences-selected-header">Game Preferences</h3>
+			<p id="preferences-selected-balls"></p>
+			<p id="preferences-selected-monsters"></p>
+			<p id="preferences-selected-time"></p>
+			<p id="preferences-selected-username"></p>
 		</div>
-		<div id="time">
-			<label for="lblTime">TIME:</label>
-			<input id="lblTime" type="text" />
+		<div id="preferences-selected-2">
+			<h3>Game Details</h3>
+			<div id="score">
+				<p id="lblScore"></p>
+			</div>
+			<div id="time">
+				<p id="lblTime"></p>
+			</div>
+			<div id="lives"></div>
 		</div>
-		<div id="game">
-			<canvas id="canvas" height="600" width="600"></canvas>
-		</div>
+	</div>
+	<div id="game">
+		<canvas id="canvas" width="700" height="620" />
+	</div>
+</section>
 
-		<center>
-			<button id="start-btn" class="btn1" data-text="color"> START NEW GAME</button>
-		</center>
-	</center>
+<section id="preferences-section" class="form-section">
+	<form id="preferences-form" class="application-forms">
+		<div class="formInstructionsDiv formElement">
+			<h2 class="formTitle">Preferences</h2>
+			<p id="instructionsText">
+				Choose your preferences before start playing
+			</p>
+		</div>
+		<div class="fillContentDiv formElement">
+			<div class="preferences-form-section">
+				<h3>Key Settings:</h3>
+				<div
+						id="keysPreference"
+						class="preferences-form-section-attribute"
+				>
+					<p>
+						Click on one of the buttoms below and then press keyboard's
+						desired key.
+					</p>
+					<div class="keySetting">
+						<p
+								id="preferences-up"
+								class="btn-preference"
+								onclick="return setUserKey('U')"
+						>
+							UP
+						</p>
+					</div>
+					<div class="keySetting">
+						<p
+								id="preferences-left"
+								class="btn-preference"
+								onclick="return setUserKey('L')"
+						>
+							LEFT
+						</p>
+						<p
+								id="preferences-down"
+								class="btn-preference"
+								onclick="return setUserKey('D')"
+						>
+							DOWN
+						</p>
+						<p
+								id="preferences-right"
+								class="btn-preference"
+								onclick="return setUserKey('R')"
+						>
+							RIGHT
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="preferences-form-section">
+				<h3>Number of balls:</h3>
+				<div class="keySetting">
+					<div class="range-wrap">
+						<div class="range-value" id="rangeVB"></div>
+						<input
+								id="rangeB"
+								type="range"
+								min="50"
+								max="90"
+								value="70"
+								step="1"
+						/>
+					</div>
+				</div>
+			</div>
+			<div class="preferences-form-section">
+				<h3>Colors:</h3>
+				<div class="preferences-form-section-attribute">
+					<div class="keySetting">
+						<label for="preferences-5-pts">5 pts.</label>
+						<input
+								type="color"
+								id="preferences-5-pts"
+								value="#b8e994"
+								class="clickable"
+						/>
+					</div>
+					<div class="keySetting">
+						<label for="preferences-15-pts">15 pts.</label>
+						<input
+								type="color"
+								id="preferences-15-pts"
+								value="#079992"
+								class="clickable"
+						/>
+					</div>
+					<div class="keySetting">
+						<label for="preferences-25-pts">25 pts.</label>
+						<input
+								type="color"
+								id="preferences-25-pts"
+								value="#b71540"
+								class="clickable"
+						/>
+					</div>
+				</div>
+			</div>
+			<div class="preferences-form-section">
+				<h3>Time:</h3>
+
+				<div class="keySetting">
+					<div class="range-wrap">
+						<div class="range-value" id="rangeVT"></div>
+						<input
+								id="rangeT"
+								type="range"
+								min="60"
+								max="300"
+								value="90"
+								step="10"
+						/>
+					</div>
+				</div>
+			</div>
+			<div class="preferences-form-section">
+				<h3>Number of monsters:</h3>
+				<div class="keySetting">
+					<div class="range-wrap">
+						<div class="range-value" id="rangeVM"></div>
+						<input
+								id="rangeM"
+								type="range"
+								min="1"
+								max="4"
+								value="4"
+								step="1"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="submitButtonDiv formElement">
+			<input
+					type="submit"
+					class="submitButton"
+					onclick="return setPreferences()"
+			/>
+			<input
+					type="button"
+					class="submitButton"
+					value="Random"
+					onclick="return randomPreferences()"
+			/>
+		</div>
+	</form>
 </section>
 
 <center>
@@ -323,6 +480,8 @@
 		</ol>
 	</div>
 </div>
+
+
 
 </body>
 <script>
