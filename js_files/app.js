@@ -130,6 +130,9 @@ $(document).ready(function() {
 	$("#register-section").hide();
 	$("#login-section").hide();
 	$("#about").hide();
+	$("#play-menu-btn").hide();
+	$("#logout-menu-btn").hide();
+
 	if (loggedInUser != null){
 		$("#welcome-section-loggedIn").hide();
 		$("#welcome-section-notLoggedIn").hide();
@@ -269,6 +272,27 @@ function setLogIn() {
 	$("#play-section").hide();
 	$("#register-section").hide();
 	$("#login-section").hide();
+	$("#play-menu-btn").show();
+	$("#logout-menu-btn").show();
+	$("#register-menu-btn").hide();
+	$("#login-menu-btn").hide();
+}
+
+function logout(){
+	loggedInUser = null;
+	setLogOut();
+}
+
+function setLogOut(){
+	$("#welcome-section-loggedIn").hide();
+	$("#welcome-section-notLoggedIn").show();
+	$("#play-section").hide();
+	$("#register-section").hide();
+	$("#login-section").hide();
+	$("#play-menu-btn").hide();
+	$("#logout-menu-btn").hide();
+	$("#register-menu-btn").show();
+	$("#login-menu-btn").show();
 }
 
 async function setKey(keyToSet){
