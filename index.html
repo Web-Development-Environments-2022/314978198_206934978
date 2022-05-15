@@ -142,8 +142,8 @@
 							</div>
 							<div class="keySet">
 								<p id="key-left" class="pref-btn" onclick="return setKey('L')">LEFT</p>
-								<p id="key-right" class="pref-btn" onclick="return setKey('R')">RIGHT</p>
 								<p id="key-down" class="pref-btn" onclick="return setKey('D')">DOWN</p>
+								<p id="key-right" class="pref-btn" onclick="return setKey('R')">RIGHT</p>
 							</div>
 						</div>
 					</div>
@@ -153,15 +153,14 @@
 						</h3>
 						<div class="keySet">
 							<div class="rangeW">
-								<div class="range-val" id="range-value-balls">
-								</div>
+								<div class="range-val" id="range-value-balls"></div>
 								<input id="rangeBalls" type="range" min="50" max="90" value="70" step="1"/>
 							</div>
 						</div>
 					</div>
 					<div class="preference-form">
 						<h3>
-							Colors of balls:
+							The colors of the balls :
 						</h3>
 						<div class="preference-form-att">
 							<div class="keySet">
@@ -185,7 +184,7 @@
 						<div class="keySet">
 							<div class="rangeW">
 								<div class="range-val" id="range-value-time"></div>
-								<input id="rangeTime" type="range" min="60" max="100" value="60" step="5"/>
+								<input id="rangeTime" type="range" min="60" max="100" value="60" step="1"/>
 							</div>
 						</div>
 					</div>
@@ -201,7 +200,7 @@
 						</div>
 					</div>
 					<div class="submitButtonD formElement">
-						<input type="submit" class="submitButton" value="SET" onclick="return setPreferences()">
+						<input type="submit" class="submitButton" value="SET" onclick="return setUserPreferences()">
 						<input type="button" class="submitButton" value="RANDO" onclick="return setRandomPreferences()">
 					</div>
 				</div>

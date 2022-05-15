@@ -7,10 +7,17 @@ var start_time;
 var time_elapsed;
 var interval;
 //TODO: Set the keys!!
-let up_key;
-let left_key;
-let right_key;
-let down_key;
+let left_key = 37;
+let up_key = 38;
+let right_key = 39;
+let down_key = 40;
+let ballsNum = 70;
+let monstersNum = 3;
+let limitTime = 60;
+let ball5color = "#FFFFCC";
+let ball15color = "#CCFFE5";
+let ball25color = "#CCE5FF";
+let life = 5;
 let users = [{username: 'k', password: 'k', firstname:'k', lastname: 'k', email: 'kk@gmail.com', birthdate: '01/01/1995'}];
 let loggedInUser = null;
 
@@ -208,8 +215,6 @@ function registrationUser(){
 	const newUser = {username: un, password: pass, firstname: fn, lastname: ln, email: em, birthdate: bD};
 
 	users.push(newUser);
-	alert(newUser["username"]);
-	alert(newUser["password"]);
 
 	alert('Registration completed successfully');
 
@@ -257,6 +262,7 @@ function logIn(){
 		return false;
 	}
 }
+
 function setLogIn() {
 	$("#welcome-section-loggedIn").show();
 	$("#welcome-section-notLoggedIn").hide();
@@ -295,6 +301,57 @@ async function setKey(keyToSet){
 
 		}
 	});
+}
+
+function setUserPreferences(){
+	ballsNum = parseInt($("#rangeBalls").val(), 10);
+	monstersNum = parseInt($("#rangeMonsters").val(), 10);
+	limitTime = parseInt($("#rangeTime").val(), 10);
+	ball5color = $("#pref-5-pts").val();
+	ball15color = $("#pref-15-pts").val();
+	ball25color = $("#pref-25-pts").val();
+	life = 5;
+	$("#preferences-selected-balls").html("Number of balls: " + ballsNum);
+	$("#preferences-selected-monsters").html("Number of monsters: " + monstersNum);
+	$("#preferences-selected-time").html("Time limit: " + limitTime);
+	$("#preferences-selected-username").html("User: " + loggedInUser["username"]);
+	Start();
+	$("#play-section").show();
+	$("#preference-section").hide();
+
+	return false;
+}
+
+function setRandomPreferences(){
+	$("#pref-5-pts").val(getRandomColor());
+	$("#pref-15-pts").val(getRandomColor());
+	$("#pref-25-pts").val(getRandomColor());
+
+	let newBallsValue = getRandomInt(50, 90);
+	$("#rangeBalls").val(newBallsValue);
+
+	let newMonstersValue = getRandomInt(1, 4);
+	$("#rangeMonsters").val(newMonstersValue);
+
+	let newTimeValue = getRandomInt(60, 100);
+	$("#rangeTime").val(newTimeValue);
+
+	return false;
+}
+
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min) + min);
+}
+
+function getRandomColor() {
+	var letters = '0123456789ABCDEF';
+	var color = '#';
+	for (var i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
 }
 
 $(document).ready(function(){

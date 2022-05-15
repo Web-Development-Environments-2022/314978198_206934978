@@ -9,9 +9,17 @@
     margin-bottom: 20px;
 }
 
+.pref-forms{
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    /*align: center;*/
+}
+
 .preference-form h3 {
     font-size: 30px;
     margin-bottom: 10px;
+    color: #f1f1f1;
 }
 
 .keySet {
@@ -19,10 +27,12 @@
     flex-direction: column;
     align-items: center;
 }
+
 .keySet input {
     width: 50px;
     height: 25px;
 }
+
 .preference-section-form-att {
     display: flex;
     justify-content: space-evenly;
@@ -45,11 +55,12 @@ input[type="range"]::-webkit-slider-runnable-track {
     background: #03a9f4;
     border-radius: 25px;
 }
+
 input[type="range"]::-webkit-slider-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #fff;
+    background: white;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 1);
     cursor: pointer;
     -webkit-appearance: none;
@@ -75,7 +86,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     line-height: 24px;
     text-align: center;
     background: #03a9f4;
-    color: #fff;
+    color: #f1f1f1;
     font-size: 12px;
     display: block;
     position: absolute;
