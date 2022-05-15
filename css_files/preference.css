@@ -1,1 +1,121 @@
-/*hello*/
+.preference-form::after {
+    display: block;
+    height: 2px;
+    background-color: #d66e3b;
+    content: " ";
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.preference-form h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.keySet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.keySet input {
+    width: 50px;
+    height: 25px;
+}
+.preference-section-form-att {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    margin: 20px 0;
+    width: 100%;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #03a9f4;
+    border-radius: 25px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 1);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: #03a9f4;
+}
+
+.rangeW {
+    width: 80%;
+    position: relative;
+    text-align: center;
+}
+.range-val {
+    position: absolute;
+    top: -15%;
+}
+.range-val span {
+    width: 30px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background: #03a9f4;
+    color: #fff;
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 6px;
+}
+
+.range-val span:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #03a9f4;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: -1px;
+}
+
+#preference-keys{
+    flex-direction: column;
+    align-items: center;
+}
+
+#preference-keys .keySet{
+    flex-direction: row;
+}
+
+.pref-btn{
+    margin: 5px;
+    font-size: 20px;
+    box-shadow: 2px 2px #f8e76e;
+    background-color: #0099cc;
+    border-radius: 25px;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    padding-top: 20px;
+    cursor: pointer;
+}

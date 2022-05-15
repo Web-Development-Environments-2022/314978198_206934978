@@ -1,501 +1,349 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<script type="text/javascript" src="js_files/jquery-3.4.1.slim.min.js"></script>
-	<script type="text/javascript" src="js_files/jquery.validate.js"></script>
-	<script type="text/javascript" src="js_files/app.js"></script>
+	<head>
+		<script type="text/javascript" src="js_files/jquery-3.4.1.slim.min.js"></script>
+		<script type="text/javascript" src="js_files/jquery.validate.js"></script>
+		<script type="text/javascript" src="js_files/app.js"></script>
 
-	<!--LINKS TO CSS FILES-->
-	<link rel="stylesheet" href="css_files/welcome.css">
-	<link rel="stylesheet" href="css_files/register.css">
-	<link rel="stylesheet" href="css_files/login.css">
-	<link rel="stylesheet" href="css_files/about.css">
-	<link rel="stylesheet" href="css_files/start.css">
-	<link rel="stylesheet" href="css_files/general.css">
-	<title>Pacman</title>
-</head>
-
-<body>
-<div id="container_header">
-	<header>
-		<center>
-			<img id=logo src="media/images/PacMan.png">
-			<h3>
-				Yuval Cohen & Noa Magrisso
-			</h3>
-		</center>
-	</header>
-</div>
-
-<div id="Menu-container">
-	<ul id="menu">
-		<li>
-			<button id="home-menu-btn" class="btn1" data-text="color">WELCOME</button>
-		</li>
-		<li>
-			<button id="register-menu-btn" class="btn1" data-text="color">REGISTER</button>
-		</li>
-		<li>
-			<button id="login-menu-btn" class="btn1" data-text="color">LOGIN</button>
-		</li>
-		<li>
-			<button id="about-menu-btn" class="btn1" data-text="color" hrel="#about">ABOUT</button>
-		</li>
-	</ul>
-</div>
-
-<section class="welcome-section" id="welcome-section-notLoggedIn">
-	<div id="Welcome-img">
-		<img id="welcome-gif" src="media/images/welcome.gif"/>
-	</div>
-	<div id="Welcome-Section-Buttons">
-		<ul id="Welcome-ul">
-			<li>
-				<button id="welcome-login-btn" type="button" class="btn1" data-text="color">LOGIN</button>
-			</li>
-			<li>
-				<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>
-			</li>
-		</ul>
-
-	</div>
-</section>
-
-<section id="register-section" class="form-section">
-	<center>
-	<form id="registration-form" class="app-forms">
-		<div class="formInstructionsD formElement">
-			<h2>Sign Up</h2>
+		<!--LINKS TO CSS FILES-->
+		<link rel="stylesheet" href="css_files/welcome.css">
+		<link rel="stylesheet" href="css_files/register.css">
+		<link rel="stylesheet" href="css_files/login.css">
+		<link rel="stylesheet" href="css_files/about.css">
+		<link rel="stylesheet" href="css_files/start.css">
+		<link rel="stylesheet" href="css_files/general.css">
+		<link rel="stylesheet" href="css_files/preference.css">
+		<title>Pacman</title>
+	</head>
+	<body>
+		<div id="container_header">
+			<header>
+				<center>
+					<img id=logo src="media/images/PacMan.png">
+					<h3>
+						Yuval Cohen & Noa Magrisso
+					</h3>
+				</center>
+			</header>
 		</div>
-		<div class="fillContactD">
-			<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="registerFormUserName" name="registerFormUserName" required/>
-			<input class="inputRequest formContentElement" type="password" placeholder="Password" id="registerFormPassword" name="registerFormPassword" required/>
-			<input class="inputRequest formContentElement" type="password" placeholder="Confirm Password" id="registerFormConfirmPassword" name="registerFormConfirmPassword" required/>
-			<input class="inputRequest formContentElement" type="text" placeholder="First Name" id="registerFormFirstName" name="registerFormFirstName" required/>
-			<input class="inputRequest formContentElement" type="text" placeholder="Last Name" id="registerFormLastName" name="registerFormLastName" required/>
-			<input class="inputRequest formContentElement" type="email" placeholder="Email" id="registerFormEmail" name="registerFormEmail" required/>
-			<input class="inputRequest formContentElement" type="date" placeholder="Birth Date" id="registerFormBirthDate" name="registerFormBirthDate" value="1940-01-01" min="1900-01-01" max="2022-01-01" required/>
-		</div>
-		<div class="submitRegistrationButtonD">
-			<input type="submit" class="submitButton" id="submitButton"/>
-			<input type="reset" class="resetButton"/>
-		</div>
-	</form>
-	</center>
-</section>
 
-<section id="login-section" class="form-section">
-	<center>
-	<form id="login-section-form" class="app-forms">
-		<div class="formInstructionsD">
-			<h2>Log In</h2>
+		<div id="Menu-container">
+			<ul id="menu">
+				<li>
+					<button id="home-menu-btn" class="btn1" data-text="color">WELCOME</button>
+				</li>
+				<li>
+					<button id="register-menu-btn" class="btn1" data-text="color">REGISTER</button>
+				</li>
+				<li>
+					<button id="login-menu-btn" class="btn1" data-text="color">LOGIN</button>
+				</li>
+				<li>
+					<button id="about-menu-btn" class="btn1" data-text="color" hrel="#about">ABOUT</button>
+				</li>
+			</ul>
 		</div>
-		<div class="fillContactD">
-			<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="loginFormUserName"/>
-			<input class="inputRequest formContentElement" type="password" placeholder="Password" id="loginFormPassword"/>
-		</div>
-		<div class="submitRegistrationButtonD">
-			<button type="submit" class="btn1" data-text="color" onclick="return logIn()">LOGIN</button>
-			<button type="reset" class="btn1" data-text="color">RESET</button>
-		</div>
-	</form>
-	</center>
-</section>
 
-<section class="welcome-section" id="welcome-section-loggedIn">
-<!--	<div id="Welcome-img-loggedIn">-->
-<!--		<img id="welcome-gif-" src="media/images/welcome.gif"/>-->
-<!--	</div>-->
-	<div id="Welcome-Section">
-		<ul id="Welcome">
-			<li>
-				<button id="welcome-play-btn" type="button" class="btn1" data-text="color">PLAY</button>
-			</li>
-<!--			<li>-->
-<!--				<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>-->
-<!--			</li>-->
-		</ul>
-	</div>
-</section>
+		<section class="welcome-section" id="welcome-section-notLoggedIn">
+			<div id="Welcome-img">
+				<img id="welcome-gif" src="media/images/welcome.gif"/>
+			</div>
+			<div id="Welcome-Section-Buttons">
+				<ul id="Welcome-ul">
+					<li>
+						<button id="welcome-login-btn" type="button" class="btn1" data-text="color">LOGIN</button>
+					</li>
+					<li>
+						<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>
+					</li>
+				</ul>
 
-<section class="preference-section" id="preference-section">
-	<form id="preference-form" class="pref-forms">
-		<div class="formInstructionsD formElement">
-			<h2>
-				Preferences
-			</h2>
-			<h1>
-				Choose your preferences before start playing
-			</h1>
-		</div>
-		<div class="fillContentD formElement">
-			<div class="preference-section-form">
-				<h3>
-					Key Settings:
-				</h3>
-				<div id="preference-keys" class="preference-section-form-att">
+			</div>
+		</section>
+
+		<section id="register-section" class="form-section">
+			<center>
+			<form id="registration-form" class="app-forms">
+				<div class="formInstructionsD formElement">
+					<h2>Sign Up</h2>
+				</div>
+				<div class="fillContactD">
+					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="registerFormUserName" name="registerFormUserName" required/>
+					<input class="inputRequest formContentElement" type="password" placeholder="Password" id="registerFormPassword" name="registerFormPassword" required/>
+					<input class="inputRequest formContentElement" type="password" placeholder="Confirm Password" id="registerFormConfirmPassword" name="registerFormConfirmPassword" required/>
+					<input class="inputRequest formContentElement" type="text" placeholder="First Name" id="registerFormFirstName" name="registerFormFirstName" required/>
+					<input class="inputRequest formContentElement" type="text" placeholder="Last Name" id="registerFormLastName" name="registerFormLastName" required/>
+					<input class="inputRequest formContentElement" type="email" placeholder="Email" id="registerFormEmail" name="registerFormEmail" required/>
+					<input class="inputRequest formContentElement" type="date" placeholder="Birth Date" id="registerFormBirthDate" name="registerFormBirthDate" value="1940-01-01" min="1900-01-01" max="2022-01-01" required/>
+				</div>
+				<div class="submitRegistrationButtonD">
+					<input type="submit" class="submitButton" id="submitButton"/>
+					<input type="reset" class="resetButton"/>
+				</div>
+			</form>
+			</center>
+		</section>
+
+		<section id="login-section" class="form-section">
+			<center>
+			<form id="login-section-form" class="app-forms">
+				<div class="formInstructionsD">
+					<h2>Log In</h2>
+				</div>
+				<div class="fillContactD">
+					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="loginFormUserName"/>
+					<input class="inputRequest formContentElement" type="password" placeholder="Password" id="loginFormPassword"/>
+				</div>
+				<div class="submitRegistrationButtonD">
+					<button type="submit" class="btn1" data-text="color" onclick="return logIn()">LOGIN</button>
+					<button type="reset" class="btn1" data-text="color">RESET</button>
+				</div>
+			</form>
+			</center>
+		</section>
+
+		<section class="welcome-section" id="welcome-section-loggedIn">
+		<!--	<div id="Welcome-img-loggedIn">-->
+		<!--		<img id="welcome-gif-" src="media/images/welcome.gif"/>-->
+		<!--	</div>-->
+			<div id="Welcome-Section">
+				<ul id="Welcome">
+					<li>
+						<button id="welcome-play-btn" type="button" class="btn1" data-text="color">PLAY</button>
+					</li>
+		<!--			<li>-->
+		<!--				<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>-->
+		<!--			</li>-->
+				</ul>
+			</div>
+		</section>
+
+		<section id="preference-section" class="preference-section">
+			<form id="preference-form" class="pref-forms">
+				<div class="formInstructionsD formElement">
+					<h2>
+						Preferences
+					</h2>
 					<h1>
-						Click on one of the buttons below and then press keyboard's desired key.
+						Choose your preferences before start playing
 					</h1>
-					<div class="keySet">
-						<p id="key-up" class="pref-btn" onclick="return setKey('U')">UP</p>
-					</div>
-					<div class="keySet">
-						<p id="key-left" class="pref-btn" onclick="return setKey('L')">LEFT</p>
-						<p id="key-right" class="pref-btn" onclick="return setKey('R')">RIGHT</p>
-						<p id="key-down" class="pref-btn" onclick="return setKey('D')">DOWN</p>
-					</div>
 				</div>
-			</div>
-			<div class="preference-section-form">
-				<h3>
-					Number of balls:
-				</h3>
-				<div class="keySet">
-					<div class="rangeW">
-						<div class="range-val" id="range-value-balls">
+				<div class="fillContentD formElement">
+					<div class="preference-form">
+						<h3>
+							Key Settings:
+						</h3>
+						<div id="preference-keys" class="preference-section-form-att">
+							<h1>
+								Click on one of the buttons below and then press keyboard's desired key.
+							</h1>
+							<div class="keySet">
+								<p id="key-up" class="pref-btn" onclick="return setKey('U')">UP</p>
+							</div>
+							<div class="keySet">
+								<p id="key-left" class="pref-btn" onclick="return setKey('L')">LEFT</p>
+								<p id="key-right" class="pref-btn" onclick="return setKey('R')">RIGHT</p>
+								<p id="key-down" class="pref-btn" onclick="return setKey('D')">DOWN</p>
+							</div>
 						</div>
-						<input id="rangeBalls" type="range" min="50" max="90" value="70" step="1"/>
+					</div>
+					<div class="preference-form">
+						<h3>
+							Number of balls:
+						</h3>
+						<div class="keySet">
+							<div class="rangeW">
+								<div class="range-val" id="range-value-balls">
+								</div>
+								<input id="rangeBalls" type="range" min="50" max="90" value="70" step="1"/>
+							</div>
+						</div>
+					</div>
+					<div class="preference-form">
+						<h3>
+							Colors of balls:
+						</h3>
+						<div class="preference-form-att">
+							<div class="keySet">
+								<label>5 pts.</label>
+								<input type="color" id="pref-5-pts" value="#FFFFCC" class="clickable"/>
+							</div>
+							<div class="keySet">
+								<label>15 pts.</label>
+								<input type="color" id="pref-15-pts" value="#CCFFE5" class="clickable"/>
+							</div>
+							<div class="keySet">
+								<label>25 pts.</label>
+								<input type="color" id="pref-25-pts" value="#CCE5FF" class="clickable"/>
+							</div>
+						</div>
+					</div>
+					<div class="preference-form">
+						<h3>
+							Time:
+						</h3>
+						<div class="keySet">
+							<div class="rangeW">
+								<div class="range-val" id="range-value-time"></div>
+								<input id="rangeTime" type="range" min="60" max="100" value="60" step="5"/>
+							</div>
+						</div>
+					</div>
+					<div class="preference-form">
+						<h3>
+							Number of monsters:
+						</h3>
+						<div class="keySet">
+							<div class="rangeW">
+								<div class="range-val" id="range-value-monsters"></div>
+								<input id="rangeMonsters" type="range" min="1" max="4" value="3" step="1"/>
+							</div>
+						</div>
+					</div>
+					<div class="submitButtonD formElement">
+						<input type="submit" class="submitButton" value="SET" onclick="return setPreferences()">
+						<input type="button" class="submitButton" value="RANDO" onclick="return setRandomPreferences()">
 					</div>
 				</div>
-			</div>
-			<div class="preference-section-form">
-				<h3>
-					Colors of balls:
-				</h3>
-				<div class="preference-section-form-att">
-					<div class="keySet">
-						<label>5 pts.</label>
-						<input type="color" id="pref-5-pts" value="#FFFFCC" class="clickable"/>
-					</div>
-					<div class="keySet">
-						<label>15 pts.</label>
-						<input type="color" id="pref-15-pts" value="#CCFFE5" class="clickable"/>
-					</div>
-					<div class="keySet">
-						<label>25 pts.</label>
-						<input type="color" id="pref-25-pts" value="#CCE5FF" class="clickable"/>
-					</div>
-				</div>
-			</div>
-			<div class="preference-section-form">
-				<h3>
-					Time:
-				</h3>
-				<div class="keySet">
-					<div class="rangeW">
-						<div class="range-val" id="range-value-time"></div>
-						<input id="rangeTime" type="range" min="60" max="100" value="60" step="5"/>
-					</div>
-				</div>
-			</div>
-			<div class="preference-section-form">
-				<h3>
-					Number of monsters:
-				</h3>
-				<div class="keySet">
-					<div class="rangeW">
-						<div class="range-val" id="range-value-monsters"></div>
-						<input id="rangeMonsters" type="range" min="1" max="4" value="3" step="1"/>
-					</div>
-				</div>
-			</div>
-			<div class="submitButtonD formElement">
-				<input type="submit" class="submitButton" value="SET" onclick="return setPreferences()">
-				<input type="button" class="submitButton" value="RANDO" onclick="return setRandomPreferences()">
-			</div>
-		</div>
-	</form>
-</section>
+			</form>
+		</section>
 
-<section id="play-section">
-	<div class="row">
-		<div id="preferences-selected">
-			<h3 id="preferences-selected-header">Game Preferences</h3>
-			<p id="preferences-selected-balls"></p>
-			<p id="preferences-selected-monsters"></p>
-			<p id="preferences-selected-time"></p>
-			<p id="preferences-selected-username"></p>
-		</div>
-		<div id="preferences-selected-2">
-			<h3>Game Details</h3>
-			<div id="score">
-				<p id="lblScore"></p>
-			</div>
-			<div id="time">
-				<p id="lblTime"></p>
-			</div>
-			<div id="lives"></div>
-		</div>
-	</div>
-	<div id="game">
-		<canvas id="canvas" width="700" height="620" />
-	</div>
-</section>
-
-<section id="preferences-section" class="form-section">
-	<form id="preferences-form" class="application-forms">
-		<div class="formInstructionsDiv formElement">
-			<h2 class="formTitle">Preferences</h2>
-			<p id="instructionsText">
-				Choose your preferences before start playing
-			</p>
-		</div>
-		<div class="fillContentDiv formElement">
-			<div class="preferences-form-section">
-				<h3>Key Settings:</h3>
-				<div
-						id="keysPreference"
-						class="preferences-form-section-attribute"
-				>
-					<p>
-						Click on one of the buttoms below and then press keyboard's
-						desired key.
-					</p>
-					<div class="keySetting">
-						<p
-								id="preferences-up"
-								class="btn-preference"
-								onclick="return setUserKey('U')"
-						>
-							UP
-						</p>
+		<section id="play-section">
+			<div class="row">
+				<div id="preferences-selected">
+					<h3 id="preferences-selected-header">Game Preferences</h3>
+					<p id="preferences-selected-balls"></p>
+					<p id="preferences-selected-monsters"></p>
+					<p id="preferences-selected-time"></p>
+					<p id="preferences-selected-username"></p>
+				</div>
+				<div id="preferences-selected-2">
+					<h3>Game Details</h3>
+					<div id="score">
+						<p id="lblScore"></p>
 					</div>
-					<div class="keySetting">
-						<p
-								id="preferences-left"
-								class="btn-preference"
-								onclick="return setUserKey('L')"
-						>
-							LEFT
-						</p>
-						<p
-								id="preferences-down"
-								class="btn-preference"
-								onclick="return setUserKey('D')"
-						>
-							DOWN
-						</p>
-						<p
-								id="preferences-right"
-								class="btn-preference"
-								onclick="return setUserKey('R')"
-						>
-							RIGHT
-						</p>
+					<div id="time">
+						<p id="lblTime"></p>
 					</div>
+					<div id="lives"></div>
 				</div>
 			</div>
-			<div class="preferences-form-section">
-				<h3>Number of balls:</h3>
-				<div class="keySetting">
-					<div class="range-wrap">
-						<div class="range-value" id="rangeVB"></div>
-						<input
-								id="rangeB"
-								type="range"
-								min="50"
-								max="90"
-								value="70"
-								step="1"
-						/>
-					</div>
-				</div>
+			<div id="game">
+				<canvas id="canvas" width="700" height="620" />
 			</div>
-			<div class="preferences-form-section">
-				<h3>Colors:</h3>
-				<div class="preferences-form-section-attribute">
-					<div class="keySetting">
-						<label for="preferences-5-pts">5 pts.</label>
-						<input
-								type="color"
-								id="preferences-5-pts"
-								value="#b8e994"
-								class="clickable"
-						/>
-					</div>
-					<div class="keySetting">
-						<label for="preferences-15-pts">15 pts.</label>
-						<input
-								type="color"
-								id="preferences-15-pts"
-								value="#079992"
-								class="clickable"
-						/>
-					</div>
-					<div class="keySetting">
-						<label for="preferences-25-pts">25 pts.</label>
-						<input
-								type="color"
-								id="preferences-25-pts"
-								value="#b71540"
-								class="clickable"
-						/>
-					</div>
-				</div>
-			</div>
-			<div class="preferences-form-section">
-				<h3>Time:</h3>
+		</section>
 
-				<div class="keySetting">
-					<div class="range-wrap">
-						<div class="range-value" id="rangeVT"></div>
-						<input
-								id="rangeT"
-								type="range"
-								min="60"
-								max="300"
-								value="90"
-								step="10"
-						/>
-					</div>
-				</div>
-			</div>
-			<div class="preferences-form-section">
-				<h3>Number of monsters:</h3>
-				<div class="keySetting">
-					<div class="range-wrap">
-						<div class="range-value" id="rangeVM"></div>
-						<input
-								id="rangeM"
-								type="range"
-								min="1"
-								max="4"
-								value="4"
-								step="1"
-						/>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="submitButtonDiv formElement">
-			<input
-					type="submit"
-					class="submitButton"
-					onclick="return setPreferences()"
-			/>
-			<input
-					type="button"
-					class="submitButton"
-					value="Random"
-					onclick="return randomPreferences()"
-			/>
-		</div>
-	</form>
-</section>
-
-<center>
-	<footer>
-		<p>Contact Us</p>
-		<p>
-			Yuval Cohen
-			<button id="email-img-yuval">
-				<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormYuval()">
-			</button>
-		</p>
-		<p>
-			Noa Magrisso
-			<button id="email-img-noa">
-				<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormNoa()">
-			</button>
-		</p>
-
-	</footer>
-</center>
-<!--		https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup_form-->
-<!--TODO: Add X button to close the window-->
-<div class="form-popup" id="myFormYuval">
-	<form action="https://formsubmit.co/yucoh@post.bgu.ac.il" method="POST">
-		Name:
-		<br/>
-		<input type="hidden" name="_subject" value="New email from My Web">
-		<input type="text" name="name" placeholder="Full name" required>
-		<br/>
-		E-mail:
-		<br/>
-		<input type="text" name="email" placeholder="E-mail Address" required>
-		<br/>
-		Comment:
-		<br/>
-		<textarea id="myTextareaYuval" name="message" placeholder="Write your message here" required></textarea>
-		<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
-		<input type="hidden" name="_template" value="basic">
-		<br/>
-		<button type="submit" onclick="closeFomYuval()">Send</button>
-		<button type="reset">Reset</button>
-	</form>
-</div>
-<div class="form-popup" id="myFormNoa">
-	<form action="https://formsubmit.co/" method="POST"><!-- TODO:Add Noa email!!!! -->
-		Name:
-		<br/>
-		<input type="hidden" name="_subject" value="New email from My Web">
-		<input type="text" name="name" placeholder="Full name" required>
-		<br/>
-		E-mail:
-		<br/>
-		<input type="text" name="email" placeholder="E-mail Address" required>
-		<br/>
-		Comment:
-		<br/>
-		<textarea id="myTextareaNoa" name="message" placeholder="Write your message here" required></textarea>
-		<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
-		<input type="hidden" name="_template" value="basic">
-		<br/>
-		<button type="submit" onclick="closeFomNoa()">Send</button>
-		<button type="reset">Reset</button>
-	</form>
-</div>
-
-<div id="about" class="modal">
-	<div id="about-header">
-		<h1>About</h1>
-	</div>
-	<div>
-		<h2>Made by</h2>
-		<ul>
-			<li>
+		<center>
+			<footer>
+				<p>Contact Us</p>
 				<p>
-					Yuval Cohen - 314978198
+					Yuval Cohen
+					<button id="email-img-yuval">
+						<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormYuval()">
+					</button>
 				</p>
-			</li>
-			<li>
 				<p>
-					Noa Magrisso - 206934978
+					Noa Magrisso
+					<button id="email-img-noa">
+						<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormNoa()">
+					</button>
 				</p>
-			</li>
-		</ul>
-		<h2>Used JQuery Plugins</h2>
-		<ol class="about-list">
-			<li>
-				<p>
-					<a href="">JQuery Moder</a> - About model
-				</p>
-			</li>
-			<li>
-				<p>
-					<a href="">JQuery Validation</a> - Validating registration form
-				</p>
-			</li>
-		</ol>
-	</div>
-</div>
 
+			</footer>
+		</center>
+		<!--		https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup_form-->
+		<!--TODO: Add X button to close the window-->
+		<div class="form-popup" id="myFormYuval">
+			<form action="https://formsubmit.co/yucoh@post.bgu.ac.il" method="POST">
+				Name:
+				<br/>
+				<input type="hidden" name="_subject" value="New email from My Web">
+				<input type="text" name="name" placeholder="Full name" required>
+				<br/>
+				E-mail:
+				<br/>
+				<input type="text" name="email" placeholder="E-mail Address" required>
+				<br/>
+				Comment:
+				<br/>
+				<textarea id="myTextareaYuval" name="message" placeholder="Write your message here" required></textarea>
+				<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
+				<input type="hidden" name="_template" value="basic">
+				<br/>
+				<button type="submit" onclick="closeFomYuval()">Send</button>
+				<button type="reset">Reset</button>
+			</form>
+		</div>
 
+		<div class="form-popup" id="myFormNoa">
+			<form action="https://formsubmit.co/noamagri@post.bgu.ac.il" method="POST">
+				Name:
+				<br/>
+				<input type="hidden" name="_subject" value="New email from My Web">
+				<input type="text" name="name" placeholder="Full name" required>
+				<br/>
+				E-mail:
+				<br/>
+				<input type="text" name="email" placeholder="E-mail Address" required>
+				<br/>
+				Comment:
+				<br/>
+				<textarea id="myTextareaNoa" name="message" placeholder="Write your message here" required></textarea>
+				<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
+				<input type="hidden" name="_template" value="basic">
+				<br/>
+				<button type="submit" onclick="closeFomNoa()">Send</button>
+				<button type="reset">Reset</button>
+			</form>
+		</div>
 
-</body>
-<script>
-	function openFormYuval(){
-		document.getElementById("myFormYuval").style.display = "block";
-	}
-	function closeFomYuval(){
-		document.getElementById("myFormYuval").style.display = "none";
-	}
-	function openFormNoa(){
-		document.getElementById("myFormYuval").style.display = "block";
-	}
-	function closeFomNoa(){
-		document.getElementById("myFormYuval").style.display = "none";
-	}
-</script>
+		<div id="about" class="modal">
+			<div id="about-header">
+				<h1>About</h1>
+			</div>
+			<div>
+				<h2>Made by</h2>
+				<ul>
+					<li>
+						<p>
+							Yuval Cohen - 314978198
+						</p>
+					</li>
+					<li>
+						<p>
+							Noa Magrisso - 206934978
+						</p>
+					</li>
+				</ul>
+				<h2>Used JQuery Plugins</h2>
+				<ol class="about-list">
+					<li>
+						<p>
+							<a href="">JQuery Moder</a> - About model
+						</p>
+					</li>
+					<li>
+						<p>
+							<a href="">JQuery Validation</a> - Validating registration form
+						</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		function openFormYuval(){
+			document.getElementById("myFormYuval").style.display = "block";
+		}
+		function closeFomYuval(){
+			document.getElementById("myFormYuval").style.display = "none";
+		}
+		function openFormNoa(){
+			document.getElementById("myFormYuval").style.display = "block";
+		}
+		function closeFomNoa(){
+			document.getElementById("myFormYuval").style.display = "none";
+		}
+	</script>
 </html>

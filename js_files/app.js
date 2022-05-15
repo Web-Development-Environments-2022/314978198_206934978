@@ -123,8 +123,16 @@ $(document).ready(function() {
 	$("#register-section").hide();
 	$("#login-section").hide();
 	$("#about").hide();
-	$("#welcome-section-loggedIn").hide();
-	$("#preference-section").hide();
+	if (loggedInUser != null){
+		$("#welcome-section-loggedIn").hide();
+		$("#welcome-section-notLoggedIn").hide();
+		$("#preference-section").hide();
+	}
+	else {
+		$("#welcome-section-loggedIn").hide();
+		$("#welcome-section-notLoggedIn").show();
+		$("#preference-section").hide();
+	}
 
 
 	$("#home-menu-btn").click(function(){
