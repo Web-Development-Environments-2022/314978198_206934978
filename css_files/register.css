@@ -13,12 +13,7 @@
 }
 
 #register-section > #registration-section-form > #register-form-title > h2 {
-    height: auto;
-    margin: 0vh 0vw 0vh 0vw;
-    font-family: "Arial Black";
-    font-size: 3vw;
-    font-style: italic;
-    padding-left: 20vw;
+    padding-left: 19vw;
 }
 
 #register-section > #registration-section-form > #register-fill-in-div {

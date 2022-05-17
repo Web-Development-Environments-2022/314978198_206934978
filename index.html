@@ -108,41 +108,25 @@
 			</form>
 		</section>
 
-<!--		<section class="welcome-section" id="welcome-section-loggedIn">-->
-<!--		&lt;!&ndash;	<div id="Welcome-img-loggedIn">&ndash;&gt;-->
-<!--		&lt;!&ndash;		<img id="welcome-gif-" src="media/images/welcome.gif"/>&ndash;&gt;-->
-<!--		&lt;!&ndash;	</div>&ndash;&gt;-->
-<!--			<div id="Welcome-Section">-->
-<!--				<ul id="Welcome">-->
-<!--					<li>-->
-<!--						<button id="welcome-play-btn" type="button" class="btn" data-text="color">PLAY</button>-->
-<!--					</li>-->
-<!--		&lt;!&ndash;			<li>&ndash;&gt;-->
-<!--		&lt;!&ndash;				<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>&ndash;&gt;-->
-<!--		&lt;!&ndash;			</li>&ndash;&gt;-->
-<!--				</ul>-->
-<!--			</div>-->
-<!--		</section>-->
-
-		<section id="preference-section" class="preference-section">
-			<form id="preference-form" class="pref-forms">
-				<div class="formInstructionsD formElement">
+		<section id="preference-section">
+			<form id="preference-form">
+				<div id="preference-form-title">
 					<h2>
 						Preferences
 					</h2>
-					<h1>
+					<h3>
 						Choose your preferences before start playing
-					</h1>
+					</h3>
 				</div>
-				<div class="fillContentD formElement">
+				<div id="preference-form-div">
 					<div class="preference-form">
 						<h3>
 							Key Settings:
 						</h3>
-						<div id="preference-keys" class="preference-section-form-att">
-							<h1>
+						<div id="preference-keys">
+							<h4>
 								Click on one of the buttons below and then press keyboard's desired key.
-							</h1>
+							</h4>
 							<div class="keySet">
 								<p id="key-up" class="pref-btn" onclick="return setKey('U')">UP</p>
 							</div>
@@ -206,8 +190,8 @@
 						</div>
 					</div>
 					<div class="submitButtonD formElement">
-						<input type="submit" class="submitButton" value="SET" onclick="return setUserPreferences()">
-						<input type="button" class="submitButton" value="RANDO" onclick="return setRandomPreferences()">
+						<button type="submit" class="btn" value="SET" onclick="return setUserPreferences()">SUBMIT</button>
+						<button type="button" class="btn" value="RANDOM" onclick="return setRandomPreferences()">RANDOM</button>
 					</div>
 				</div>
 			</form>

@@ -249,6 +249,8 @@ function logIn(){
 			loggedInUser = user;
 			alert("Welcome " + userName + "!");
 			setLogIn();
+			let form = $("#login-section-form");
+			form[0].reset();
 			return false;
 		}
 		else{

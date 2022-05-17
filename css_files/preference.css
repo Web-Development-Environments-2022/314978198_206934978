@@ -1,31 +1,86 @@
-.preference-form::after {
-    display: block;
-    height: 2px;
-    background-color: #d66e3b;
-    content: " ";
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+#preference-section{
+    width: 50vw;
+    height: auto;
+    justify-items: center;
+    margin: 0 50% 0 25%;
 }
 
-.pref-forms{
-    display: -webkit-flex;
-    display: flex;
-    height: 100%;
-    /*align: center;*/
+#preference-section > #preference-form{
+    align-items: center;
+    height: auto;
+    padding-top: 5vh;
+    padding-left: 12vh;
+    flex-direction: column;
+    margin: 0;
 }
 
-.preference-form h3 {
-    font-size: 30px;
-    margin-bottom: 10px;
-    color: #f1f1f1;
+#preference-section > #preference-form > #preference-form-title {
+    align-items: center;
+    height: auto;
+    padding-top: 0;
+    margin: 0;
+}
+
+#preference-section > #preference-form > #preference-form-div {
+    align-items: center;
+    height: auto;
+    /*padding-top: 20vh;*/
+    margin: 0;
+}
+
+#preference-section > #preference-form > #preference-form-title > h2 {
+    padding-left: 10vw;
+}
+
+#preference-section > #preference-form > #preference-form-title > h3 {
+    height: auto;
+    margin: 0vh 0vw 0vh 0vw;
+    font-family: "Arial Black";
+    font-size: 1.5vw;
+    padding-left: 3vw;
+    padding-top: 2.5vh;
+    color: white;
+}
+
+#preference-section > #preference-form > #preference-form-div > .preference-form > h3 {
+    height: auto;
+    margin: 0vh 0vw 0vh 0vw;
+    font-family: "Arial Black";
+    font-size: 1.5vw;
+    padding-top: 2vh;
+    color: white;
+}
+
+#preference-section > #preference-form > #preference-form-div > .preference-form > #preference-keys > h4 {
+    height: auto;
+    margin: 0;
+    font-family: "Arial Black";
+    font-size: 1vw;
+    padding-left: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+    color: white;
+}
+
+#preference-section > #preference-form > #preference-form-div > .preference-form > #preference-keys {
+    padding-top: 1vh;
+}
+
+#preference-section > #preference-form > #preference-form-div {
+    display: grid;
+    padding-left: 0vw;
+    grid-column-gap: initial;
+    align-content: space-around;
 }
 
 .keySet {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    align-content: space-evenly;
+    justify-content: space-around;
+    justify-items: center;
+    width: 40vw;
 }
 
 .keySet input {
@@ -33,9 +88,23 @@
     height: 25px;
 }
 
-.preference-section-form-att {
-    display: flex;
-    justify-content: space-evenly;
+#preference-keys{
+    flex-direction: column;
+    align-items: center;
+}
+
+.pref-btn{
+    margin: 3px;
+    font-size: 1.5vw;
+    border-color: #f8e76e;
+    border-style: solid;
+    background: none;
+    border-radius: 25px;
+    width: 10vw;
+    height: 7vh;
+    text-align: center;
+    padding-top: 3vh;
+    cursor: pointer;
 }
 
 input[type="range"] {
@@ -60,8 +129,8 @@ input[type="range"]::-webkit-slider-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: white;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 1);
+    background: black;
+    box-shadow: 0 0 4px 0 white;
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -8px;
@@ -76,17 +145,19 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     position: relative;
     text-align: center;
 }
+
 .range-val {
     position: absolute;
     top: -15%;
 }
+
 .range-val span {
     width: 30px;
     height: 24px;
     line-height: 24px;
     text-align: center;
     background: #03a9f4;
-    color: #f1f1f1;
+    color: black;
     font-size: 12px;
     display: block;
     position: absolute;
@@ -109,24 +180,40 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     margin-top: -1px;
 }
 
-#preference-keys{
-    flex-direction: column;
-    align-items: center;
+.pref-forms{
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    /*align: center;*/
+
+}
+.preference-form h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: black;
+
 }
 
-#preference-keys .keySet{
+.preference-form::after {
+    display: block;
+    height: 2px;
+    background-color: #d66e3b;
+    content: " ";
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+#preference-keys > .keySet{
     flex-direction: row;
+
+
+
+}
+.preference-section-form-att {
+    display: flex;
+    justify-content: space-evenly;
+
 }
 
-.pref-btn{
-    margin: 5px;
-    font-size: 20px;
-    box-shadow: 2px 2px #f8e76e;
-    background-color: #0099cc;
-    border-radius: 25px;
-    width: 120px;
-    height: 60px;
-    text-align: center;
-    padding-top: 20px;
-    cursor: pointer;
-}

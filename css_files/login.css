@@ -13,11 +13,6 @@
 }
 
 #login-section > #login-section-form > #login-form-title > h2 {
-    height: auto;
-    margin: 0vh 0vw 0vh 0vw;
-    font-family: "Arial Black";
-    font-size: 3vw;
-    font-style: italic;
     padding-left: 20vw;
 }
 
