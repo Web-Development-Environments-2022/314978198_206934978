@@ -1,30 +1,67 @@
-.formInstructionsD{
-    margin-left: 5%;
-    font-size: 1em;
-    margin-top: 10vh;
-}
-
-#register-section > #registration-form > fillContactD{
-    display: block;
+#register-section{
+    width: 40vw;
+    height: 90vh;
+    justify-items: center;
     flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    width: 50vw;
+    margin: 0 55% 0 25%;
 }
 
-.inputRequest {
-    padding: 15px;
-    font-size: 1.2em;
-    background-color: #f2f2f2;
-    border-style: none;
-    border-radius: 5px;
-    margin-top: 10px;
+#register-section > #registration-section-form > #register-form-title {
+    align-items: center;
+    padding-top: 5vh;
+    margin: 0;
 }
 
-.inputRequest:focus {
-    border-style: solid;
-    border: 1px;
-    border-color: #0d6380;
+#register-section > #registration-section-form > #register-form-title > h2 {
+    height: auto;
+    margin: 0vh 0vw 0vh 0vw;
+    font-family: "Arial Black";
+    font-size: 3vw;
+    font-style: italic;
+    padding-left: 20vw;
 }
+
+#register-section > #registration-section-form > #register-fill-in-div {
+    display: grid;
+    padding-left: 12vw;
+    grid-column-gap: initial;
+    align-content: space-around;
+}
+
+#register-section > #registration-section-form > #submitRegistrationButtonD {
+    padding-left: 10vw;
+    padding-top: 5vh;
+    flex-direction: row;
+    width: 60vw;
+}
+
+/*.formInstructionsD{*/
+/*    margin-left: 5%;*/
+/*    font-size: 1em;*/
+/*    margin-top: 10vh;*/
+/*}*/
+
+/*#register-section > #registration-form > fillContactD{*/
+/*    display: block;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-between;*/
+/*    flex-grow: 1;*/
+/*    margin-top: 10px;*/
+/*    margin-bottom: 5px;*/
+/*    width: 50vw;*/
+/*}*/
+
+/*.inputRequest {*/
+/*    padding: 15px;*/
+/*    font-size: 1.2em;*/
+/*    background-color: #f2f2f2;*/
+/*    border-style: none;*/
+/*    border-radius: 5px;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*.inputRequest:focus {*/
+/*    border-style: solid;*/
+/*    border: 1px;*/
+/*    border-color: #0d6380;*/
+/*}*/

@@ -18,7 +18,7 @@ let ball5color = "#FFFFCC";
 let ball15color = "#CCFFE5";
 let ball25color = "#CCE5FF";
 let life = 5;
-let users = [{username: 'k', password: 'k', firstname:'k', lastname: 'k', email: 'kk@gmail.com', birthdate: '01/01/1995'}];
+var users = [{username: 'k', password: 'k', firstname:'k', lastname: 'k', email: 'kk@gmail.com', birthdate: '01/01/1995'}];
 let loggedInUser = null;
 
 
@@ -44,7 +44,7 @@ $(document).ready(function () {
 		}
 	});
 
-	$("#registration-form").validate({
+	$("#registration-section-form").validate({
 		rules: {
 			registerFormUserName: {
 				required: true,
@@ -118,9 +118,10 @@ $(document).ready(function () {
 			}
 		},
 
-		submitHandler: function(){
-			registrationUser();
-		}
+		// submitHandler: function(){
+		// 	registrationUser();
+		// 	alert(users.length);
+		// }
 	});
 });
 
@@ -135,12 +136,12 @@ $(document).ready(function() {
 
 
 	if (loggedInUser != null){
-		$("#welcome-section-loggedIn").hide();
+		// $("#welcome-section-loggedIn").hide();
 		$("#welcome-section-notLoggedIn").hide();
-		$("#preference-section").hide();
+		$("#preference-section").show();
 	}
 	else {
-		$("#welcome-section-loggedIn").hide();
+		// $("#welcome-section-loggedIn").hide();
 		$("#welcome-section-notLoggedIn").show();
 		$("#preference-section").hide();
 	}
@@ -158,7 +159,7 @@ $(document).ready(function() {
 	$("#register-menu-btn").click(function(){
 		window.clearInterval(interval);
 		$("#welcome-section-notLoggedIn").hide();
-		$("#welcome-section-loggedIn").hide();
+		// $("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").show();
 		$("#login-section").hide();
@@ -168,7 +169,7 @@ $(document).ready(function() {
 	$("#login-menu-btn").click(function(){
 		window.clearInterval(interval);
 		$("#welcome-section-notLoggedIn").hide();
-		$("#welcome-section-loggedIn").hide();
+		// $("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").show();
@@ -178,7 +179,7 @@ $(document).ready(function() {
 	$("#welcome-login-btn").click(function(){
 		window.clearInterval(interval);
 		$("#welcome-section-notLoggedIn").hide();
-		$("#welcome-section-loggedIn").hide();
+		// $("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").show();
@@ -188,7 +189,7 @@ $(document).ready(function() {
 	$("#welcome-registration-btn").click(function(){
 		window.clearInterval(interval);
 		$("#welcome-section-notLoggedIn").hide();
-		$("#welcome-section-loggedIn").hide();
+		// $("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").show();
 		$("#login-section").hide();
@@ -198,7 +199,7 @@ $(document).ready(function() {
 	$("#welcome-play-btn").click(function(){
 		window.clearInterval(interval);
 		$("#welcome-section-notLoggedIn").hide();
-		$("#welcome-section-loggedIn").hide();
+		// $("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").hide();
@@ -222,11 +223,12 @@ function registrationUser(){
 
 	alert('Registration completed successfully');
 
-	let form = $("#registration-form");
+	let form = $("#registration-section-form");
 	form[0].reset();
 
 	$("#register-section").hide();
 	$("#login-section").show();
+
 	return false;
 }
 
@@ -268,7 +270,8 @@ function logIn(){
 }
 
 function setLogIn() {
-	$("#welcome-section-loggedIn").show();
+	// $("#welcome-section-loggedIn").show();
+	$("#preference-section").show();
 	$("#welcome-section-notLoggedIn").hide();
 	$("#play-section").hide();
 	$("#register-section").hide();
@@ -285,7 +288,7 @@ function logout(){
 }
 
 function setLogOut(){
-	$("#welcome-section-loggedIn").hide();
+	// $("#welcome-section-loggedIn").hide();
 	$("#welcome-section-notLoggedIn").show();
 	$("#play-section").hide();
 	$("#register-section").hide();

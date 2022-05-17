@@ -34,22 +34,22 @@
 		<div id="Menu-container">
 			<ul id="menu">
 				<li>
-					<button id="home-menu-btn" class="btn1" data-text="color">WELCOME</button>
+					<button id="home-menu-btn" class="btn" data-text="color">WELCOME</button>
 				</li>
 				<li>
-					<button id="register-menu-btn" class="btn1" data-text="color">REGISTER</button>
+					<button id="register-menu-btn" class="btn" data-text="color">REGISTER</button>
 				</li>
 				<li>
-					<button id="play-menu-btn" class="btn1" data-text="color">PLAY</button>
+					<button id="play-menu-btn" class="btn" data-text="color">PLAY</button>
 				</li>
 				<li>
-					<button id="login-menu-btn" class="btn1" data-text="color">LOGIN</button>
+					<button id="login-menu-btn" class="btn" data-text="color">LOGIN</button>
 				</li>
 				<li>
-					<button id="logout-menu-btn" class="btn1" data-text="color" onclick="return logout()">LOGOUT</button>
+					<button id="logout-menu-btn" class="btn" data-text="color" onclick="return logout()">LOGOUT</button>
 				</li>
 				<li>
-					<button id="about-menu-btn" class="btn1" data-text="color" hrel="#about">ABOUT</button>
+					<button id="about-menu-btn" class="btn" data-text="color" hrel="#about">ABOUT</button>
 				</li>
 			</ul>
 		</div>
@@ -61,72 +61,68 @@
 			<div id="Welcome-Section-Buttons">
 				<ul id="Welcome-ul">
 					<li>
-						<button id="welcome-login-btn" type="button" class="btn1" data-text="color">LOGIN</button>
+						<button id="welcome-login-btn" type="button" class="btn" data-text="color">LOGIN</button>
 					</li>
 					<li>
-						<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>
+						<button id="welcome-registration-btn" type="button" class="btn" data-text="color">SING UP</button>
 					</li>
 				</ul>
 
 			</div>
 		</section>
 
-		<section id="register-section" class="form-section">
-			<center>
-			<form id="registration-form" class="app-forms">
-				<div class="formInstructionsD formElement">
+		<section id="register-section">
+			<form id="registration-section-form" class="app-forms">
+				<div id="register-form-title">
 					<h2>Sign Up</h2>
 				</div>
-				<div class="fillContactD">
-					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="registerFormUserName" name="registerFormUserName" required/>
-					<input class="inputRequest formContentElement" type="password" placeholder="Password" id="registerFormPassword" name="registerFormPassword" required/>
-					<input class="inputRequest formContentElement" type="password" placeholder="Confirm Password" id="registerFormConfirmPassword" name="registerFormConfirmPassword" required/>
-					<input class="inputRequest formContentElement" type="text" placeholder="First Name" id="registerFormFirstName" name="registerFormFirstName" required/>
-					<input class="inputRequest formContentElement" type="text" placeholder="Last Name" id="registerFormLastName" name="registerFormLastName" required/>
-					<input class="inputRequest formContentElement" type="email" placeholder="Email" id="registerFormEmail" name="registerFormEmail" required/>
-					<input class="inputRequest formContentElement" type="date" placeholder="Birth Date" id="registerFormBirthDate" name="registerFormBirthDate" value="1940-01-01" min="1900-01-01" max="2022-01-01" required/>
+				<div id="register-fill-in-div">
+					<input class="inputRequest" type="text" placeholder="User Name" id="registerFormUserName" name="registerFormUserName" required/>
+					<input class="inputRequest" type="password" placeholder="Password" id="registerFormPassword" name="registerFormPassword" required/>
+					<input class="inputRequest" type="password" placeholder="Confirm Password" id="registerFormConfirmPassword" name="registerFormConfirmPassword" required/>
+					<input class="inputRequest" type="text" placeholder="First Name" id="registerFormFirstName" name="registerFormFirstName" required/>
+					<input class="inputRequest" type="text" placeholder="Last Name" id="registerFormLastName" name="registerFormLastName" required/>
+					<input class="inputRequest" type="email" placeholder="Email" id="registerFormEmail" name="registerFormEmail" required/>
+					<input class="inputRequest" type="date" placeholder="Birth Date" id="registerFormBirthDate" name="registerFormBirthDate" value="1940-01-01" min="1900-01-01" max="2022-01-01" required/>
 				</div>
-				<div class="submitRegistrationButtonD">
-					<input type="submit" class="submitButton" id="submitButton"/>
-					<input type="reset" class="resetButton"/>
+				<div id="submitRegistrationButtonD">
+					<button type="submit" class="btn" data-text="color" onclick="return registrationUser()">SUBMIT</button>
+					<button type="reset" class="btn" data-text="color">RESET</button>
 				</div>
 			</form>
-			</center>
 		</section>
 
-		<section id="login-section" class="form-section">
-			<center>
-			<form id="login-section-form" class="app-forms">
-				<div class="formInstructionsD">
+		<section id="login-section">
+			<form id="login-section-form">
+				<div id="login-form-title">
 					<h2>Log In</h2>
 				</div>
-				<div class="fillContactD">
-					<input class="inputRequest formContentElement" type="text" placeholder="User Name" id="loginFormUserName"/>
-					<input class="inputRequest formContentElement" type="password" placeholder="Password" id="loginFormPassword"/>
+				<div id="login-fill-in-div">
+					<input class="inputRequest" type="text" placeholder="User Name" id="loginFormUserName"/>
+					<input class="inputRequest" type="password" placeholder="Password" id="loginFormPassword"/>
 				</div>
-				<div class="submitRegistrationButtonD">
-					<button type="submit" class="btn2" data-text="color" onclick="return logIn()">LOGIN</button>
-					<button type="reset" class="btn2" data-text="color">RESET</button>
+				<div id="submitLogInButtonD">
+					<button type="submit" class="btn" data-text="color" onclick="return logIn()">LOGIN</button>
+					<button type="reset" class="btn" data-text="color">RESET</button>
 				</div>
 			</form>
-			</center>
 		</section>
 
-		<section class="welcome-section" id="welcome-section-loggedIn">
-		<!--	<div id="Welcome-img-loggedIn">-->
-		<!--		<img id="welcome-gif-" src="media/images/welcome.gif"/>-->
-		<!--	</div>-->
-			<div id="Welcome-Section">
-				<ul id="Welcome">
-					<li>
-						<button id="welcome-play-btn" type="button" class="btn1" data-text="color">PLAY</button>
-					</li>
-		<!--			<li>-->
-		<!--				<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>-->
-		<!--			</li>-->
-				</ul>
-			</div>
-		</section>
+<!--		<section class="welcome-section" id="welcome-section-loggedIn">-->
+<!--		&lt;!&ndash;	<div id="Welcome-img-loggedIn">&ndash;&gt;-->
+<!--		&lt;!&ndash;		<img id="welcome-gif-" src="media/images/welcome.gif"/>&ndash;&gt;-->
+<!--		&lt;!&ndash;	</div>&ndash;&gt;-->
+<!--			<div id="Welcome-Section">-->
+<!--				<ul id="Welcome">-->
+<!--					<li>-->
+<!--						<button id="welcome-play-btn" type="button" class="btn" data-text="color">PLAY</button>-->
+<!--					</li>-->
+<!--		&lt;!&ndash;			<li>&ndash;&gt;-->
+<!--		&lt;!&ndash;				<button id="welcome-registration-btn" type="button" class="btn1" data-text="color">SING UP</button>&ndash;&gt;-->
+<!--		&lt;!&ndash;			</li>&ndash;&gt;-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--		</section>-->
 
 		<section id="preference-section" class="preference-section">
 			<form id="preference-form" class="pref-forms">
