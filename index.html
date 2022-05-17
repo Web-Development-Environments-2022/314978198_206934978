@@ -13,14 +13,17 @@
 		<link rel="stylesheet" href="css_files/start.css">
 		<link rel="stylesheet" href="css_files/general.css">
 		<link rel="stylesheet" href="css_files/preference.css">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<title>Pacman</title>
 	</head>
 	<body>
 		<div id="container_header">
 			<header>
 				<center>
-					<img id=logo src="media/images/PacMan.png">
-					<h3>
+					<img id="logo" src="media/images/PacMan.png">
+					<h3 id="names">
 						Yuval Cohen & Noa Magrisso
 					</h3>
 				</center>
@@ -214,7 +217,8 @@
 		</section>
 
 		<section id="play-section">
-			<div class="row">
+			<div id="row">
+<!--				class="row"-->
 				<div id="preferences-selected">
 					<h3 id="preferences-selected-header">Game Preferences</h3>
 					<p id="preferences-selected-balls"></p>
@@ -238,24 +242,19 @@
 			</div>
 		</section>
 
-		<center>
-			<footer>
-				<p>Contact Us</p>
-				<p>
-					Yuval Cohen
-					<button id="email-img-yuval">
-						<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormYuval()">
-					</button>
-				</p>
-				<p>
-					Noa Magrisso
-					<button id="email-img-noa">
-						<img src="media/images/mailLogo.png" width="30" height="20" class="open-img" onclick="openFormNoa()">
-					</button>
-				</p>
 
-			</footer>
-		</center>
+		<footer>
+			<h2>Contact Us</h2>
+			<div class="footerDiv">
+				<h1>Yuval Cohen</h1>
+				<i class="fa fa-envelope" style="font-size:1.5vw;color:black;" onclick="openFormYuval()"></i>
+			</div>
+			<div class="footerDiv">
+				<h1>Noa Magrisso</h1>
+				<i class="fa fa-envelope" style="font-size:1.5vw;color:black;" onclick="openFormNoa()"></i>
+			</div>
+		</footer>
+
 		<!--		https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup_form-->
 		<!--TODO: Add X button to close the window-->
 		<div class="form-popup" id="myFormYuval">

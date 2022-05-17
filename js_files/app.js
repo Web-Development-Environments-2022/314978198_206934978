@@ -133,6 +133,7 @@ $(document).ready(function() {
 	$("#play-menu-btn").hide();
 	$("#logout-menu-btn").hide();
 
+
 	if (loggedInUser != null){
 		$("#welcome-section-loggedIn").hide();
 		$("#welcome-section-notLoggedIn").hide();

@@ -1,10 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700');
 
+html{
+    height: 100%;
+    width: 100%;
+}
 
 body{
-    /*background-color: white;*/
-    background-color: black;
+    background-color: white;
+    /*background-color: black;*/
     max-width: 100%;
     max-height: 100%;
     justify-content: center;
@@ -15,7 +19,24 @@ body{
 }
 
 #container_header{
+    height: 25%;
+}
+
+#names{
     height: auto;
+    margin: 0vh 0vw 0vh 0vw;
+    font-family: "Arial Black";
+    font-size: medium;
+    font-style: italic;
+}
+
+#logo{
+    text-align: center;
+    justify-content: center;
+    padding-top: 0%;
+    opacity: 50;
+    width: 35%;
+    height: 17.5%;
 }
 
 #Menu-container{
@@ -43,6 +64,7 @@ body{
 }
 
 /*TODO: Check if relevant*/
+
 #Menu-container > #menu.fixed {
     background-color: #1e801b;
     z-index: 10000;
@@ -51,7 +73,6 @@ body{
     right: 0;;
     position: fixed;
 }
-
 #Menu-container > #menu > li{
     height: 0px;
     display: inline-block;
@@ -62,6 +83,7 @@ body{
     padding-top: 0px;
     margin: 0 1vw 0 1vw;
 }
+
 
 .btn1{
     text-align: center;
@@ -87,15 +109,7 @@ body{
     box-shadow: inset 0 0 0 rgba(0,150,100,0.5), 0 0 1.5em rgba(0,150,100,0.7);
 }
 
-#logo{
-    text-align: center;
-    justify-content: center;
-    opacity: 30;
-}
 
-#game{
-    width:1100px;
-}
 
 .form-popup {
     display: none;
@@ -105,3 +119,55 @@ body{
     border: 3px solid #f1f1f1;
     z-index: 9;
 }
+
+footer{
+    justify-content: center;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding: 0px;
+}
+
+footer > h2{
+    margin: 0;
+    padding-top: 5vh;
+    font-size: medium;
+    font-family: "Arial Black";
+    font-style: italic;
+    justify-content: center;
+}
+
+footer > .footerDiv{
+    width: 20vw;
+    height: 6vh;
+    /*justify-content: center;*/
+    /*padding-top: 12px;*/
+    padding:0;
+    margin: 0;
+    /*justify-items: center;*/
+    /*flex-direction: row;*/
+}
+
+footer > .footerDiv > h1{
+    font-size: 1vw;
+    justify-content: center;
+    display: inline-block;
+    /*padding-left: 3vw;*/
+    color: black;
+    font-family: "Arial Black";
+    margin: 0;
+}
+
+/*footer > .footerDiv > .fa fa-envelope{*/
+/*    font-size: 40px;*/
+/*    color: black;*/
+/*}*/
+
+/*footer > .footerDiv > .email-bnt > img{*/
+/*    justify-content: center;*/
+/*    height: 2vh;*/
+/*    width: 3vw;*/
+/*}*/
+

@@ -1,3 +1,20 @@
+#Welcome-img{
+    /*height: 40vh;*/
+    /*width: 85vw;*/
+    /*justify-content: center;*/
+    text-align: center;
+    /*padding: 0vh 0vw;*/
+    margin: 0vh 10vw 0vh 0vw;
+    padding-left: 10vw;
+}
+
+#Welcome-img > #welcome-gif{
+    height: 38%;
+    width: 50%;
+    justify-content: center;
+    padding: 2vh 0vw;
+}
+
 #Welcome-Section-Buttons {
     /*margin: 0vw 20vw 0vw 20vw;*/
     /*padding-top: 10px;*/
@@ -12,7 +29,7 @@
 }
 
 #Welcome-Section-Buttons > #Welcome-ul{
-    /*margin: 0vw 20vw 0vw 20vw;*/
+    margin: 0vw 0vw 0vw 0vw;
     /*padding-top: 10px;*/
     /*background-color: white;*/
     background-color: #22102b;
@@ -35,53 +52,7 @@
     margin: 0 1vw 0 1vw;
 }
 
-#Welcome-img{
-    height: 40vh;
-    width: 85vw;
-    text-align: center;
-    padding-top: 0vh;
-    padding-bottom: 0vh;
-    /*padding-left: 10vw;*/
-}
-
-#Welcome-img > #welcome-gif{
-    padding-top: 7vh;
-    padding-bottom: 5vh;
-    padding-left: 15vw;
-}
-
-#play-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5% 0 10% 0;
-}
-
-#play-section label,
-#play-section h3 {
-    font-size: 40px;
-}
-
-#play-section div p {
-    font-size: 30px;
-}
-
 .clickable{
     cursor: pointer;
-}
-
-footer{
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    padding: 10px;
-}
-
-footer p a img{
-    width: 15px;
-    height: auto;
-    padding-top: 12px;
 }
 
