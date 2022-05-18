@@ -295,6 +295,7 @@ function setLogOut(){
 	$("#play-section").hide();
 	$("#register-section").hide();
 	$("#login-section").hide();
+	$("#preference-section").hide();
 	$("#play-menu-btn").hide();
 	$("#logout-menu-btn").hide();
 	$("#register-menu-btn").show();
@@ -327,6 +328,8 @@ async function setKey(keyToSet){
 					left_key = e.which;
 					$("#key-left").text(e.key);
 					break;
+				default:
+					break;
 			}
 
 		}
@@ -341,11 +344,14 @@ function setUserPreferences(){
 	ball15color = $("#pref-15-pts").val();
 	ball25color = $("#pref-25-pts").val();
 	life = 5;
+
 	$("#preferences-selected-balls").html("Number of balls: " + ballsNum);
 	$("#preferences-selected-monsters").html("Number of monsters: " + monstersNum);
 	$("#preferences-selected-time").html("Time limit: " + limitTime);
 	$("#preferences-selected-username").html("User: " + loggedInUser["username"]);
+
 	Start();
+
 	$("#play-section").show();
 	$("#preference-section").hide();
 
