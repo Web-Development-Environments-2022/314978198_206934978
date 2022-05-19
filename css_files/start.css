@@ -25,10 +25,20 @@
 #game{
     float: left;
     padding-left: 15vw;
+    width: 60vw;
+    height: 60vh;
     /*width: vw;*/
 }
 
-/*#game{*/
-/*    width:1100px;*/
-/*}*/
+#game > #canvas{
+    float: left;
+    /*padding-left: 15vw;*/
+    width: 60vw;
+    height: 60vh;
+    /*width: vw;*/
+}
+
+
+
+/*width="700" height="620"*/
 

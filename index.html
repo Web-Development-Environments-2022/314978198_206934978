@@ -51,7 +51,7 @@
 					<button id="logout-menu-btn" class="btn" data-text="color" onclick="return logout()">LOGOUT</button>
 				</li>
 				<li>
-					<button id="about-menu-btn" class="btn" data-text="color" hrel="#about">ABOUT</button>
+					<button id="about-menu-btn" class="btn" data-text="color" hrel="#about" onclick="openAbout()">ABOUT</button>
 				</li>
 			</ul>
 		</div>
@@ -221,7 +221,7 @@
 				</div>
 			</div>
 			<div id="game">
-				<canvas id="canvas" width="700" height="620" />
+				<canvas id="canvas"/>
 			</div>
 		</section>
 
@@ -273,80 +273,77 @@
 		<!--		https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup_form-->
 		<!--TODO: Add X button to close the window-->
 		<div class="form-popup" id="myFormYuval">
-			<form action="https://formsubmit.co/yucoh@post.bgu.ac.il" method="POST">
-				Name:
-				<br/>
+			<form action="https://formsubmit.co/yucoh@post.bgu.ac.il" method="POST" class="form-container">
+				<span class="close" onclick="closeFomYuval()">&times;</span>
+				<h3>Name:</h3>
 				<input type="hidden" name="_subject" value="New email from My Web">
 				<input type="text" name="name" placeholder="Full name" required>
-				<br/>
-				E-mail:
-				<br/>
+				<h3>E-mail:</h3>
 				<input type="text" name="email" placeholder="E-mail Address" required>
-				<br/>
-				Comment:
-				<br/>
+				<h3>Comment:</h3>
 				<textarea id="myTextareaYuval" name="message" placeholder="Write your message here" required></textarea>
 				<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
 				<input type="hidden" name="_template" value="basic">
 				<br/>
-				<button type="submit" onclick="closeFomYuval()">Send</button>
-				<button type="reset">Reset</button>
+				<br/>
+				<button type="submit" class="btn">SEND</button>
+				<button type="reset" class="btn">RESET</button>
 			</form>
 		</div>
 
 		<div class="form-popup" id="myFormNoa">
 			<form action="https://formsubmit.co/noamagri@post.bgu.ac.il" method="POST">
-				Name:
-				<br/>
+				<span class="close" onclick="closeFomNoa()">&times;</span>
+				<h3>Name:</h3>
 				<input type="hidden" name="_subject" value="New email from My Web">
 				<input type="text" name="name" placeholder="Full name" required>
-				<br/>
-				E-mail:
-				<br/>
+				<h3>E-mail:</h3>
 				<input type="text" name="email" placeholder="E-mail Address" required>
-				<br/>
-				Comment:
-				<br/>
+				<h3>Comment:</h3>
 				<textarea id="myTextareaNoa" name="message" placeholder="Write your message here" required></textarea>
 				<input type="hidden" name="_next" value=""><!-- TODO:Add an URL to the page!!!! -->
 				<input type="hidden" name="_template" value="basic">
 				<br/>
-				<button type="submit" onclick="closeFomNoa()">Send</button>
-				<button type="reset">Reset</button>
+				<br/>
+				<button type="submit" class="btn">SEND</button>
+				<button type="reset" class="btn">RESET</button>
 			</form>
 		</div>
 
 		<div id="about" class="modal">
-			<div id="about-header">
-				<h1>About</h1>
-			</div>
-			<div>
-				<h2>Made by</h2>
-				<ul>
-					<li>
-						<p>
-							Yuval Cohen - 314978198
-						</p>
-					</li>
-					<li>
-						<p>
-							Noa Magrisso - 206934978
-						</p>
-					</li>
-				</ul>
-				<h2>Used JQuery Plugins</h2>
-				<ol class="about-list">
-					<li>
-						<p>
-							<a href="">JQuery Moder</a> - About model
-						</p>
-					</li>
-					<li>
-						<p>
-							<a href="">JQuery Validation</a> - Validating registration form
-						</p>
-					</li>
-				</ol>
+			<div class="modal-content">
+				<span class="close" onclick="closeAbout()">&times;</span>
+				<div id="about-header">
+					<h1>About</h1>
+				</div>
+				<div>
+					<h2>Made by</h2>
+					<ul>
+						<li>
+							<h2>
+								Yuval Cohen - 314978198
+							</h2>
+						</li>
+						<li>
+							<h2>
+								Noa Magrisso - 206934978
+							</h2>
+						</li>
+					</ul>
+					<h3>Used JQuery Plugins</h3>
+					<ol class="about-list">
+						<li>
+							<p>
+								<a href="">JQuery Moder</a> - About model
+							</p>
+						</li>
+						<li>
+							<p>
+								<a href="">JQuery Validation</a> - Validating registration form
+							</p>
+						</li>
+					</ol>
+				</div>
 			</div>
 		</div>
 	</body>
@@ -364,5 +361,12 @@
 		function closeFomNoa(){
 			document.getElementById("myFormYuval").style.display = "none";
 		}
+		function openAbout(){
+			document.getElementById("about").style.display = "block";
+		}
+		function closeAbout(){
+			document.getElementById("about").style.display = "none";
+		}
+
 	</script>
 </html>

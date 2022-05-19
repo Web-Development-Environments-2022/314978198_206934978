@@ -205,8 +205,8 @@ $(document).ready(function() {
 		$("#login-section").hide();
 		$("#preference-section").show();
 	});
-	// context = canvas.getContext("2d");
-	// Start();
+	context = canvas.getContext("2d");
+	Start();
 });
 
 function registrationUser(){
@@ -487,11 +487,11 @@ function Draw() {
 	for (var i = 0; i < 10; i++) {
 		for (var j = 0; j < 10; j++) {
 			var center = new Object();
-			center.x = i * 60 + 30;
-			center.y = j * 60 + 30;
+			center.x = i * 30 + 30;
+			center.y = j * 30 + 30;
 			if (board[i][j] == 2) {
 				context.beginPath();
-				context.arc(center.x, center.y, 30, 0.15 * Math.PI, 1.85 * Math.PI); // half circle
+				context.arc(center.x, center.y, 15, 0.15 * Math.PI, 1.85 * Math.PI); // half circle
 				context.lineTo(center.x, center.y);
 				context.fillStyle = pac_color; //color
 				context.fill();
