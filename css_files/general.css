@@ -7,8 +7,8 @@
 /*}*/
 
 body{
-    background-color: white;
-    /*background-color: black;*/
+    /*background-color: white;*/
+    background-color: black;
     max-width: 100%;
     max-height: 100%;
     justify-content: center;
@@ -25,7 +25,7 @@ body{
 #names{
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
     font-size: medium;
     font-style: italic;
 }
@@ -82,7 +82,7 @@ body{
 h2 {
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
     font-size: 3vw;
     font-style: italic;
     color: white;
@@ -90,20 +90,13 @@ h2 {
 
 .btn{
     text-align: center;
-    /*color: white;*/
-    /*color: rgba(80,230,255,200);*/
     color: #f8e76e;
     font-weight: bold;
-    /*text-shadow: 1px 1px #f8e76e;*/
-    /*text-shadow: 2px 2px rgb(0 0 152);*/
     background: none;
     border-radius: 1px;
     padding: 3px 15px;
     letter-spacing: 0.2em;
     transition: background-color 0.8s, box-shadow 0.2s, color 0.8s;
-    /*box-shadow: inset 0 0 0.7em rgb(255 128 0);*/
-    /*, 0 0 3em rgb(200 20 160 / 50%);*/
-    /*border: #03a9f4 20px;*/
     font-style: revert;
     font-family: "Berlin Sans FB";
     height: 5vh;
@@ -113,11 +106,7 @@ h2 {
 
 .btn:hover{
     display: inline-block;
-    /*color: white;*/
-    /*text-shadow: 2px 2px rgb(0 0 152);*/
     transform: scale(1.3);
-    /*background-color: #F53137;*/
-    /*box-shadow: inset 0 0 0.7em #EAF55A;*/
 }
 
 .form-popup {
@@ -155,19 +144,19 @@ h2 {
 .form-container > input{
     width: 80%;
     height: 3vh;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
 }
 
 .form-container > textarea{
     width: 80%;
     height: 5vh;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
 }
 
 .form-container > h3{
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
     font-size: 1.5vw;
     padding-top: 2vh;
     padding-left: 2vw;
@@ -191,7 +180,7 @@ footer > h2{
     margin: 0;
     padding-bottom: 3vh;
     font-size: medium;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
     font-style: italic;
     justify-content: center;
 }
@@ -238,7 +227,7 @@ footer > .footerContact > .footerContactMail > .footerMailDiv > h3{
     justify-content: center;
     display: inline-block;
     color: white;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
     margin: 0;
 }
 
@@ -247,7 +236,7 @@ footer > .footerContact > .footerContactSocialMedia > .footerSocialMediaDiv > h3
     justify-content: center;
     display: inline-block;
     color: white;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
     margin: 0;
 }
 
@@ -259,24 +248,24 @@ footer > .footerContact > .footerContactSocialMedia > .footerSocialMediaDiv > h3
     background-color: inherit;
     outline: none;
     color: white;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
     height: 5vh;
     width: 25vw;
     padding-top: 4vh;
 }
 
 .modal{
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
@@ -287,22 +276,52 @@ footer > .footerContact > .footerContactSocialMedia > .footerSocialMediaDiv > h3
     width: 80%;
 }
 
-#about > .modal-content > h3{
+
+
+#about > .modal-content > #about-header > h1{
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
-    font-family: "Arial Black";
-    font-size: 1.5vw;
+    font-family: "Berlin Sans FB";
+    font-size: 4vw;
+    padding-top: 2vh;
+    padding-left: 2vw;
+    padding-bottom: 2vh;
+    color: white;
+    font-style: italic;
+}
+
+#about > .modal-content > div > h2{
+    padding-left: 2vw;
+    font-size: 2.5vw;
+}
+
+#about > .modal-content > div > ul > li > h2{
+    padding-left: 2vw;
+    font-size: 2.5vw;
+}
+
+#about > .modal-content > div > h3{
+    height: auto;
+    margin: 0vh 0vw 0vh 0vw;
+    font-family: "Berlin Sans FB";
+    font-size: 2vw;
     padding-top: 2vh;
     padding-left: 2vw;
     color: white;
 }
 
-#about > .modal-content > h1{
+#about > .modal-content > div > ol > li > h4{
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
-    font-family: "Arial Black";
-    font-size: 5vw;
+    font-family: "Berlin Sans FB";
+    font-size: 1.3vw;
     padding-top: 2vh;
     padding-left: 2vw;
     color: white;
 }
+
+#about > .modal-content > div > ol > li{
+    font-family: "Berlin Sans FB";
+    font-size: 1.3vw;
+}
+

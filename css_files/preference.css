@@ -15,7 +15,7 @@
 #preference-section > #preference-form > #preference-form-title > h3 {
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
     font-size: 1.5vw;
     padding-left: 2vw;
     padding-top: 2.5vh;
@@ -40,7 +40,7 @@
 #preference-section > #preference-form > #preference-form-div > .preference-form > h3 {
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
     font-size: 1.5vw;
     /*padding-top: 3vh;*/
     padding-left: 2vw;
@@ -50,7 +50,7 @@
 #preference-section > #preference-form > #preference-form-div > .preference-form > #preference-keys > h4 {
     height: auto;
     margin: 0;
-    font-family: "Arial Black";
+    font-family: "Berlin Sans FB";
     font-size: 1vw;
     padding-left: 2vw;
     padding-top: 1vh;
