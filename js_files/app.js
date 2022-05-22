@@ -33,7 +33,7 @@ $(document).ready(function () {
 		return /^[a-zA-Z]+$/.test(value);
 	});
 
-	//Checks if username ia already exists
+	//Checks if username is already exists
 	$.validator.addMethod("validUserName", function(value){
 		let is_valid = users.some(e => e.username == value);
 		if (is_valid == true){
@@ -125,6 +125,38 @@ $(document).ready(function () {
 	});
 });
 
+$(document).ready(function () {
+
+	//Checks if username exists
+	$.validator.addMethod("existsUserName", function(value) {
+		return users.some(e => e.username == value);
+	});
+
+	$("#login-section-form").validate({
+		rules: {
+			loginFormUserName: {
+				required: true,
+				existsUserName: true
+			},
+
+			loginFormPassword: {
+				required: true,
+			}
+		},
+
+		messages: {
+			registerFormUserName: {
+				existsUserName: "This username is not exists",
+				required: "Please enter a username"
+			},
+
+			registerFormPassword: {
+				required: "Please enter a password"
+			}
+		}
+	});
+});
+
 
 $(document).ready(function() {
 	$("#play-section").hide();
@@ -133,6 +165,8 @@ $(document).ready(function() {
 	$("#about").hide();
 	$("#play-menu-btn").hide();
 	$("#logout-menu-btn").hide();
+	// $("#container_header_loggedin").hide();
+	// $("#container_header").show();
 
 
 	if (loggedInUser != null){
@@ -273,6 +307,9 @@ function logIn(){
 
 function setLogIn() {
 	// $("#welcome-section-loggedIn").show();
+	// $("#usernamep").value(loggedInUser.username);
+	// $("#container_header_loggedin").show();
+	// $("#container_header").hide();
 	$("#preference-section").show();
 	$("#welcome-section-notLoggedIn").hide();
 	$("#play-section").hide();
@@ -291,6 +328,8 @@ function logout(){
 
 function setLogOut(){
 	// $("#welcome-section-loggedIn").hide();
+	// $("#container_header_loggedin").hide();
+	// $("#container_header").show();
 	$("#welcome-section-notLoggedIn").show();
 	$("#play-section").hide();
 	$("#register-section").hide();

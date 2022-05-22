@@ -22,7 +22,7 @@ body{
     height: 25%;
 }
 
-#names{
+.names{
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
     font-family: "Berlin Sans FB";
@@ -30,7 +30,7 @@ body{
     font-style: italic;
 }
 
-#logo{
+.logo{
     text-align: center;
     justify-content: center;
     padding-top: 0%;
@@ -38,6 +38,20 @@ body{
     width: 35%;
     height: 17.5%;
 }
+
+/*#container_header_loggedin > header > #label{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+
+/*#container_header_loggedin > header > #label > #usernamep{*/
+/*    height: auto;*/
+/*    margin: 0vh 0vw 0vh 0vw;*/
+/*    font-family: "Berlin Sans FB";*/
+/*    font-size: medium;*/
+/*    font-style: italic;*/
+/*    color: white;*/
+/*}*/
 
 #Menu-container{
     /*margin: 0px;*/

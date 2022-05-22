@@ -25,13 +25,27 @@
 		<div id="container_header">
 			<header>
 				<center>
-					<img id="logo" src="media/images/PacMan.png">
-					<h3 id="names">
+					<img class="logo" src="media/images/PacMan.png">
+					<h3 class="names">
 						Yuval Cohen & Noa Magrisso
 					</h3>
 				</center>
 			</header>
 		</div>
+
+<!--		<div id="container_header_loggedin">-->
+<!--			<header>-->
+<!--				<center>-->
+<!--					<img class="logo" src="media/images/PacMan.png">-->
+<!--					<h3 class="names">-->
+<!--						Yuval Cohen & Noa Magrisso-->
+<!--					</h3>-->
+<!--				</center>-->
+<!--				<div id="label">-->
+<!--					<p id="usernamep"> </p>-->
+<!--				</div>-->
+<!--			</header>-->
+<!--		</div>-->
 
 		<div id="Menu-container">
 			<ul id="menu">
@@ -100,8 +114,8 @@
 					<h2>Log In</h2>
 				</div>
 				<div id="login-fill-in-div">
-					<input class="inputRequest" type="text" placeholder="User Name" id="loginFormUserName"/>
-					<input class="inputRequest" type="password" placeholder="Password" id="loginFormPassword"/>
+					<input class="inputRequest" type="text" placeholder="User Name" id="loginFormUserName" required/>
+					<input class="inputRequest" type="password" placeholder="Password" id="loginFormPassword" required/>
 				</div>
 				<div id="submitLogInButtonD">
 					<button type="submit" class="btn" data-text="color" onclick="return logIn()">LOGIN</button>
@@ -367,5 +381,16 @@
 			document.getElementById("about").style.display = "none";
 		}
 
+		window.onclick = function (event){
+			if (event.target == document.getElementById("about")){
+				document.getElementById("about").style.display = "none";
+			}
+		}
+
+		document.addEventListener('keyup', function (event){
+			if (event.keyCode == 27){
+				document.getElementById("about").style.display = "none";
+			}
+		})
 	</script>
 </html>
