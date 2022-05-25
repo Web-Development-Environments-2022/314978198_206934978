@@ -151,8 +151,14 @@ input[type="range"]::-moz-range-thumb{
     width: 10vw;
     height: 5vh;
     text-align: center;
-    padding-top: 3vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     cursor: pointer;
+    font-family: "Berlin Sans FB";
+    display: flex;
+    font-style: italic;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 #preference-section > #preference-form > .colorsSetSet > .rangeW > #rangeBalls {
