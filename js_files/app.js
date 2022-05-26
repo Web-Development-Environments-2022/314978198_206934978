@@ -460,23 +460,23 @@ function Start() {
 	//   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
 		[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], //1
 		[4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4], //2
-		[4, 0, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], //3
-		[4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 4], //4
-		[4, 4, 4, 4, 4, 4, 0, 4, 4, 0, 4, 0, 4, 4, 4, 4, 4, 4], //5
-		[4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 4, 0, 4, 4, 4, 4, 4, 4], //6
-		[4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], //7
-		[4, 4, 0, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], //8
-		[4, 4, 0, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], //9
-		[4, 0, 0, 0, 0, 4, 0, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 4], //10
-		[4, 0, 4, 4, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], //11
-		[4, 0, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], //12
-		[4, 0, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], //13
-		[4, 0, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], //14
-		[4, 0, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 0, 0, 0, 0, 0, 4], //15
-		[4, 0, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4], //16
-		[4, 0, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4], //17
-		[4, 0, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4], //18
-		[4, 3, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4], //19
+		[4, 0, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4], //3
+		[4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 4], //4
+		[4, 0, 4, 4, 4, 4, 0, 4, 4, 0, 4, 0, 4, 4, 4, 4, 0, 4], //5
+		[4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4], //6
+		[4, 0, 4, 4, 4, 4, 0, 4, 4, 4, 0, 4, 0, 0, 0, 4, 4, 4], //7
+		[4, 0, 0, 0, 0, 0, 0, 4, 4, 4, 0, 4, 4, 4, 0, 0, 4, 4], //8
+		[4, 4, 0, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4], //9
+		[4, 0, 0, 0, 0, 4, 0, 4, 4, 4, 0, 4, 4, 4, 0, 0, 0, 4], //10
+		[4, 0, 4, 4, 0, 0, 0, 0, 4, 4, 0, 4, 4, 4, 0, 4, 0, 4], //11
+		[4, 0, 4, 4, 4, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4], //12
+		[4, 0, 4, 4, 4, 0, 4, 0, 4, 0, 4, 4, 4, 0, 4, 4, 4, 4], //13
+		[4, 0, 0, 0, 0, 0, 0, 0, 4, 0, 4, 4, 4, 0, 4, 4, 4, 4], //14
+		[4, 0, 4, 0, 4, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4], //15
+		[4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 4, 4, 0, 4, 4, 0, 4], //16
+		[4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 4], //17
+		[4, 0, 4, 4, 0, 4, 4, 0, 4, 0, 4, 4, 4, 0, 0, 0, 0, 4], //18
+		[4, 3, 0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 4, 4, 3, 4], //19
 		[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]  //20
 	];
 
@@ -584,7 +584,7 @@ function GetKeyPressed() {
 	}
 }
 
-function Draw(dirPac) {
+function Draw() {
 	canvas.width = canvas.width;//crlean boad
 	// alert(canvas.width);
 	lblScore.value = score;
@@ -606,21 +606,27 @@ function Draw(dirPac) {
 
 				let pacman_gif = new Image();
 
-				if (dirPac == "Right"){
-					pacman_gif.src = "media/images/pacmanGifRight.gif"
+				if (directionPac == "Right"){
+					pacman_gif.src = "media/images/pacmanGifRight.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 				}
-				else if (dirPac == "Down"){
-					pacman_gif = "media/images/pacmanGifDown.gif";
+				else if (directionPac == "Down"){
+					pacman_gif.src = "media/images/pacmanGifDown.jpg";
+					console.log(typeof pacman_gif);
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
+					// console.log("here");
 				}
-				else if (dirPac == "Left"){
-					pacman_gif = "media/images/pacmanGifLeft.gif";
+				else if (directionPac == "Left"){
+					pacman_gif.src = "media/images/pacmanGifLeft.jpg";
+					console.log(typeof pacman_gif);
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
+					// console.log("here");
 				}
-				else if (dirPac == "Up"){
-					pacman_gif = "media/images/pacmanGifUp.gif";
+				else if (directionPac == "Up"){
+					pacman_gif.src = "media/images/pacmanGifUp.jpg";
+					console.log(typeof pacman_gif);
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
+					// console.log("here");
 				}
 			}
 			else if (board[i][j] == 5) {
@@ -677,24 +683,28 @@ function UpdatePosition() {
 	if (x == 1) { //Up
 		if (shape.j > 0 && board[shape.i][shape.j - 1] != 4) {
 			shape.j--;
+			console.log("Up");
 			directionPac = "Up";
 		}
 	}
 	if (x == 2) { //Down
-		if (shape.j < 9 && board[shape.i][shape.j + 1] != 4) {
+		if (shape.j < cols && board[shape.i][shape.j + 1] != 4) {
 			shape.j++;
+			console.log("Down");
 			directionPac = "Down";
 		}
 	}
 	if (x == 3) { //Left
 		if (shape.i > 0 && board[shape.i - 1][shape.j] != 4) {
 			shape.i--;
+			console.log("Left");
 			directionPac = "Left";
 		}
 	}
 	if (x == 4) { //Right
-		if (shape.i < 9 && board[shape.i + 1][shape.j] != 4) {
+		if (shape.i < rows && board[shape.i + 1][shape.j] != 4) {
 			shape.i++;
+			console.log("Right");
 			directionPac = "Right";
 		}
 	}
@@ -712,7 +722,7 @@ function UpdatePosition() {
 	}
 	else{
 		board[shape.i][shape.j] = 2;
-		if (!flagMonsterts){
+		if (flagMonsterts == false){
 			UpdatePositionMonsters();
 			flagMonsterts = true;
 		}
@@ -727,25 +737,25 @@ function UpdatePosition() {
 	if (time_elapsed > limitTime){
 		//audio
 		window.clearInterval(interval);
-		//winner or loser
-		Draw();
+		window.alert("Game completed"); //TODO:CHANGE TO WINNER OR LOSER
+		Draw("Right");
 	}
 
 	if (score == 50) {
 		window.clearInterval(interval);
 		window.alert("Game completed");
 	} else {
-		Draw();
+		Draw("Right");
 	}
 
 	if (life == 0){
 		//audio
 		window.clearInterval(interval);
-		//winner or loser
-		Draw();
+		window.alert("Game completed"); //TODO:CHANGE TO WINNER OR LOSER
+		Draw("Right");
 	}
 	else {
-		directionPac = "Right"
+		directionPac = "Right";
 		Draw(directionPac);
 	}
 }
@@ -753,11 +763,11 @@ function UpdatePosition() {
 function BFS(start, end){
 	var next = null;
 	let visited = new Set();
-	let closed_list = new Set();
 	let dist = Array(rows).fill().map(() => Array(cols).fill(-1));
 	let q = [];
 	q.push(start);
-	visited.add(start.toString()); //Check why toString()!!!!
+
+	visited.add(start.toString()); //TODO:Check why toString()!!!!
 
 	let moveR = [0, -1, 0, 1];
 	let moveC = [-1, 0, 1, 0];
@@ -779,7 +789,6 @@ function BFS(start, end){
 		}
 	}
 
-	//????
 	if (dist[end[0]][end[1]] == -1){
 		console.log("Path not exist");
 	}
@@ -808,6 +817,7 @@ function ResetMonsterPosition(){
 
 	let emptyCell = findRandomEmptyCell(board);
 
+	board[shape.i][shape.j] = 0;
 	//New position to Pacman
 	shape.i = emptyCell[0];
 	shape.j = emptyCell[1];
@@ -845,6 +855,7 @@ function UpdatePositionMonsters(){
 	for (let m = 0; m < monstersNum; m++){
 		var next = BFS([shape.i, shape.j], [monsters[m].i, monsters[m].j]);
 		board[monsters[m].i][monsters[m].j] = monstersSteps[m];
+		// console.log(monstersSteps[m]);
 
 		if (board[next[0]][next[1]] == 3){
 			monstersSteps[m] = findMonster(next[0], next[1]);
@@ -857,6 +868,7 @@ function UpdatePositionMonsters(){
 			board[next[0]][next[1]] = 3;
 			monsters[m].i = next[0];
 			monsters[m].j = next[1];
+			pacmanEaten = true;
 			break;
 		}
 
