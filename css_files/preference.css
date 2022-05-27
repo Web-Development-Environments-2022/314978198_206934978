@@ -123,8 +123,6 @@ input[type="range"]::-moz-range-thumb{
 }
 
 .colorsSet {
-    /*width: 40vw;*/
-    /*height: 5vh;*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,7 +133,6 @@ input[type="range"]::-moz-range-thumb{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-
 }
 
 #preference-keys{
@@ -185,13 +182,7 @@ input[type="range"]::-moz-range-thumb{
     width: 40vw;
     height: 10vh;
     cursor: pointer;
-    /*opacity: 1;*/
 }
-
-/*.rangeSet > .rangeW > .range-val{*/
-/*    position: absolute;*/
-/*    top: -15%;*/
-/*}*/
 
 #preference-section > #preference-form > #preference-form-div > .preference-form > .rangeSet > .rangeW > .range-val span {
     width: 30px;
@@ -231,8 +222,6 @@ input[type="range"]::-moz-range-thumb{
     display: -webkit-flex;
     display: flex;
     height: 100%;
-    /*align: center;*/
-
 }
 
 .preference-form::after {
@@ -241,9 +230,7 @@ input[type="range"]::-moz-range-thumb{
     background-color: #d66e3b;
     content: " ";
     width: 100%;
-    /*margin: 0 auto;*/
     margin-top: 2vh;
-    /*margin-bottom: 1vh;*/
 }
 
 .submitButtonD{
@@ -252,8 +239,8 @@ input[type="range"]::-moz-range-thumb{
     flex-direction: row;
 }
 
-.preference-section-form-att {
-    display: flex;
-    justify-content: space-evenly;
-}
+/*.preference-section-form-att {*/
+/*    display: flex;*/
+/*    justify-content: space-evenly;*/
+/*}*/
 

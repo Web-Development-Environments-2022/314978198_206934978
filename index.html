@@ -215,31 +215,91 @@
 
 		<section id="play-section">
 			<div id="row">
-<!--				class="row"-->
 				<div id="preferences-selected">
-					<h3 id="preferences-selected-header">Game Preferences</h3>
-					<p id="preferences-selected-balls"></p>
-					<p id="preferences-selected-monsters"></p>
-					<p id="preferences-selected-time"></p>
-					<p id="preferences-selected-username"></p>
+					<h2>Game Preferences</h2>
+					<div class="preference-form">
+						<h3>Keys:</h3>
+						<div class="preference-key">
+							<div class="keySet">
+								<p class="pref-btn" id="preferences-selected-key-up">UP</p>
+							</div>
+							<div class="keySet">
+								<p class="pref-btn" id="preferences-selected-key-left">LEFT</p>
+								<p class="pref-btn" id="preferences-selected-key-down">DOWN</p>
+								<p class="pref-btn" id="preferences-selected-key-right">RIGHT</p>
+							</div>
+						</div>
+					</div>
+					<div class="preference-form">
+						<h3>
+							Number of balls:
+						</h3>
+						<div class="rangeSet">
+							<div class="rangeW">
+								<div class="range-val"></div>
+								<input type="range" id="rangeGameBalls" min="50" max="90" value="70" step="1"/>
+							</div>
+						</div>
+					</div>
+					<div class="preference-form">
+						<h3>
+							The colors of the balls :
+						</h3>
+						<div class="preference-form-colors">
+							<div class="colorsSet">
+								<label>5 pts.</label>
+								<input type="color" id="pref-game-5-pts" value="#FFFFCC" class="clickable"/>
+							</div>
+							<div class="colorsSet">
+								<label>15 pts.</label>
+								<input type="color" id="pref-game-15-pts" value="#CCFFE5" class="clickable"/>
+							</div>
+							<div class="colorsSet">
+								<label>25 pts.</label>
+								<input type="color" id="pref-game-25-pts" value="#CCE5FF" class="clickable"/>
+							</div>
+						</div>
+					</div>
+					<div class="preference-form">
+						<h3>
+							Time:
+						</h3>
+						<div class="rangeSet">
+							<div class="rangeW">
+								<div class="range-val"></div>
+								<input type="range" id="rangeGameTime" min="60" max="100" value="60" step="1"/>
+							</div>
+						</div>
+					</div>
+					<div class="preference-form">
+						<h3>
+							Number of monsters:
+						</h3>
+						<div class="rangeSet">
+							<div class="rangeW">
+								<div class="range-val"></div>
+								<input type="range" id="rangeGameMonsters" min="1" max="4" value="3" step="1"/>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div id="game">
-				<canvas id="canvas" width="850" height="600"></canvas>
+				<canvas id="canvas" width="650" height="600"></canvas>
 			</div>
 			<div id="game-details">
 				<form id="game-details-form">
-					<div id="score">
+					<div class="detailsSet">
 						<h3>Score</h3>
-						<input id="score-input" type="text"/>
+						<input id="scoreInput" type="text"/>
 					</div>
-					<div id="timer">
+					<div class="detailsSet">
 						<h3>Timer</h3>
-						<input id="timer-input" type="text"/>
+						<input id="timerInput" type="text"/>
 					</div>
-					<div id="life">
+					<div class="detailsSet">
 						<h3>Life</h3>
-						<input id="life-input" type="text"/>
+						<input id="lifeInput" type="text"/>
 					</div>
 				</form>
 			</div>

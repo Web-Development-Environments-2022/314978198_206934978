@@ -8,7 +8,7 @@ var monsters = [new Object(), new Object(), new Object(), new Object()];
 var monstersStartPosition = [[1, 1], [1, 16], [18, 1], [18, 16]];
 var monstersSteps = [0, 0, 0, 0];
 var flagMonsterts = false;
-var score;
+var score = 0;
 var pac_color;
 var start_time;
 var time_elapsed;
@@ -437,10 +437,17 @@ function setUserPreferences(){
 	ball25color = $("#pref-25-pts").val();
 	life = 5;
 
-	$("#preferences-selected-balls").html("Number of balls: " + ballsNum);
-	$("#preferences-selected-monsters").html("Number of monsters: " + monstersNum);
-	$("#preferences-selected-time").html("Time limit: " + limitTime);
-	$("#preferences-selected-username").html("User: " + loggedInUser["username"]);
+
+	// $("#preferences-selected-key-up").text(String.fromCharCode(up_key));
+	// $("#preferences-selected-key-left").text(String.fromCharCode(left_key));
+	// $("#preferences-selected-key-down").text(String.fromCharCode(down_key));
+	// $("#preferences-selected-key-right").text(String.fromCharCode(right_key));
+	$("#pref-game-5-pts").val(ball5color);
+	$("#pref-game-15-pts").val(ball15color);
+	$("#pref-game-25-pts").val(ball25color);
+	$("#rangeGameBalls").val(ballsNum);
+	$("#rangeGameTime").val(limitTime);
+	$("#rangeGameBalls").val(monstersNum);
 
 	// context = canvas.getContext("2d");
 	Start();
@@ -628,8 +635,10 @@ function GetKeyPressed() {
 function Draw() {
 	canvas.width = canvas.width;//crlean boad
 	// alert(canvas.width);
-	lblScore.value = score;
-	lblTime.value = time_elapsed;
+	$("#scoreInput").val(score);
+	$("#timerInput").val(limitTime - time_elapsed);
+	// $("#timerInput").value = limitTime - time_elapsed;
+
 
 	for (var i = 0; i < board.length; i++) {
 		for (var j = 0; j < board[0].length; j++) {

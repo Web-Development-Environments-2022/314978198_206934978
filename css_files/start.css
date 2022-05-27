@@ -10,10 +10,10 @@
     justify-content: space-between;
 }
 
-#play-section label,
-#play-section h3 {
-    font-size: 1.5vw;
-}
+/*#play-section label,*/
+/*#play-section h3 {*/
+/*    font-size: 1.5vw;*/
+/*}*/
 
 #play-section div p {
     font-size: 1.5vw;
@@ -22,30 +22,64 @@
 #row{
     float: left;
     width: 10vw;
-    padding-left: 5vw;
+    padding-left: 1vw;
 }
 
 #game{
-    /*float: ;*/
     align-items: center;
-
-    /*padding-left: 15vw;*/
-    /*width: 60vw;*/
-    /*height: 160vh;*/
-    /*width: vw;*/
 }
 
 #game > #canvas{
     /* float: left; */
     display: block;
     padding-left: 10vw;
+    padding-right: 5vw;
 }
 
-#timer{
+.h2{
 
 }
 
+#play-section > #game-details > #game-details-form > .detailsSet{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+}
 
+#play-section > #game-details > #game-details-form > .detailsSet > h3{
+    height: auto;
+    margin: 0vh 0vw 0vh 0vw;
+    font-family: "Berlin Sans FB";
+    font-size: 1.5vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-right: 1vw;
+    color: white;
+}
 
-/*width="700" height="620"*/
+#play-section > #row > #preferences-selected > .preference-form > h3{
+    height: auto;
+    margin: 0vh 0vw 0vh 0vw;
+    font-family: "Berlin Sans FB";
+    font-size: 1.5vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-right: 1vw;
+    color: white;
+}
 
+#play-section > #game-details > #game-details-form > .detailsSet > input{
+    height: auto;
+    width: 7vw;
+    margin: 0vh 0vw 0vh 0vw;
+    font-size: 1.5vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-right: 1vw;
+    background: none;
+    border: none;
+    font-family: "Berlin Sans FB";
+    color: white;
+}
