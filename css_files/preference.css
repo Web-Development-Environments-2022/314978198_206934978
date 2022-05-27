@@ -78,11 +78,13 @@
 
 .rangeSet {
     width: 80%;
+    height: auto;
 }
 
 .rangeW{
     padding-left: 6vw;
-    padding-top: 2vh;
+    padding-top: 7vh;
+    height: 10vh;
 }
 
 input[type="range"] {
@@ -186,27 +188,37 @@ input[type="range"]::-moz-range-thumb{
     /*opacity: 1;*/
 }
 
-.range-val span {
+/*.rangeSet > .rangeW > .range-val{*/
+/*    position: absolute;*/
+/*    top: -15%;*/
+/*}*/
+
+#preference-section > #preference-form > #preference-form-div > .preference-form > .rangeSet > .rangeW > .range-val span {
     width: 30px;
     height: 24px;
     line-height: 24px;
     text-align: center;
-    background: #03a9f4;
+    background: #f8e76e;
     color: black;
     font-size: 12px;
-    display: block;
+    display: flex;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(0, -130%);
     border-radius: 6px;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Berlin Sans FB";
 }
 
-.range-val span:before {
+#preference-section > #preference-form > #preference-form-div > .preference-form > .rangeSet > .rangeW > .range-val span:before {
     content: "";
-    position: absolute;
+    position: inherit;
     width: 0;
     height: 0;
-    border-top: 10px solid #03a9f4;
+    border-top: 10px solid #f8e76e;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     top: 100%;

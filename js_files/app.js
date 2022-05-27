@@ -249,6 +249,47 @@ $(document).ready(function() {
 	// Start();
 });
 
+$(document).ready(function() {
+	const rangeBalls = document.getElementById('rangeBalls');
+	const rangeValueBalls = document.getElementById('range-value-balls');
+	const setValueBalls = () => {
+		const newVal = Number((rangeBalls.value - rangeBalls.min) * 100 / (rangeBalls.max - rangeBalls.min));
+		const newPosition = 10 - (newVal * 0.2);
+		rangeValueBalls.innerHTML = `<span>${rangeBalls.value}</span>`;
+		rangeValueBalls.style.left = `calc(${newVal}% + ${newPosition}%)`;
+	};
+	document.addEventListener("ContactLoaded", setValueBalls);
+	rangeBalls.addEventListener('input', setValueBalls);
+
+
+	const rangeTime = document.getElementById('rangeTime');
+	const rangeValueTime = document.getElementById('range-value-time');
+	const setValueTime = () => {
+		const newVal = Number((rangeTime.value - rangeTime.min) * 100 / (rangeTime.max - rangeTime.min));
+		const newPosition = 10 - (newVal * 0.2);
+		rangeValueTime.innerHTML = `<span>${rangeTime.value}</span>`;
+		rangeValueTime.style.left = `calc(${newVal}% + ${newPosition}%)`;
+	};
+	document.addEventListener("ContactLoaded", setValueTime);
+	rangeTime.addEventListener('input', setValueTime);
+
+
+	const rangeMonsters = document.getElementById('rangeMonsters');
+	const rangeValueMonsters = document.getElementById('range-value-monsters');
+	const setValueMonsters = () => {
+		const newVal = Number((rangeMonsters.value - rangeMonsters.min) * 100 / (rangeMonsters.max - rangeMonsters.min));
+		const newPosition = 10 - (newVal * 0.2);
+		rangeValueMonsters.innerHTML = `<span>${rangeMonsters.value}</span>`;
+		rangeValueMonsters.style.left = `calc(${newVal}% + ${newPosition}%)`;
+	};
+	document.addEventListener("ContactLoaded", setValueMonsters);
+	rangeMonsters.addEventListener('input', setValueMonsters);
+
+	setValueBalls();
+	setValueTime();
+	setValueMonsters();
+});
+
 $(document).ready(function(){
 	let canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");

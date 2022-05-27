@@ -223,20 +223,27 @@
 					<p id="preferences-selected-time"></p>
 					<p id="preferences-selected-username"></p>
 				</div>
-				<div id="preferences-selected-2">
-					<h3>Game Details</h3>
-					<div id="score">
-						<p id="lblScore"></p>
-					</div>
-					<div id="time">
-						<p id="lblTime"></p>
-					</div>
-					<div id="lives"></div>
-				</div>
 			</div>
 			<div id="game">
 				<canvas id="canvas" width="850" height="600"></canvas>
 			</div>
+			<div id="game-details">
+				<form id="game-details-form">
+					<div id="score">
+						<h3>Score</h3>
+						<input id="score-input" type="text"/>
+					</div>
+					<div id="timer">
+						<h3>Timer</h3>
+						<input id="timer-input" type="text"/>
+					</div>
+					<div id="life">
+						<h3>Life</h3>
+						<input id="life-input" type="text"/>
+					</div>
+				</form>
+			</div>
+
 		</section>
 
 
@@ -392,5 +399,13 @@
 				document.getElementById("about").style.display = "none";
 			}
 		})
+
+		// Deprecated code!
+		window.addEventListener("keydown", function(e) {
+			// space and arrow keys
+			if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+				e.preventDefault();
+			}
+		}, false);
 	</script>
 </html>

@@ -5,6 +5,9 @@
     padding: 5% 0 10% 0;
     width: 90vw;
     height: 90vh;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: space-between;
 }
 
 #play-section label,
@@ -23,15 +26,23 @@
 }
 
 #game{
-    float: left;
+    /*float: ;*/
+    align-items: center;
+
     /*padding-left: 15vw;*/
-    width: auto;
-    height: auto;
+    /*width: 60vw;*/
+    /*height: 160vh;*/
     /*width: vw;*/
 }
 
 #game > #canvas{
-    float: left;
+    /* float: left; */
+    display: block;
+    padding-left: 10vw;
+}
+
+#timer{
+
 }
 
 
