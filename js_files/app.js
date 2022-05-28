@@ -1,5 +1,5 @@
-//bord: 0 -> empty cell, 1 -> 2-> pacman position, 3 -> monsters, 4 -> wall, 5 -> 5 points food, 15 -> 15 points food,
-// 		25 -> 25 points food, 30 -> special coin,
+//bord: 0 -> empty cell, 2-> pacman position, 3 -> monsters, 4 -> wall, 5 -> 5 points food, 15 -> 15 points food,
+// 		25 -> 25 points food, 30 -> special coin, 40 -> clock, 50 -> heart
 var context;
 var shape = new Object();
 var board;
@@ -11,6 +11,8 @@ var monstersStartPosition = [[1, 1], [1, 16], [18, 1], [18, 16]];
 var monstersSteps = [0, 0, 0, 0];
 var flagMonsterts = false;
 var specialCoin = new Object();
+var clock = new Object();
+var heart = new Object();
 var score = 0;
 var pac_color;
 var start_time;
@@ -604,6 +606,16 @@ function Start() {
 	specialCoin.j = 10;
 	board[9][10] = 30;
 
+	var emptyCell = findRandomEmptyCell(board);
+	board[emptyCell[0]][emptyCell[1]] = 40;
+	clock.i = emptyCell[0];
+	clock.j = emptyCell[1];
+
+	var emptyCell = findRandomEmptyCell(board);
+	board[emptyCell[0]][emptyCell[1]] = 50;
+	heart.i = emptyCell[0];
+	heart.j = emptyCell[1];
+
 
 	// var img = document.createElement("heart");
 	// img.setAttribute("src", "media/images/heart.jpg");
@@ -685,24 +697,24 @@ function Draw() {
 
 				if (directionPac == "Right"){
 					let pacman_gif = new Image();
-					pacman_gif.src = "media/images/pacmanRight.jpg";
+					pacman_gif.src = "media/images/pacmanGifRight.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 				}
 				else if (directionPac == "Down"){
 					let pacman_gif = new Image();
-					pacman_gif.src = "media/images/pacmanDown.jpg";
+					pacman_gif.src = "media/images/pacmanGifDown.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 					// console.log("here");
 				}
 				else if (directionPac == "Left"){
 					let pacman_gif = new Image();
-					pacman_gif.src = "media/images/pacmanLeft.jpg";
+					pacman_gif.src = "media/images/pacmanGifLeft.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 					// console.log("here");
 				}
 				else if (directionPac == "Up"){
 					let pacman_gif = new Image();
-					pacman_gif.src = "media/images/pacmanUp.jpg";
+					pacman_gif.src = "media/images/pacmanGifUp.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 					// console.log("here");
 				}
@@ -756,6 +768,16 @@ function Draw() {
 				img.src = "media/images/specialCoin.jpg";
 				context.drawImage(img, center.x - 10, center.y - 10, 15, 15);
 			}
+			else if (board[i][j] == 40){
+				let img = new Image();
+				img.src = "media/images/clock.png";
+				context.drawImage(img, center.x - 10, center.y - 10, 15, 15);
+			}
+			else if (board[i][j] == 50){
+				let img = new Image();
+				img.src = "media/images/heartLife.png";
+				context.drawImage(img, center.x - 10, center.y - 10, 15, 15);
+			}
 		}
 	}
 }
@@ -766,28 +788,24 @@ function UpdatePosition() {
 	if (x == 1) { //Up
 		if (shape.j > 0 && board[shape.i][shape.j - 1] != 4) {
 			shape.j--;
-			console.log("Up");
 			directionPac = "Up";
 		}
 	}
 	if (x == 2) { //Down
 		if (shape.j < cols && board[shape.i][shape.j + 1] != 4) {
 			shape.j++;
-			console.log("Down");
 			directionPac = "Down";
 		}
 	}
 	if (x == 3) { //Left
 		if (shape.i > 0 && board[shape.i - 1][shape.j] != 4) {
 			shape.i--;
-			console.log("Left");
 			directionPac = "Left";
 		}
 	}
 	if (x == 4) { //Right
 		if (shape.i < rows && board[shape.i + 1][shape.j] != 4) {
 			shape.i++;
-			console.log("Right");
 			directionPac = "Right";
 		}
 	}

@@ -190,13 +190,13 @@ label {
 }
 
 #preference-section > #preference-form > #preference-form-div > .preference-form > .rangeSet > .rangeW > .range-val span {
-    width: 30px;
-    height: 24px;
-    line-height: 24px;
+    width: 3vw;
+    height: 3vh;
+    line-height: 3vh;
     text-align: center;
     background: #f8e76e;
     color: black;
-    font-size: 12px;
+    font-size: 1vw;
     display: flex;
     position: absolute;
     left: 50%;
