@@ -128,6 +128,11 @@ input[type="range"]::-moz-range-thumb{
     align-items: center;
 }
 
+label {
+    font-size: 1vw;
+    font-family: "Berlin Sans FB";
+}
+
 #preference-form-colors{
     display: flex;
     flex-direction: row;
@@ -160,7 +165,7 @@ input[type="range"]::-moz-range-thumb{
     justify-content: space-around;
 }
 
-#preference-section > #preference-form > .colorsSetSet > .rangeW > #rangeBalls {
+#preference-section > #preference-form > .rangeSet > .rangeW > #rangeBalls {
     -webkit-appearance: none;
     appearance: none;
     width: 40vw;
@@ -172,11 +177,11 @@ input[type="range"]::-moz-range-thumb{
     transition: opacity 0.2s;
 }
 
-#preference-section > #preference-form > .colorsSet > .rangeW > #rangeBalls:hover{
+#preference-section > #preference-form > .rangeSet > .rangeW > #rangeBalls:hover{
     opacity: 1;
 }
 
-#preference-section > #preference-form > .colorsSet > .rangeW > #rangeBalls::-webkit-slider-thumb{
+#preference-section > #preference-form > .rangeSet > .rangeW > #rangeBalls::-webkit-slider-thumb{
     -webkit-appearance: none;
     appearance: none;
     width: 40vw;

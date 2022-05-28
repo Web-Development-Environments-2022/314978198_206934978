@@ -437,7 +437,7 @@ function setUserPreferences(){
 	ball25color = $("#pref-25-pts").val();
 	life = 5;
 
-
+	//TODO:KEYS!!
 	// $("#preferences-selected-key-up").text(String.fromCharCode(up_key));
 	// $("#preferences-selected-key-left").text(String.fromCharCode(left_key));
 	// $("#preferences-selected-key-down").text(String.fromCharCode(down_key));
@@ -445,6 +445,7 @@ function setUserPreferences(){
 	$("#pref-game-5-pts").val(ball5color);
 	$("#pref-game-15-pts").val(ball15color);
 	$("#pref-game-25-pts").val(ball25color);
+	//TODO:CHECK WHY NOT WORK!!
 	$("#rangeGameBalls").val(ballsNum);
 	$("#rangeGameTime").val(limitTime);
 	$("#rangeGameBalls").val(monstersNum);
