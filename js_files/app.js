@@ -542,52 +542,58 @@ function Start() {
 	MonstertsStart();
 
 	score = 0;
-	pac_color = "yellow";
+	// pac_color = "yellow";
 	var cnt = rows * cols;
-	var food_remain = 20;
-	// var food_remain = ballsNum;
+	var food_remain = ballsNum;
+	let food5 = 0.6 * food_remain;
+	let food15 = 0.3 * food_remain;
+	let food25 = 0.1 * food_remain;
 	// var pacman_remain = 1;
 	start_time = new Date();
 
 
-	// let counter = 0;
-	// for (var i = 0; i < board.length; i++) {
-	// 	for (var j = 0; j < board[0].length; j++) {
-	// 		if ((board[i][j] == 4) || (board[i][j] == 3)){
-	// 			continue;
-	// 		}
-	// 		var randomNum = Math.random();
-	// 		if (randomNum <= (1.0 * food_remain) / cnt) {
-	// 			const random_food = Math.random();
-	// 			if (random_food <= 0.6){
-	// 				board[i][j] = 5; //food of 5 points
-	// 			}
-	// 			else if ((random_food > 0.6) && (random_food <= 0.9)){
-	// 				board[i][j] = 15; //food of 15 points
-	// 			}
-	// 			else {
-	// 				board[i][j] = 25; //food of 25 points
-	// 			}
-	// 			food_remain--;
-	// 		}
-	// 		else {
-	// 			board[i][j] = 0;
-	// 		}
-	// 		cnt--;
-	// 	}
-	// }
+	for (var i = 0; i < rows; i++) {
+		for (var j = 0; j < cols; j++) {
+			if ((board[i][j] == 4) || (board[i][j] == 3)){
+				continue;
+			}
+			var randomNum = Math.random();
+			if (randomNum <= (1.0 * food_remain) / cnt) {
+				const random_food = Math.floor(Math.random()*3);
+				if (random_food == 0 && food5 != 0){
+					board[i][j] = 5; //food of 5 points
+					food5--;
+				}
+				else if (random_food == 1 && food15 != 0){
+					board[i][j] = 15; //food of 15 points
+					food15--;
+				}
+				else if( random_food == 2 && food25 != 0){
+					board[i][j] = 25; //food of 25 points
+					food25--;
+				}
+				food_remain--;
+			}
+			else {
+				board[i][j] = 0;
+			}
+			cnt--;
+		}
+	}
 
 	while (food_remain > 0) {
-		const random_food = Math.random();
 		var emptyCell = findRandomEmptyCell(board);
-		if (random_food <= 0.6){
+		if (food5 != 0){
 			board[emptyCell[0]][emptyCell[1]] = 5; //food of 5 points
+			food5--;
 		}
-		else if ((random_food > 0.6) && (random_food <= 0.9)){
+		else if (food15 != 0){
 			board[emptyCell[0]][emptyCell[1]] = 15; //food of 15 points
+			food15--;
 		}
-		else {
+		else if(food25 != 0) {
 			board[emptyCell[0]][emptyCell[1]] = 25; //food of 25 points
+			food25--;
 		}
 		food_remain--;
 	}
@@ -794,6 +800,10 @@ function UpdatePosition() {
 		score += 25;
 	}
 
+	if (board[shape.i][shape.j] == 30){
+		score += 50;
+	}
+
 	if (board[shape.i][shape.j] == 3){
 		ResetMonsterPosition();
 	}
@@ -983,7 +993,6 @@ function UpdatePositionSpecialCoin(){
 	board[next[0]][next[1]] = 30;
 	specialCoin.i = next[0];
 	specialCoin.j = next[1];
-
 }
 
 
