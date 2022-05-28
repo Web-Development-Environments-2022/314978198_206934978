@@ -407,25 +407,21 @@ async function setKey(keyToSet){
 				case 'U':
 					up_key = e.which;
 					$("#key-up").text(e.key);
-					console.log("up");
 					break;
 
 				case 'D':
 					down_key = e.which;
 					$("#key-down").text(e.key);
-					console.log("down");
 					break;
 
 				case 'R':
 					right_key = e.which;
 					$("#key-right").text(e.key);
-					console.log("right");
 					break;
 
 				case 'L':
 					left_key = e.which;
 					$("#key-left").text(e.key);
-					console.log("left");
 					break;
 
 				default:
@@ -684,25 +680,29 @@ function Draw() {
 
 			if (board[i][j] == 2) {
 				context.beginPath();
-				//TODO:CHECK WHY NOT WORKING
-				let pacman_gif = new Image();
+				// //TODO:CHECK WHY NOT WORKING
+				// let pacman_gif = new Image();
 
 				if (directionPac == "Right"){
-					pacman_gif.src = "media/images/pacmanGifRight.jpg";
+					let pacman_gif = new Image();
+					pacman_gif.src = "media/images/pacmanRight.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 				}
 				else if (directionPac == "Down"){
-					pacman_gif.src = "media/images/pacmanGifDown.jpg";
+					let pacman_gif = new Image();
+					pacman_gif.src = "media/images/pacmanDown.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 					// console.log("here");
 				}
 				else if (directionPac == "Left"){
-					pacman_gif.src = "media/images/pacmanGifLeft.jpg";
+					let pacman_gif = new Image();
+					pacman_gif.src = "media/images/pacmanLeft.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 					// console.log("here");
 				}
 				else if (directionPac == "Up"){
-					pacman_gif.src = "media/images/pacmanGifUp.jpg";
+					let pacman_gif = new Image();
+					pacman_gif.src = "media/images/pacmanUp.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 					// console.log("here");
 				}
@@ -747,7 +747,7 @@ function Draw() {
 					context.drawImage(img, center.x - 10, center.y - 10, 15, 15);
 				}
 				else if ((i == monsters[3].i) && (j == monsters[3].j)){
-					img.src = "media/images/blueGhost.png";
+					img.src = "media/images/pinkGhost.jpg";
 					context.drawImage(img, center.x - 10, center.y - 10, 15, 15);
 				}
 			}
@@ -823,30 +823,38 @@ function UpdatePosition() {
 	var currentTime = new Date();
 	time_elapsed = (currentTime - start_time) / 1000;
 
-	if (time_elapsed > limitTime){
+	if (time_elapsed > limitTime) {
 		//audio
 		window.clearInterval(interval);
+		console.log("time");
 		window.alert("Game completed"); //TODO:CHANGE TO WINNER OR LOSER
-		Draw("Right");
+		directionPac = "Right";
+		Draw();
 	}
+	// }else {
+	// 	Draw();
+	// }
 
 	if (score == 50) {
 		window.clearInterval(interval);
+		console.log("score");
 		window.alert("Game completed");
-	} else {
-		Draw("Right");
 	}
+	// else {
+	// 	Draw();
+	// }
 
 	if (life == 0){
 		//audio
 		window.clearInterval(interval);
+		console.log("life");
 		window.alert("Game completed"); //TODO:CHANGE TO WINNER OR LOSER
-		Draw("Right");
-	}
-	else {
 		directionPac = "Right";
-		Draw(directionPac);
+		Draw();
 	}
+
+	Draw(directionPac);
+
 }
 
 function BFS(start, end){
@@ -987,7 +995,7 @@ function UpdatePositionSpecialCoin(){
 	}
 	else{
 		previousChar = findMonster(next[0], next[1]);
-		console.log(previousChar);
+		// console.log(previousChar);
 	}
 
 	board[next[0]][next[1]] = 30;
