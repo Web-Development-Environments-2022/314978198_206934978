@@ -1,3 +1,5 @@
+//bord: 0 -> empty cell, 1 -> 2-> pacman position, 3 -> monsters, 4 -> wall, 5 -> 5 points food, 15 -> 15 points food,
+// 		25 -> 25 points food, 30 -> special coin,
 var context;
 var shape = new Object();
 var board;
@@ -8,12 +10,13 @@ var monsters = [new Object(), new Object(), new Object(), new Object()];
 var monstersStartPosition = [[1, 1], [1, 16], [18, 1], [18, 16]];
 var monstersSteps = [0, 0, 0, 0];
 var flagMonsterts = false;
+var specialCoin = new Object();
 var score = 0;
 var pac_color;
 var start_time;
 var time_elapsed;
 var interval;
-//TODO: Set the keys!!
+var previousChar = 5;
 let left_key = 37;
 let up_key = 38;
 let right_key = 39;
@@ -404,26 +407,30 @@ async function setKey(keyToSet){
 				case 'U':
 					up_key = e.which;
 					$("#key-up").text(e.key);
+					console.log("up");
 					break;
 
 				case 'D':
 					down_key = e.which;
 					$("#key-down").text(e.key);
+					console.log("down");
 					break;
 
 				case 'R':
 					right_key = e.which;
 					$("#key-right").text(e.key);
+					console.log("right");
 					break;
 
 				case 'L':
 					left_key = e.which;
 					$("#key-left").text(e.key);
+					console.log("left");
 					break;
+
 				default:
 					break;
 			}
-
 		}
 	});
 }
@@ -437,18 +444,20 @@ function setUserPreferences(){
 	ball25color = $("#pref-25-pts").val();
 	life = 5;
 
-	//TODO:KEYS!!
-	// $("#preferences-selected-key-up").text(String.fromCharCode(up_key));
-	// $("#preferences-selected-key-left").text(String.fromCharCode(left_key));
-	// $("#preferences-selected-key-down").text(String.fromCharCode(down_key));
-	// $("#preferences-selected-key-right").text(String.fromCharCode(right_key));
+
+	$("#preferences-selected-key-left").text(String.fromCharCode(left_key));
+	$("#preferences-selected-key-up").text(String.fromCharCode(up_key));
+	$("#preferences-selected-key-right").text(String.fromCharCode(right_key));
+	$("#preferences-selected-key-down").text(String.fromCharCode(down_key));
+
+
 	$("#pref-game-5-pts").val(ball5color);
 	$("#pref-game-15-pts").val(ball15color);
 	$("#pref-game-25-pts").val(ball25color);
-	//TODO:CHECK WHY NOT WORK!!
-	$("#rangeGameBalls").val(ballsNum);
-	$("#rangeGameTime").val(limitTime);
-	$("#rangeGameBalls").val(monstersNum);
+	$("#balls").val(ballsNum);
+	$("#time").val(limitTime);
+	$("#monsters").val(monstersNum);
+	$("#userInput").val(loggedInUser.username);
 
 	// context = canvas.getContext("2d");
 	Start();
@@ -509,16 +518,16 @@ function Start() {
 	//   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
 		[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], //1
 		[4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4], //2
-		[4, 0, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4], //3
+		[4, 0, 4, 4, 4, 0, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0, 4], //3
 		[4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 4], //4
 		[4, 0, 4, 4, 4, 4, 0, 4, 4, 0, 4, 0, 4, 4, 4, 4, 0, 4], //5
 		[4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4], //6
-		[4, 0, 4, 4, 4, 4, 0, 4, 4, 4, 0, 4, 0, 0, 0, 4, 4, 4], //7
-		[4, 0, 0, 0, 0, 0, 0, 4, 4, 4, 0, 4, 4, 4, 0, 0, 4, 4], //8
+		[4, 0, 4, 4, 4, 4, 0, 4, 4, 4, 0, 4, 0, 0, 0, 4, 0, 4], //7
+		[4, 0, 0, 0, 0, 0, 0, 4, 4, 4, 0, 4, 4, 4, 0, 0, 0, 4], //8
 		[4, 4, 0, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4], //9
-		[4, 0, 0, 0, 0, 4, 0, 4, 4, 4, 0, 4, 4, 4, 0, 0, 0, 4], //10
-		[4, 0, 4, 4, 0, 0, 0, 0, 4, 4, 0, 4, 4, 4, 0, 4, 0, 4], //11
-		[4, 0, 4, 4, 4, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4], //12
+		[4, 0, 0, 0, 0, 0, 0, 4, 4, 4, 0, 4, 4, 4, 0, 0, 0, 4], //10
+		[4, 0, 4, 4, 4, 0, 0, 0, 4, 4, 0, 4, 4, 4, 0, 4, 0, 4], //11
+		[4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4], //12
 		[4, 0, 4, 4, 4, 0, 4, 0, 4, 0, 4, 4, 4, 0, 4, 4, 4, 4], //13
 		[4, 0, 0, 0, 0, 0, 0, 0, 4, 0, 4, 4, 4, 0, 4, 4, 4, 4], //14
 		[4, 0, 4, 0, 4, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4], //15
@@ -535,13 +544,15 @@ function Start() {
 	score = 0;
 	pac_color = "yellow";
 	var cnt = rows * cols;
-	// var food_remain = ballsNum; //TODO:Change value!!!
-	var food_remain = 10;
+	var food_remain = 20;
+	// var food_remain = ballsNum;
 	// var pacman_remain = 1;
 	start_time = new Date();
 
-	// for (var i = 0; i < board.length; i++){
-	// 	for (var j = 0; j < board[0].length; j ++){
+
+	// let counter = 0;
+	// for (var i = 0; i < board.length; i++) {
+	// 	for (var j = 0; j < board[0].length; j++) {
 	// 		if ((board[i][j] == 4) || (board[i][j] == 3)){
 	// 			continue;
 	// 		}
@@ -586,6 +597,21 @@ function Start() {
 	shape.i = emptyCell[0];
 	shape.j = emptyCell[1];
 
+	//Special Coin start position
+	specialCoin.i = 9;
+	specialCoin.j = 10;
+	board[9][10] = 30;
+
+
+	// var img = document.createElement("heart");
+	// img.setAttribute("src", "media/images/heart.jpg");
+	// img.setAttribute("width", "10px");
+	// img.setAttribute("height", "10px");
+	//
+	// for (let i = 1; i <= life; i++){
+	// 	document.getElementById("lifeInput").append(img);
+	// 	// document.getElementById("lifeInput").append(`<img src="media/images/heart.jpg">`);
+	// }
 
 	keysDown = {};
 
@@ -635,11 +661,9 @@ function GetKeyPressed() {
 
 function Draw() {
 	canvas.width = canvas.width;//crlean boad
-	// alert(canvas.width);
 	$("#scoreInput").val(score);
 	$("#timerInput").val(limitTime - time_elapsed);
-	// $("#timerInput").value = limitTime - time_elapsed;
-
+	$("#lifeInput").val(life);
 
 	for (var i = 0; i < board.length; i++) {
 		for (var j = 0; j < board[0].length; j++) {
@@ -654,7 +678,7 @@ function Draw() {
 
 			if (board[i][j] == 2) {
 				context.beginPath();
-
+				//TODO:CHECK WHY NOT WORKING
 				let pacman_gif = new Image();
 
 				if (directionPac == "Right"){
@@ -663,19 +687,16 @@ function Draw() {
 				}
 				else if (directionPac == "Down"){
 					pacman_gif.src = "media/images/pacmanGifDown.jpg";
-					console.log(typeof pacman_gif);
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 					// console.log("here");
 				}
 				else if (directionPac == "Left"){
 					pacman_gif.src = "media/images/pacmanGifLeft.jpg";
-					console.log(typeof pacman_gif);
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 					// console.log("here");
 				}
 				else if (directionPac == "Up"){
 					pacman_gif.src = "media/images/pacmanGifUp.jpg";
-					console.log(typeof pacman_gif);
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
 					// console.log("here");
 				}
@@ -723,6 +744,11 @@ function Draw() {
 					img.src = "media/images/blueGhost.png";
 					context.drawImage(img, center.x - 10, center.y - 10, 15, 15);
 				}
+			}
+			else if (board[i][j] == 30){
+				let img = new Image();
+				img.src = "media/images/specialCoin.jpg";
+				context.drawImage(img, center.x - 10, center.y - 10, 15, 15);
 			}
 		}
 	}
@@ -782,6 +808,8 @@ function UpdatePosition() {
 		}
 	}
 
+	UpdatePositionSpecialCoin();
+
 	var currentTime = new Date();
 	time_elapsed = (currentTime - start_time) / 1000;
 
@@ -818,7 +846,7 @@ function BFS(start, end){
 	let q = [];
 	q.push(start);
 
-	visited.add(start.toString()); //TODO:Check why toString()!!!!
+	visited.add(start.toString());
 
 	let moveR = [0, -1, 0, 1];
 	let moveC = [-1, 0, 1, 0];
@@ -931,6 +959,31 @@ function UpdatePositionMonsters(){
 	if (pacmanEaten){
 		ResetMonsterPosition();
 	}
+}
+
+function UpdatePositionSpecialCoin(){
+	let destinationCells = [[1, 1], [1, 16], [18, 1], [18, 16]];
+	let dest;
+	let next = null;
+
+	while (next == null){
+		dest  = destinationCells[Math.floor(Math.random() * destinationCells.length)];
+		next = BFS(dest, [specialCoin.i, specialCoin.j]);
+	}
+
+	board[specialCoin.i][specialCoin.j] = previousChar;
+	if (board[next[0]][next[1]] != 3){
+		previousChar = board[next[0]][next[1]];
+	}
+	else{
+		previousChar = findMonster(next[0], next[1]);
+		console.log(previousChar);
+	}
+
+	board[next[0]][next[1]] = 30;
+	specialCoin.i = next[0];
+	specialCoin.j = next[1];
 
 }
+
 

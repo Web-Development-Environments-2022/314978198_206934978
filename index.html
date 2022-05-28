@@ -234,12 +234,7 @@
 						<h3>
 							Number of balls:
 						</h3>
-						<div class="rangeSet">
-							<div class="rangeW">
-								<div class="range-val"></div>
-								<input type="range" id="rangeGameBalls" min="50" max="90" value="70" step="1"/>
-							</div>
-						</div>
+						<input type="text" id="balls"/>
 					</div>
 					<div class="preference-form">
 						<h3>
@@ -264,23 +259,13 @@
 						<h3>
 							Time:
 						</h3>
-						<div class="rangeSet">
-							<div class="rangeW">
-								<div class="range-val"></div>
-								<input type="range" id="rangeGameTime" min="60" max="100" value="60" step="1"/>
-							</div>
-						</div>
+						<input type="text" id="time"/>
 					</div>
 					<div class="preference-form">
 						<h3>
 							Number of monsters:
 						</h3>
-						<div class="rangeSet">
-							<div class="rangeW">
-								<div class="range-val"></div>
-								<input type="range" id="rangeGameMonsters" min="1" max="4" value="3" step="1"/>
-							</div>
-						</div>
+						<input type="text" id="monsters"/>
 					</div>
 				</div>
 			</div>
@@ -289,6 +274,10 @@
 			</div>
 			<div id="game-details">
 				<form id="game-details-form">
+					<div class="detailsSet">
+						<h3>User</h3>
+						<input id="userInput" type="text"/>
+					</div>
 					<div class="detailsSet">
 						<h3>Score</h3>
 						<input id="scoreInput" type="text"/>

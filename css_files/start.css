@@ -10,18 +10,9 @@
     justify-content: space-between;
 }
 
-/*#play-section label,*/
-/*#play-section h3 {*/
-/*    font-size: 1.5vw;*/
-/*}*/
-
-/*#play-section div p {*/
-/*    font-size: 1.5vw;*/
-/*}*/
-
 #row{
     float: left;
-    width: 15vw;
+    width: 17vw;
     padding-left: 1vw;
 }
 
@@ -30,10 +21,13 @@
 }
 
 #game > #canvas{
-    /* float: left; */
     display: block;
     padding-left: 10vw;
     padding-right: 5vw;
+}
+
+#play-section > #row > #preferences-selected {
+    height: 80vh;
 }
 
 #play-section > #row > #preferences-selected > h2{
@@ -63,11 +57,29 @@
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
     font-family: "Berlin Sans FB";
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     /*padding-top: 1vh;*/
     /*padding-bottom: 1vh;*/
     padding-right: 1vw;
     color: white;
+}
+
+#play-section > #row > #preferences-selected > .preference-form {
+    display: flex;
+    flex-direction: column;
+    height: 17vh;
+    /*padding-top: 2vh;*/
+    /*padding-bottom: 2vh;*/
+}
+
+#play-section > #row > #preferences-selected > .preference-form::after {
+    display: block;
+    height: 2px;
+    background-color: #d66e3b;
+    content: " ";
+    width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 
 #play-section > .preference-form > .preference-key {
@@ -91,6 +103,7 @@
 .preference-key{
     flex-direction: column;
     align-items: center;
+    height: 10vh;
 }
 
 #play-section > #row > #preferences-selected > .preference-form > .preference-key > .keySet > .pref-btn-game {
@@ -113,11 +126,27 @@
     justify-content: space-around;
 }
 
-#play-section > #row > #preferences-selected > .preference-form > .rangeSet > .rangeW{
-    padding-left: 1vw;
-    padding-top: 3vh;
-    height: 5vh;
+.preference-form-colors{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
+
+
+/*#play-section > #row > #preferences-selected > .preference-form > input {*/
+/*    font-family: "Berlin Sans FB";*/
+/*    color: #f8e76e;*/
+/*    font-style: italic;*/
+/*    background: none;*/
+/*    border: none;*/
+/*}*/
+
+/*#play-section > #row > #preferences-selected > .preference-form > .rangeSet > .rangeW{*/
+/*    padding-left: 1vw;*/
+/*    padding-top: 3vh;*/
+/*    height: 5vh;*/
+/*}*/
 
 #play-section > #game-details > #game-details-form > .detailsSet > input{
     height: auto;
@@ -132,3 +161,24 @@
     font-family: "Berlin Sans FB";
     color: white;
 }
+
+#play-section > #row > #preferences-selected > .preference-form > input {
+    height: auto;
+    width: 5vw;
+    margin: 0vh 0vw 0vh 0vw;
+    font-size: 1.5vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 5vw;
+    background: none;
+    border: none;
+    font-family: "Berlin Sans FB";
+    color: #f8e76e;
+}
+
+/*#play-section > #game-details > #game-details-form > .detailsSet > #lifeInput{*/
+/*    width: 10vw;*/
+/*    height: 5vh;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
