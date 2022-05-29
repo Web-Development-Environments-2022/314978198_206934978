@@ -203,6 +203,10 @@ $(document).ready(function() {
 		if (audio != null){
 			audio.pause();
 		}
+		if (loggedInUser != null){
+			$("#welcome-login-btn").hide();
+			$("#welcome-registration-btn").hide();
+		}
 		$("#welcome-section-notLoggedIn").show();
 		$("#play-section").hide();
 		$("#register-section").hide();
@@ -238,6 +242,10 @@ $(document).ready(function() {
 		ClearAllIntervals();
 		if (audio != null){
 			audio.pause();
+		}
+		if (loggedInUser != null){
+			$("#welcome-login-btn").hide();
+			$("#welcome-registration-btn").hide();
 		}
 		$("#welcome-section-notLoggedIn").hide();
 		$("#play-section").hide();
@@ -427,6 +435,9 @@ function setLogOut(){
 	$("#logout-menu-btn").hide();
 	$("#register-menu-btn").show();
 	$("#login-menu-btn").show();
+	$("#welcome-login-btn").show();
+	$("#welcome-registration-btn").show();
+
 	ResetPreferences();
 }
 

@@ -273,39 +273,47 @@ footer > .footerContact > .footerContactSocialMedia > .footerSocialMediaDiv > h3
     margin: auto;
     padding: 20px;
     border: 1px solid white;
-    width: 80%;
+    width: 70%;
 }
-
-
 
 #about > .modal-content > #about-header > h1{
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
     font-family: "Berlin Sans FB";
-    font-size: 4vw;
-    padding-top: 2vh;
+    font-size: 3vw;
+    padding-top: 1vh;
     padding-left: 2vw;
-    padding-bottom: 2vh;
-    color: white;
+    padding-bottom: 1vh;
+    color: #f8e76e;
     font-style: italic;
 }
 
 #about > .modal-content > div > h2{
     padding-left: 2vw;
-    font-size: 2.5vw;
+    font-size: 2vw;
 }
 
 #about > .modal-content > div > ul > li > h2{
     padding-left: 2vw;
-    font-size: 2.5vw;
+    font-size: 2vw;
 }
 
 #about > .modal-content > div > h3{
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
     font-family: "Berlin Sans FB";
-    font-size: 2vw;
+    font-size: 1.5vw;
     padding-top: 2vh;
+    padding-left: 2vw;
+    color: white;
+}
+
+#about > .modal-content > div > ul > li > h3{
+    height: auto;
+    margin: 0vh 0vw 0vh 0vw;
+    font-family: "Berlin Sans FB";
+    font-size: 1.5vw;
+    padding-top: 1vh;
     padding-left: 2vw;
     color: white;
 }
@@ -314,14 +322,25 @@ footer > .footerContact > .footerContactSocialMedia > .footerSocialMediaDiv > h3
     height: auto;
     margin: 0vh 0vw 0vh 0vw;
     font-family: "Berlin Sans FB";
-    font-size: 1.3vw;
-    padding-top: 2vh;
-    padding-left: 2vw;
+    font-size: 1.2vw;
+    padding-left: 1vw;
     color: white;
+}
+
+#about > .modal-content > div > ol{
+    margin: 0;
+    padding-top: 1vh;
 }
 
 #about > .modal-content > div > ol > li{
     font-family: "Berlin Sans FB";
-    font-size: 1.3vw;
+    font-size: 1.2vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    justify-content: flex-start;
+    align-items: baseline;
 }
+
 
