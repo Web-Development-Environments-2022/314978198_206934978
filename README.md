@@ -28,6 +28,8 @@ By this project we ([`Yuval Cohen`](https://github.com/yuvalCohen/), [`Noa Magri
 **In addition, you can contact us by few different ways:**
 
 *By Mail* - by clicking on the envelope
+
 *By LinkedIn* - by clicking on its Icon - "in"
+
 *By GitHub* - by clicking on the Icon - a cat
 
