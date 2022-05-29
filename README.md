@@ -21,9 +21,8 @@ By this project we ([`Yuval Cohen`](https://github.com/yuvalCohen/), [`Noa Magri
 | --- | --- |
 | WELCOME | This button will take you back to the home page - which includes the logo of the game, the other buttons and ways to contact with us. |
 | REGISTER | This button will open for you a registration form where you should fill out your user name, a password, your first and last name, your email address and your birthday. By clicking on the "SUBMIT" button you will get a message by the system if your registration complited successfully. By Clicking on the "RESET" button you can clear the all fields you fill. |
-| LOGIN | d |
-| ABOUT | d |
-| SIGN UP | d |
+| LOGIN | After registration, you can login by your user name and your password. |
+| ABOUT | Here you can here about us and our Pacman game website. |
 
 the registration page uses jquery validation to ensure that the inputs are valid.
 
