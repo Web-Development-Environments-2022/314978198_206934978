@@ -45,9 +45,10 @@ First, for moving on the board use the keys which selected.
 What will give you more points? Eaying food!
 
 There are three types of food points -
-* *small = 5 points
-* *medium = 15 points
+* *small = 5 points*
+* *medium = 15 points*
 * *large = 25 points*
+
 You achieved 50 points if you eat the moving money bag.
 Bad news! You lose a 1 life and 10 points if a monster caught the pacman!
 
