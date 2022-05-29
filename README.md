@@ -27,7 +27,7 @@ By this project we ([`Yuval Cohen`](https://github.com/yuvalCohen/), [`Noa Magri
 
 **In addition, you can contact us by few different ways:**
 
-*By Mail* - by clicking on the envelope
+<img width="958" alt="image" src="https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/mailLogo.png"> - *By Mail*
 
 *By LinkedIn* - by clicking on its Icon - "in"
 
