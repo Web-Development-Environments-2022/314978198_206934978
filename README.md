@@ -49,7 +49,7 @@ There are three types of food points -
 * *medium = 15 points*
 * *large = 25 points*
 
-You achieved 50 points if you eat the moving money bag.
+You earn 50 points if you eat the moving money bag.
 Bad news! You lose a 1 life and 10 points if a monster caught the pacman!
 
 When the games end?
