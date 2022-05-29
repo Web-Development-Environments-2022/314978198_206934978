@@ -5,7 +5,7 @@
 ![This is an image](https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/PacMan.png)
 
 
-By this project we ([`Yuval Cohen`](https://github.com/yuvalCohen/), [`Noa Magrisso`](https://github.com/NoaMagrisso)) implemented a Pacman game, as we asked to do under the "Internet Programming Environments" course at BGU.
+By this project we ([`Yuval Cohen`](https://github.com/yuval5210), [`Noa Magrisso`](https://github.com/NoaMagrisso)) implemented a Pacman game, as we asked to do under the "Internet Programming Environments" course at BGU.
 
 **Yuval Cohen: 314978198 | Noa Magrisso: 206934978**
 
@@ -20,7 +20,7 @@ By this project we ([`Yuval Cohen`](https://github.com/yuvalCohen/), [`Noa Magri
 | Button | Description |
 | --- | --- |
 | WELCOME | This button will take you back to the home page - which includes the logo of the game, the other buttons and ways to contact with us. |
-| REGISTER | This button will open for you a registration form where you should fill out your user name, a password, your first and last name, your email address and your birthday. By clicking on the "SUBMIT" button you will get a message by the system if your registration complited successfully. By Clicking on the "RESET" button you can clear the all fields you fill. |
+| REGISTER | This button will open for you a registration form where you should fill out your user name, a password, your first and last name, your email address and your birthday. By clicking on the "SUBMIT" button you will get a message by the system if your registration complited successfully. By Clicking on the "RESET" button you can clear the all fields you fill in. |
 | LOGIN | After registration, you can login by your user name and your password. |
 | ABOUT | Here you can here about us and our Pacman game website. |
 
