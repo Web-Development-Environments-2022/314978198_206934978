@@ -24,7 +24,7 @@ By this project we ([`Yuval Cohen`](https://github.com/yuvalCohen/), [`Noa Magri
 | LOGIN | After registration, you can login by your user name and your password. |
 | ABOUT | Here you can here about us and our Pacman game website. |
 
-the registration page uses jquery validation to ensure that the inputs are valid.
+
 
 **In addition, you can contact us by few different ways:**
 
