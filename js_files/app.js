@@ -349,6 +349,11 @@ function registrationUser(){
 	const em = document.getElementById("registerFormEmail").value;
 	const bD = document.getElementById("registerFormBirthDate").value;
 
+	if (un == "" || pass == "" || fn == "" || ln == "" || em == ""){
+		alert("Some details are missing.");
+		return false;
+	}
+
 	const newUser = {username: un, password: pass, firstname: fn, lastname: ln, email: em, birthdate: bD};
 
 	users.push(newUser);
