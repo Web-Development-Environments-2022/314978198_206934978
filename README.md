@@ -27,9 +27,9 @@ By this project we ([`Yuval Cohen`](https://github.com/yuvalCohen/), [`Noa Magri
 
 **In addition, you can contact us by few different ways:**
 
-<img width="30" alt="image" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> *- By Mail*
+*By Mail* - clicking on the envelope
 
-*By LinkedIn* - by clicking on its Icon - "in"
+*By LinkedIn* - clicking on its Icon - "in"
 
-*By GitHub* - by clicking on the Icon - a cat
+*By GitHub* - clicking on its Icon - a cat
 
