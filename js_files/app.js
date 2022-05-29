@@ -1,5 +1,5 @@
 //bord: 0 -> empty cell, 2-> pacman position, 3 -> monsters, 4 -> wall, 5 -> 5 points food, 15 -> 15 points food,
-// 		25 -> 25 points food, 30 -> special coin, 40 -> clock, 50 -> heart
+// 		25 -> 25 points food, 30 -> special coin, 40 -> clock, 50 -> heart, 60 -> slow motion monsterts
 var context;
 var shape = new Object();
 var board;
@@ -12,12 +12,21 @@ var monstersSteps = [0, 0, 0, 0];
 var flagMonsterts = false;
 var specialCoin = new Object();
 var clock = new Object();
+var isClockEaten = false;
 var heart = new Object();
+var isHeartEaten = false;
+var slowMotion = new Object();
+var isSlowMotionEaten = false;
 var score = 0;
 var pac_color;
 var start_time;
 var time_elapsed;
+var intervalSpecialCoin;
+var intervalMonsters;
+var intervalClock;
+var intervalHeart;
 var interval;
+var monstersClock;
 var previousChar = 5;
 let left_key = 37;
 let up_key = 38;
@@ -458,10 +467,10 @@ function setUserPreferences(){
 	$("#userInput").val(loggedInUser.username);
 
 	// context = canvas.getContext("2d");
-	Start();
-
 	$("#play-section").show();
 	$("#preference-section").hide();
+
+	Start();
 
 	return false;
 }
@@ -549,12 +558,12 @@ function Start() {
 	// var pacman_remain = 1;
 	start_time = new Date();
 
-
 	for (var i = 0; i < rows; i++) {
 		for (var j = 0; j < cols; j++) {
 			if ((board[i][j] == 4) || (board[i][j] == 3)){
 				continue;
 			}
+			//TODO:IMPROVE!!!!
 			var randomNum = Math.random();
 			if (randomNum <= (1.0 * food_remain) / cnt) {
 				const random_food = Math.floor(Math.random()*3);
@@ -616,16 +625,10 @@ function Start() {
 	heart.i = emptyCell[0];
 	heart.j = emptyCell[1];
 
-
-	// var img = document.createElement("heart");
-	// img.setAttribute("src", "media/images/heart.jpg");
-	// img.setAttribute("width", "10px");
-	// img.setAttribute("height", "10px");
-	//
-	// for (let i = 1; i <= life; i++){
-	// 	document.getElementById("lifeInput").append(img);
-	// 	// document.getElementById("lifeInput").append(`<img src="media/images/heart.jpg">`);
-	// }
+	var emptyCell = findRandomEmptyCell(board);
+	board[emptyCell[0]][emptyCell[1]] = 60;
+	slowMotion.i = emptyCell[0];
+	slowMotion.j = emptyCell[1];
 
 	keysDown = {};
 
@@ -645,7 +648,11 @@ function Start() {
 		false
 	);
 
-	interval = setInterval(UpdatePosition, 250);
+	interval = setInterval(UpdatePosition, 100);
+	intervalSpecialCoin = setInterval(UpdatePositionSpecialCoin, 200);
+	intervalMonsters = setInterval(UpdatePositionMonsters, 220);
+	intervalClock = setInterval(UpdatePositionClock, 500);
+	intervalHeart = setInterval(UpdatePositionHeart, 500);
 }
 
 function findRandomEmptyCell(board) {
@@ -704,19 +711,16 @@ function Draw() {
 					let pacman_gif = new Image();
 					pacman_gif.src = "media/images/pacmanGifDown.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
-					// console.log("here");
 				}
 				else if (directionPac == "Left"){
 					let pacman_gif = new Image();
 					pacman_gif.src = "media/images/pacmanGifLeft.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
-					// console.log("here");
 				}
 				else if (directionPac == "Up"){
 					let pacman_gif = new Image();
 					pacman_gif.src = "media/images/pacmanGifUp.jpg";
 					context.drawImage(pacman_gif, center.x - 10, center.y - 10, 15, 15);
-					// console.log("here");
 				}
 			}
 			else if (board[i][j] == 5) {
@@ -778,12 +782,18 @@ function Draw() {
 				img.src = "media/images/heartLife.png";
 				context.drawImage(img, center.x - 10, center.y - 10, 15, 15);
 			}
+			else if (board[i][j] == 60){
+				let img = new Image();
+				img.src = "media/images/slowMotionCandy.png";
+				context.drawImage(img, center.x - 10, center.y - 10, 15, 15);
+			}
 		}
 	}
 }
 
 function UpdatePosition() {
 	board[shape.i][shape.j] = 0;
+
 	var x = GetKeyPressed();
 	if (x == 1) { //Up
 		if (shape.j > 0 && board[shape.i][shape.j - 1] != 4) {
@@ -818,25 +828,44 @@ function UpdatePosition() {
 		score += 25;
 	}
 
-	if (board[shape.i][shape.j] == 30){
+
+	if (shape.i == specialCoin.i && shape.j == specialCoin.j){
 		score += 50;
 	}
 
+
 	if (board[shape.i][shape.j] == 3){
 		ResetMonsterPosition();
+		directionPac = "Right";
 	}
 	else{
 		board[shape.i][shape.j] = 2;
-		if (flagMonsterts == false){
-			UpdatePositionMonsters();
-			flagMonsterts = true;
-		}
-		else {
-			flagMonsterts = false;
-		}
 	}
 
-	UpdatePositionSpecialCoin();
+
+	if (shape.i == clock.i && shape.j == clock.j){
+		limitTime += 10;
+		isClockEaten = true;
+		clock.i = -1;
+		clock.j = -1;
+	}
+
+
+	if (shape.i == heart.i && shape.j == heart.j){
+		life ++;
+		isHeartEaten = true;
+		heart.i = -1;
+		heart.j = -1;
+	}
+
+
+	if (shape.i == slowMotion.i && shape.j == slowMotion.j){
+		isSlowMotionEaten = true;
+		slowMotion.i = -1;
+		slowMotion.j = -1;
+	}
+
+	UpdateSlowMotion();
 
 	var currentTime = new Date();
 	time_elapsed = (currentTime - start_time) / 1000;
@@ -849,18 +878,7 @@ function UpdatePosition() {
 		directionPac = "Right";
 		Draw();
 	}
-	// }else {
-	// 	Draw();
-	// }
 
-	if (score == 50) {
-		window.clearInterval(interval);
-		console.log("score");
-		window.alert("Game completed");
-	}
-	// else {
-	// 	Draw();
-	// }
 
 	if (life == 0){
 		//audio
@@ -929,15 +947,7 @@ function BFS(start, end){
 
 function ResetMonsterPosition(){
 	life--;
-
-	let emptyCell = findRandomEmptyCell(board);
-
-	board[shape.i][shape.j] = 0;
-	//New position to Pacman
-	shape.i = emptyCell[0];
-	shape.j = emptyCell[1];
-	board[shape.i][shape.j] = 2;
-
+	console.log("eaten");
 	score -= 10;
 
 	for (let i = 0; i < monstersNum; i++){
@@ -955,6 +965,15 @@ function ResetMonsterPosition(){
 		monstersSteps[i] = 0;
 		board[monsters[i].i][monsters[i].j] = 3;
 	}
+
+	let emptyCell = findRandomEmptyCell(board);
+
+	board[shape.i][shape.j] = 0;
+
+	//New position to Pacman
+	shape.i = emptyCell[0];
+	shape.j = emptyCell[1];
+	board[shape.i][shape.j] = 2;
 }
 
 function findMonster(i, j){
@@ -996,7 +1015,7 @@ function UpdatePositionMonsters(){
 		ResetMonsterPosition();
 	}
 }
-
+//TODO:HOW TO IMPROVE!!!
 function UpdatePositionSpecialCoin(){
 	let destinationCells = [[1, 1], [1, 16], [18, 1], [18, 16]];
 	let dest;
@@ -1013,7 +1032,6 @@ function UpdatePositionSpecialCoin(){
 	}
 	else{
 		previousChar = findMonster(next[0], next[1]);
-		// console.log(previousChar);
 	}
 
 	board[next[0]][next[1]] = 30;
@@ -1021,4 +1039,47 @@ function UpdatePositionSpecialCoin(){
 	specialCoin.j = next[1];
 }
 
+function UpdatePositionClock(){
+	if (isClockEaten){
+		var emptyCell = findRandomEmptyCell(board);
+		clock.i = emptyCell[0];
+		clock.j = emptyCell[1];
+		board[emptyCell[0]][emptyCell[1]] = 40;
+		isClockEaten = false;
+	}
+}
 
+function UpdatePositionHeart(){
+	if (isHeartEaten){
+		var emptyCell = findRandomEmptyCell(board);
+		heart.i = emptyCell[0];
+		heart.j = emptyCell[1];
+		board[emptyCell[0]][emptyCell[1]] = 50;
+		isHeartEaten = false;
+	}
+}
+
+function UpdateSlowMotion(){
+	if (isSlowMotionEaten){
+		monstersClock = new Date();
+		window.clearInterval(intervalMonsters);
+		intervalMonsters = setInterval(UpdatePositionMonsters, 1000);
+		isSlowMotionEaten = false;
+	}
+	else{
+		if (monstersClock != null){
+			var currentTime = new Date();
+			time_elapsed = (currentTime - monstersClock) / 1000;
+
+			if (time_elapsed >= 10){
+				monstersClock = null;
+				window.clearInterval(intervalMonsters);
+				intervalMonsters = setInterval(UpdatePositionMonsters, 220);
+				var emptyCell = findRandomEmptyCell(board);
+				slowMotion.i = emptyCell[0];
+				slowMotion.j = emptyCell[1];
+				board[emptyCell[0]][emptyCell[1]] = 60;
+			}
+		}
+	}
+}
