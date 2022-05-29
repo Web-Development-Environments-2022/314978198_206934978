@@ -56,6 +56,10 @@ When the games end?
 * Win: The time is up and the score is above 100 points.
 * Lose: If the pacman loses all its lives (= a Loser) or if the time runs out and the score is below 100 points.
 
+Look at your settings options:
+The number of food balls and the colors of the food points, the number of monsters, the time of the game, etc.
+You can change preferences at random by clicking a button.
+
 ![This is an image](https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/gameMode.JPG)
 
  
