@@ -19,11 +19,13 @@ By this project we ([`Yuval Cohen`](https://github.com/yuvalCohen/), [`Noa Magri
 
 | Button | Description |
 | --- | --- |
-| WELCOME | Each one of them h |
-| REGISTER | d |
+| WELCOME | This button will take you back to the home page - which includes the logo of the game, the other buttons and ways to contact with us. |
+| REGISTER | This button will open for you a registration form where you should fill out your user name, a password, your first and last name, your email address and your birthday. By clicking on the "SUBMIT" button you will get a message by the system if your registration complited successfully. By Clicking on the "RESET" button you can clear the all fields you fill. |
 | LOGIN | d |
 | ABOUT | d |
 | SIGN UP | d |
+
+the registration page uses jquery validation to ensure that the inputs are valid.
 
 **In addition, you can contact us by few different ways:**
 
