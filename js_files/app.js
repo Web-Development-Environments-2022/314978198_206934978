@@ -28,6 +28,7 @@ var intervalHeart;
 var interval;
 var monstersClock;
 var previousChar = 5;
+var audio;
 let left_key = 37;
 let up_key = 38;
 let right_key = 39;
@@ -185,24 +186,20 @@ $(document).ready(function() {
 	$("#about").hide();
 	$("#play-menu-btn").hide();
 	$("#logout-menu-btn").hide();
-	// $("#container_header_loggedin").hide();
-	// $("#container_header").show();
 
 
 	if (loggedInUser != null){
-		// $("#welcome-section-loggedIn").hide();
 		$("#welcome-section-notLoggedIn").hide();
 		$("#preference-section").show();
 	}
 	else {
-		// $("#welcome-section-loggedIn").hide();
 		$("#welcome-section-notLoggedIn").show();
 		$("#preference-section").hide();
 	}
 
 
 	$("#home-menu-btn").click(function(){
-		window.clearInterval(interval);
+		ClearAllIntervals();
 		$("#welcome-section-notLoggedIn").show();
 		$("#play-section").hide();
 		$("#register-section").hide();
@@ -211,9 +208,8 @@ $(document).ready(function() {
 	});
 
 	$("#register-menu-btn").click(function(){
-		window.clearInterval(interval);
+		ClearAllIntervals();
 		$("#welcome-section-notLoggedIn").hide();
-		// $("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").show();
 		$("#login-section").hide();
@@ -221,9 +217,8 @@ $(document).ready(function() {
 	});
 
 	$("#login-menu-btn").click(function(){
-		window.clearInterval(interval);
+		ClearAllIntervals();
 		$("#welcome-section-notLoggedIn").hide();
-		// $("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").show();
@@ -231,9 +226,8 @@ $(document).ready(function() {
 	});
 
 	$("#welcome-login-btn").click(function(){
-		window.clearInterval(interval);
+		ClearAllIntervals();
 		$("#welcome-section-notLoggedIn").hide();
-		// $("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").show();
@@ -241,9 +235,8 @@ $(document).ready(function() {
 	});
 
 	$("#welcome-registration-btn").click(function(){
-		window.clearInterval(interval);
+		ClearAllIntervals();
 		$("#welcome-section-notLoggedIn").hide();
-		// $("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").show();
 		$("#login-section").hide();
@@ -251,14 +244,23 @@ $(document).ready(function() {
 	});
 
 	$("#welcome-play-btn").click(function(){
-		window.clearInterval(interval);
+		ClearAllIntervals();
 		$("#welcome-section-notLoggedIn").hide();
-		// $("#welcome-section-loggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
 		$("#login-section").hide();
 		$("#preference-section").show();
 	});
+
+	$("#play-menu-btn").click(function(){
+		ClearAllIntervals();
+		$("#welcome-section-notLoggedIn").hide();
+		$("#play-section").hide();
+		$("#register-section").hide();
+		$("#login-section").hide();
+		$("#preference-section").show();
+	});
+
 	// context = canvas.getContext("2d");
 	// Start();
 });
@@ -372,10 +374,6 @@ function logIn(){
 }
 
 function setLogIn() {
-	// $("#welcome-section-loggedIn").show();
-	// $("#usernamep").value(loggedInUser.username);
-	// $("#container_header_loggedin").show();
-	// $("#container_header").hide();
 	$("#preference-section").show();
 	$("#welcome-section-notLoggedIn").hide();
 	$("#play-section").hide();
@@ -389,14 +387,11 @@ function setLogIn() {
 
 function logout(){
 	loggedInUser = null;
+	ResetAllDocuments();
 	setLogOut();
 }
 
 function setLogOut(){
-	// $("#welcome-section-loggedIn").hide();
-	// $("#container_header_loggedin").hide();
-	// $("#container_header").show();
-	window.clearInterval(interval);
 	$("#welcome-section-notLoggedIn").show();
 	$("#play-section").hide();
 	$("#register-section").hide();
@@ -481,12 +476,32 @@ function setRandomPreferences(){
 	$("#pref-25-pts").val(getRandomColor());
 
 	let newBallsValue = getRandomInt(50, 90);
+	const rangeBalls = document.getElementById('rangeBalls');
+	const rangeValueBalls = document.getElementById('range-value-balls');
+	const newValB = Number((newBallsValue - rangeBalls.min) * 100 / (rangeBalls.max - rangeBalls.min));
+	const newPositionB = 10 - (newValB * 0.2);
+	rangeValueBalls.innerHTML = `<span>${newBallsValue}</span>`;
+	rangeValueBalls.style.left = `calc(${newValB}% + ${newPositionB}vw)`;
 	$("#rangeBalls").val(newBallsValue);
 
+
 	let newMonstersValue = getRandomInt(1, 4);
+	const rangeMonsters = document.getElementById('rangeMonsters');
+	const rangeValueMonsters = document.getElementById('range-value-monsters');
+	const newValM = Number((newMonstersValue - rangeMonsters.min) * 100 / (rangeMonsters.max - rangeMonsters.min));
+	const newPositionM = 10 - (newValM * 0.2);
+	rangeValueMonsters.innerHTML = `<span>${newMonstersValue}</span>`;
+	rangeValueMonsters.style.left = `calc(${newValM}% + ${newPositionM}%)`;
 	$("#rangeMonsters").val(newMonstersValue);
 
+
 	let newTimeValue = getRandomInt(60, 100);
+	const rangeTime = document.getElementById('rangeTime');
+	const rangeValueTime = document.getElementById('range-value-time');
+	const newValT = Number((newTimeValue - rangeTime.min) * 100 / (rangeTime.max - rangeTime.min));
+	const newPositionT = 10 - (newValT * 0.2);
+	rangeValueTime.innerHTML = `<span>${newTimeValue}</span>`;
+	rangeValueTime.style.left = `calc(${newValT}% + ${newPositionT}%)`;
 	$("#rangeTime").val(newTimeValue);
 
 	return false;
@@ -549,6 +564,7 @@ function Start() {
 	MonstertsStart();
 
 	score = 0;
+	life = 5;
 	// pac_color = "yellow";
 	var cnt = rows * cols;
 	var food_remain = ballsNum;
@@ -556,6 +572,9 @@ function Start() {
 	let food15 = 0.3 * food_remain;
 	let food25 = 0.1 * food_remain;
 	// var pacman_remain = 1;
+	audio = document.getElementById("startMusic");
+	audio.play();
+
 	start_time = new Date();
 
 	for (var i = 0; i < rows; i++) {
@@ -872,19 +891,27 @@ function UpdatePosition() {
 
 	if (time_elapsed > limitTime) {
 		//audio
-		window.clearInterval(interval);
-		console.log("time");
+		audio.pause();
+		audio = document.getElementById("deathMusic");
+		audio.play();
 		window.alert("Game completed"); //TODO:CHANGE TO WINNER OR LOSER
+		audio.pause();
+
+		ClearAllIntervals();
 		directionPac = "Right";
 		Draw();
+
+
 	}
-
-
 	if (life == 0){
 		//audio
-		window.clearInterval(interval);
-		console.log("life");
-		window.alert("Game completed"); //TODO:CHANGE TO WINNER OR LOSER
+		audio.pause();
+		audio = document.getElementById("deathMusic");
+		audio.play();
+		window.alert("LOSER!!!"); //TODO:CHANGE TO WINNER OR LOSER
+		audio.pause();
+
+		ClearAllIntervals();
 		directionPac = "Right";
 		Draw();
 	}
@@ -1082,4 +1109,12 @@ function UpdateSlowMotion(){
 			}
 		}
 	}
+}
+
+function ClearAllIntervals(){
+	window.clearInterval(interval);
+	window.clearInterval(intervalMonsters);
+	window.clearInterval(intervalHeart);
+	window.clearInterval(intervalClock);
+	window.clearInterval(intervalSpecialCoin);
 }
