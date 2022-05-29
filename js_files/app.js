@@ -930,7 +930,12 @@ function UpdatePosition() {
 		audio.pause();
 		audio = document.getElementById("deathMusic");
 		audio.play();
-		window.alert("TIMEOUT!");
+		if (score < 100){
+			window.alert("You are better than " + score + " points!");
+		}
+		else {
+			window.alert("WINNER!!!");
+		}
 		audio.pause();
 
 		ClearAllIntervals();
