@@ -35,11 +35,11 @@ the registration page uses jquery validation to ensure that the inputs are valid
 * *By GitHub*
 
 
-![This is an image](https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/mainScreen.png)
+![This is an image](https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/mainScreen.JPG)
 
 
 
-![This is an image](https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/gameMode.png)
+![This is an image](https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/gameMode.JPG)
 
  
 
