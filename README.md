@@ -38,9 +38,28 @@ the registration page uses jquery validation to ensure that the inputs are valid
 ![This is an image](https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/mainScreen.JPG)
 
 
+## The Game Rules
+
+You should know our game rules.
+First, for moving on the board use the keys which selected.
+What will give you more points? Eaying food!
+
+There are three types of food points -
+* *small = 5 points
+* *medium = 15 points
+* *large = 25 points*
+You achieved 50 points if you eat the moving money bag.
+Bad news! You lose a 1 life and 10 points if a monster caught the pacman!
+
+When the games end?
+* Win: The time is up and the score is above 100 points.
+* Lose: If the pacman loses all its lives (= a Loser) or if the time runs out and the score is below 100 points.
 
 ![This is an image](https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/gameMode.JPG)
 
+ 
+ ## Bonus 
+ 
  
 
 
