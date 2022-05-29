@@ -27,9 +27,9 @@ By this project we ([`Yuval Cohen`](https://github.com/yuvalCohen/), [`Noa Magri
 
 **In addition, you can contact us by few different ways:**
 
-*By Mail* - clicking on the envelope
+* *By Mail*
 
-*By LinkedIn* - clicking on its Icon - "in"
+* *By LinkedIn* 
 
-*By GitHub* - clicking on its Icon - a cat
+* *By GitHub*
 
