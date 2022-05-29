@@ -69,9 +69,9 @@ You can change preferences at random by clicking a button.
  
 We took the challenge so we added few special things.
 
-<img width="30" alt="image" src="https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/heartLife.png"> *- If you eat this heart, you will get an extra live. *
+<img width="30" alt="image" src="https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/heartLife.png"> *- If you eat this heart, you will get an extra live.*
 
-<img width="30" alt="image" src="https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/clock.png"> *- If you eat the icon clock, you will get 10 more secondes. *
+<img width="30" alt="image" src="https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/clock.png"> *- If you eat the icon clock, you will get 10 more secondes.*
 
 <img width="30" alt="image" src="https://github.com/Web-Development-Environments-2022/314978198_206934978/blob/main/media/images/slowMotionCandy.png"> *- If you eat this candy, the monsters will be in a slow motion.*
 
