@@ -200,6 +200,9 @@ $(document).ready(function() {
 
 	$("#home-menu-btn").click(function(){
 		ClearAllIntervals();
+		if (audio != null){
+			audio.pause();
+		}
 		$("#welcome-section-notLoggedIn").show();
 		$("#play-section").hide();
 		$("#register-section").hide();
@@ -209,6 +212,9 @@ $(document).ready(function() {
 
 	$("#register-menu-btn").click(function(){
 		ClearAllIntervals();
+		if (audio != null){
+			audio.pause();
+		}
 		$("#welcome-section-notLoggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").show();
@@ -218,6 +224,9 @@ $(document).ready(function() {
 
 	$("#login-menu-btn").click(function(){
 		ClearAllIntervals();
+		if (audio != null){
+			audio.pause();
+		}
 		$("#welcome-section-notLoggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
@@ -227,6 +236,9 @@ $(document).ready(function() {
 
 	$("#welcome-login-btn").click(function(){
 		ClearAllIntervals();
+		if (audio != null){
+			audio.pause();
+		}
 		$("#welcome-section-notLoggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
@@ -236,6 +248,9 @@ $(document).ready(function() {
 
 	$("#welcome-registration-btn").click(function(){
 		ClearAllIntervals();
+		if (audio != null){
+			audio.pause();
+		}
 		$("#welcome-section-notLoggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").show();
@@ -245,6 +260,9 @@ $(document).ready(function() {
 
 	$("#welcome-play-btn").click(function(){
 		ClearAllIntervals();
+		if (audio != null){
+			audio.pause();
+		}
 		$("#welcome-section-notLoggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
@@ -254,6 +272,10 @@ $(document).ready(function() {
 
 	$("#play-menu-btn").click(function(){
 		ClearAllIntervals();
+		if (audio != null){
+			audio.pause();
+		}
+		ResetPreferences();
 		$("#welcome-section-notLoggedIn").hide();
 		$("#play-section").hide();
 		$("#register-section").hide();
@@ -387,7 +409,11 @@ function setLogIn() {
 
 function logout(){
 	loggedInUser = null;
-	ResetAllDocuments();
+	ClearAllIntervals();
+	ResetPreferences();
+	if (audio != null){
+		audio.pause();
+	}
 	setLogOut();
 }
 
@@ -401,6 +427,7 @@ function setLogOut(){
 	$("#logout-menu-btn").hide();
 	$("#register-menu-btn").show();
 	$("#login-menu-btn").show();
+	ResetPreferences();
 }
 
 async function setKey(keyToSet){
@@ -481,7 +508,7 @@ function setRandomPreferences(){
 	const newValB = Number((newBallsValue - rangeBalls.min) * 100 / (rangeBalls.max - rangeBalls.min));
 	const newPositionB = 10 - (newValB * 0.2);
 	rangeValueBalls.innerHTML = `<span>${newBallsValue}</span>`;
-	rangeValueBalls.style.left = `calc(${newValB}% + ${newPositionB}vw)`;
+	rangeValueBalls.style.left = `calc(${newValB}% + ${newPositionB}%)`;
 	$("#rangeBalls").val(newBallsValue);
 
 
@@ -565,27 +592,25 @@ function Start() {
 
 	score = 0;
 	life = 5;
-	// pac_color = "yellow";
 	var cnt = rows * cols;
 	var food_remain = ballsNum;
 	let food5 = 0.6 * food_remain;
 	let food15 = 0.3 * food_remain;
-	let food25 = 0.1 * food_remain;
-	// var pacman_remain = 1;
+	let food25 = food_remain - food5 - food15;
 	audio = document.getElementById("startMusic");
 	audio.play();
 
 	start_time = new Date();
 
-	for (var i = 0; i < rows; i++) {
-		for (var j = 0; j < cols; j++) {
+	for (var i = 1; i < rows - 1; i++) {
+		for (var j = 1; j < cols - 1; j++) {
 			if ((board[i][j] == 4) || (board[i][j] == 3)){
 				continue;
 			}
 			//TODO:IMPROVE!!!!
 			var randomNum = Math.random();
-			if (randomNum <= (1.0 * food_remain) / cnt) {
-				const random_food = Math.floor(Math.random()*3);
+			if (randomNum <= (1.0 * ballsNum) / cnt) {
+				const random_food = Math.floor(Math.random() * 3);
 				if (random_food == 0 && food5 != 0){
 					board[i][j] = 5; //food of 5 points
 					food5--;
@@ -718,8 +743,6 @@ function Draw() {
 
 			if (board[i][j] == 2) {
 				context.beginPath();
-				// //TODO:CHECK WHY NOT WORKING
-				// let pacman_gif = new Image();
 
 				if (directionPac == "Right"){
 					let pacman_gif = new Image();
@@ -841,10 +864,13 @@ function UpdatePosition() {
 
 	if (board[shape.i][shape.j] == 5) {
 		score += 5;
+		ballsNum--;
 	}else if (board[shape.i][shape.j] == 15) {
 		score += 15;
+		ballsNum--;
 	}else if (board[shape.i][shape.j] == 25) {
 		score += 25;
+		ballsNum--;
 	}
 
 
@@ -890,25 +916,34 @@ function UpdatePosition() {
 	time_elapsed = (currentTime - start_time) / 1000;
 
 	if (time_elapsed > limitTime) {
-		//audio
 		audio.pause();
 		audio = document.getElementById("deathMusic");
 		audio.play();
-		window.alert("Game completed"); //TODO:CHANGE TO WINNER OR LOSER
+		window.alert("TIMEOUT!");
 		audio.pause();
 
 		ClearAllIntervals();
 		directionPac = "Right";
 		Draw();
-
-
 	}
+
 	if (life == 0){
-		//audio
 		audio.pause();
 		audio = document.getElementById("deathMusic");
 		audio.play();
-		window.alert("LOSER!!!"); //TODO:CHANGE TO WINNER OR LOSER
+		window.alert("LOSER!!!");
+		audio.pause();
+
+		ClearAllIntervals();
+		directionPac = "Right";
+		Draw();
+	}
+
+	if (ballsNum == 0){
+		audio.pause();
+		audio = document.getElementById("winMusic");
+		audio.play();
+		window.alert("Winner!!!");
 		audio.pause();
 
 		ClearAllIntervals();
@@ -1042,7 +1077,7 @@ function UpdatePositionMonsters(){
 		ResetMonsterPosition();
 	}
 }
-//TODO:HOW TO IMPROVE!!!
+
 function UpdatePositionSpecialCoin(){
 	let destinationCells = [[1, 1], [1, 16], [18, 1], [18, 16]];
 	let dest;
@@ -1117,4 +1152,47 @@ function ClearAllIntervals(){
 	window.clearInterval(intervalHeart);
 	window.clearInterval(intervalClock);
 	window.clearInterval(intervalSpecialCoin);
+}
+
+function ResetPreferences(){
+	left_key = 37;
+	up_key = 38;
+	right_key = 39;
+	down_key = 40;
+	$("#key-up").val(up_key);
+	$("#key-up").text("UP");
+	$("#key-left").val(left_key);
+	$("#key-left").text("LEFT");
+	$("#key-down").val(down_key);
+	$("#key-down").text("DOWN");
+	$("#key-right").val(right_key);
+	$("#key-right").text("RIGHT");
+
+	$("#rangeBalls").val("70");
+	const rangeBalls = document.getElementById('rangeBalls');
+	const rangeValueBalls = document.getElementById('range-value-balls');
+	const newValB = Number((70 - rangeBalls.min) * 100 / (rangeBalls.max - rangeBalls.min));
+	const newPositionB = 10 - (newValB * 0.2);
+	rangeValueBalls.innerHTML = `<span>${"70"}</span>`;
+	rangeValueBalls.style.left = `calc(${newValB}% + ${newPositionB}%)`;
+
+	$("#pref-5-pts").val("#FFFFCC");
+	$("#pref-15-pts").val("#CCFFE5");
+	$("#pref-25-pts").val("#CCE5FF");
+
+	$("#rangeMonsters").val("3");
+	const rangeMonsters = document.getElementById('rangeMonsters');
+	const rangeValueMonsters = document.getElementById('range-value-monsters');
+	const newValM = Number((3 - rangeMonsters.min) * 100 / (rangeMonsters.max - rangeMonsters.min));
+	const newPositionM = 10 - (newValM * 0.2);
+	rangeValueMonsters.innerHTML = `<span>${"3"}</span>`;
+	rangeValueMonsters.style.left = `calc(${newValM}% + ${newPositionM}%)`;
+
+	$("#rangeTime").val("60");
+	const rangeTime = document.getElementById('rangeTime');
+	const rangeValueTime = document.getElementById('range-value-time');
+	const newValT = Number((60 - rangeTime.min) * 100 / (rangeTime.max - rangeTime.min));
+	const newPositionT = 10 - (newValT * 0.2);
+	rangeValueTime.innerHTML = `<span>${"60"}</span>`;
+	rangeValueTime.style.left = `calc(${newValT}% + ${newPositionT}%)`;
 }
