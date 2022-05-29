@@ -50,7 +50,7 @@ There are three types of food points -
 * *large = 5 points*
 
 You earn 50 points if you eat the moving money bag.
-Bad news! You lose a 1 life and 10 points if a monster caught the pacman!
+Bad news! You lose a 1 life if a monster caught the pacman!
 
 When the games end?
 * Win: The time is up and the score is above 100 points.
